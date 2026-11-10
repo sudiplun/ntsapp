@@ -203,6 +203,7 @@ class _MainAppState extends State<MainApp> with WidgetsBindingObserver {
           EventStream().publish(AppEvent(type: EventType.authorise));
         }
         SyncUtils().startAutoSync();
+        SyncUtils.startRealtimeSync();
         logger.info("Started Foreground Sync");
       } else if (state == AppLifecycleState.paused) {
         AuthGuard.lastActiveAt = DateTime.now();
@@ -297,6 +298,8 @@ class DataSync {
     }
     // sync on app start
     SyncUtils().startAutoSync();
+    // No-op until the session is restored; the post-onboarding check re-arms it.
+    await SyncUtils.startRealtimeSync();
     logger.info("Started autosync");
   }
 
