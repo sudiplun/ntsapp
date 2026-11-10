@@ -685,6 +685,39 @@ class AppLocalizationsDe extends AppLocalizations {
   String get sendOtpLabel => 'OTP senden';
 
   @override
+  String get enterPasswordLabel => 'Passwort eingeben';
+
+  @override
+  String get confirmPasswordLabel => 'Passwort bestätigen';
+
+  @override
+  String get signInButtonLabel => 'Anmelden';
+
+  @override
+  String get createAccountButtonLabel => 'Konto erstellen';
+
+  @override
+  String get alreadyHaveAccountLabel => 'Du hast bereits ein Konto? Anmelden';
+
+  @override
+  String get emailPasswordNote => 'Hinweis: Diese E-Mail und dieses Passwort sind nur für dein Konto. Der Notiz-Verschlüsselungsschlüssel wird danach separat eingerichtet.';
+
+  @override
+  String get passwordTooShortMessage => 'Das Passwort muss mindestens 8 Zeichen lang sein';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'Passwörter stimmen nicht überein';
+
+  @override
+  String get invalidCredentialsMessage => 'E-Mail oder Passwort ist falsch';
+
+  @override
+  String get accountExistsMessage => 'Diese E-Mail ist bereits registriert. Melde dich stattdessen an.';
+
+  @override
+  String get tooManyAttemptsMessage => 'Zu viele Versuche - versuche es später erneut';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'Wir haben ein Einmalpasswort (OTP) an deine E-Mail-Adresse $email gesendet';
   }

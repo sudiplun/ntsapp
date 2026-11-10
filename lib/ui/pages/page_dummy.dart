@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:ntsapp/l10n/app_localizations.dart';
 import 'package:ntsapp/services/service_logger.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class PageDummy extends StatefulWidget {
@@ -31,14 +28,7 @@ class _PageDummyState extends State<PageDummy> {
   }
 
   Future<void> simulate() async {
-    if (Platform.isAndroid || Platform.isIOS) {
-      /* LogInResult loginResult = await Purchases.logIn(
-          "\$RCAnonymousID:5c5ce4a721d6424695a34e1d1afb0b46");
-      logger.info("Has valid plan:${loginResult.customerInfo.toString()}"); */
-
-      CustomerInfo customerInfo = await Purchases.getCustomerInfo();
-      logger.info(customerInfo.toString());
-    }
+    logger.info("simulate");
   }
 
   @override

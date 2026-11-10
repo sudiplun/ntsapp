@@ -685,6 +685,39 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sendOtpLabel => 'إرسال رمز التحقق';
 
   @override
+  String get enterPasswordLabel => 'أدخل كلمة المرور';
+
+  @override
+  String get confirmPasswordLabel => 'تأكيد كلمة المرور';
+
+  @override
+  String get signInButtonLabel => 'تسجيل الدخول';
+
+  @override
+  String get createAccountButtonLabel => 'إنشاء حساب';
+
+  @override
+  String get alreadyHaveAccountLabel => 'لديك حساب بالفعل؟ تسجيل الدخول';
+
+  @override
+  String get emailPasswordNote => 'ملاحظة: هذا البريد الإلكتروني وكلمة المرور مخصصان لحسابك فقط. يتم إعداد مفتاح تشفير الملاحظات على حدة بعد ذلك.';
+
+  @override
+  String get passwordTooShortMessage => 'يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'كلمتا المرور غير متطابقتين';
+
+  @override
+  String get invalidCredentialsMessage => 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+
+  @override
+  String get accountExistsMessage => 'هذا البريد الإلكتروني مسجل بالفعل. قم بتسجيل الدخول بدلاً من ذلك.';
+
+  @override
+  String get tooManyAttemptsMessage => 'محاولات كثيرة جداً - حاول مرة أخرى لاحقاً';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'لقد أرسلنا رمز تحقق (OTP) إلى بريدك الإلكتروني $email';
   }

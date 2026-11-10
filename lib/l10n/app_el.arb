@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "Εισάγετε κωδικό",
+  "confirmPasswordLabel": "Επιβεβαίωση κωδικού",
+  "signInButtonLabel": "Σύνδεση",
+  "createAccountButtonLabel": "Δημιουργία λογαριασμού",
+  "alreadyHaveAccountLabel": "Έχετε ήδη λογαριασμό; Σύνδεση",
+  "emailPasswordNote": "Σημείωση: αυτό το email και ο κωδικός αφορούν μόνο τον λογαριασμό σας. Το κλειδί κρυπτογράφησης σημειώσεων ρυθμίζεται ξεχωριστά, μετά από αυτό.",
+  "passwordTooShortMessage": "Ο κωδικός πρέπει να έχει τουλάχιστον 8 χαρακτήρες",
+  "passwordsDoNotMatchMessage": "Οι κωδικοί δεν ταιριάζουν",
+  "invalidCredentialsMessage": "Λάθος email ή κωδικός",
+  "accountExistsMessage": "Αυτό το email είναι ήδη καταχωρημένο. Συνδεθείτε αντί αυτού.",
+  "tooManyAttemptsMessage": "Πάρα πολλές προσπάθειες - δοκιμάστε ξανά αργότερα",
   "otpSentToEmailMessage": "Έχουμε στείλει έναν κωδικό μιας χρήσης (OTP) στο email σας {email}",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

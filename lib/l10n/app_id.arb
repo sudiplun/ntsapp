@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "Masukkan kata sandi",
+  "confirmPasswordLabel": "Konfirmasi kata sandi",
+  "signInButtonLabel": "Masuk",
+  "createAccountButtonLabel": "Buat akun",
+  "alreadyHaveAccountLabel": "Sudah punya akun? Masuk",
+  "emailPasswordNote": "Catatan: email dan kata sandi ini hanya untuk akun Anda. Kunci enkripsi catatan disiapkan terpisah, setelah ini.",
+  "passwordTooShortMessage": "Kata sandi minimal 8 karakter",
+  "passwordsDoNotMatchMessage": "Kata sandi tidak cocok",
+  "invalidCredentialsMessage": "Email atau kata sandi salah",
+  "accountExistsMessage": "Email ini sudah terdaftar. Masuk saja.",
+  "tooManyAttemptsMessage": "Terlalu banyak percobaan - coba lagi nanti",
   "otpSentToEmailMessage": "Kami telah mengirimkan kata sandi satu kali (OTP) ke email Anda {email}",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

@@ -685,6 +685,39 @@ class AppLocalizationsRu extends AppLocalizations {
   String get sendOtpLabel => 'Отправить OTP';
 
   @override
+  String get enterPasswordLabel => 'Введите пароль';
+
+  @override
+  String get confirmPasswordLabel => 'Подтвердите пароль';
+
+  @override
+  String get signInButtonLabel => 'Войти';
+
+  @override
+  String get createAccountButtonLabel => 'Создать аккаунт';
+
+  @override
+  String get alreadyHaveAccountLabel => 'Уже есть аккаунт? Войти';
+
+  @override
+  String get emailPasswordNote => 'Примечание: этот email и пароль — только для аккаунта. Ключ шифрования заметок настраивается отдельно, после этого.';
+
+  @override
+  String get passwordTooShortMessage => 'Пароль должен содержать не менее 8 символов';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'Пароли не совпадают';
+
+  @override
+  String get invalidCredentialsMessage => 'Неверный email или пароль';
+
+  @override
+  String get accountExistsMessage => 'Этот email уже зарегистрирован. Войдите вместо этого.';
+
+  @override
+  String get tooManyAttemptsMessage => 'Слишком много попыток - попробуйте позже';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'Мы отправили одноразовый пароль (OTP) на вашу почту $email';
   }

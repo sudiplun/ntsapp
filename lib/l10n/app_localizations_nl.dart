@@ -685,6 +685,39 @@ class AppLocalizationsNl extends AppLocalizations {
   String get sendOtpLabel => 'OTP verzenden';
 
   @override
+  String get enterPasswordLabel => 'Voer wachtwoord in';
+
+  @override
+  String get confirmPasswordLabel => 'Bevestig wachtwoord';
+
+  @override
+  String get signInButtonLabel => 'Inloggen';
+
+  @override
+  String get createAccountButtonLabel => 'Account aanmaken';
+
+  @override
+  String get alreadyHaveAccountLabel => 'Heb je al een account? Inloggen';
+
+  @override
+  String get emailPasswordNote => 'Let op: dit e-mailadres en wachtwoord zijn alleen voor je account. De versleutelingssleutel voor notities wordt daarna apart ingesteld.';
+
+  @override
+  String get passwordTooShortMessage => 'Het wachtwoord moet minstens 8 tekens bevatten';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'Wachtwoorden komen niet overeen';
+
+  @override
+  String get invalidCredentialsMessage => 'E-mailadres of wachtwoord is onjuist';
+
+  @override
+  String get accountExistsMessage => 'Dit e-mailadres is al geregistreerd. Log in plaats daarvan in.';
+
+  @override
+  String get tooManyAttemptsMessage => 'Te veel pogingen - probeer het later opnieuw';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'We hebben een eenmalig wachtwoord (OTP) naar je e-mail $email gestuurd';
   }

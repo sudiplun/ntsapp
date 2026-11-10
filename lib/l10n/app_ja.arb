@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "パスワードを入力",
+  "confirmPasswordLabel": "パスワードの確認",
+  "signInButtonLabel": "サインイン",
+  "createAccountButtonLabel": "アカウント作成",
+  "alreadyHaveAccountLabel": "アカウントをお持ちですか？サインイン",
+  "emailPasswordNote": "注意：このメールアドレスとパスワードはアカウント専用です。ノート暗号化キーは、この後別途設定します。",
+  "passwordTooShortMessage": "パスワードは8文字以上である必要があります",
+  "passwordsDoNotMatchMessage": "パスワードが一致しません",
+  "invalidCredentialsMessage": "メールアドレスまたはパスワードが正しくありません",
+  "accountExistsMessage": "このメールアドレスは既に登録されています。サインインしてください。",
+  "tooManyAttemptsMessage": "試行回数が多すぎます - 後でもう一度お試しください",
   "otpSentToEmailMessage": "ワンタイムパスワード(OTP)をメール({email})へ送信しました",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

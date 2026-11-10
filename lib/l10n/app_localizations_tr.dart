@@ -685,6 +685,39 @@ class AppLocalizationsTr extends AppLocalizations {
   String get sendOtpLabel => 'OTP Gönder';
 
   @override
+  String get enterPasswordLabel => 'Şifre girin';
+
+  @override
+  String get confirmPasswordLabel => 'Şifreyi onayla';
+
+  @override
+  String get signInButtonLabel => 'Oturum aç';
+
+  @override
+  String get createAccountButtonLabel => 'Hesap oluştur';
+
+  @override
+  String get alreadyHaveAccountLabel => 'Zaten hesabınız var mı? Oturum aç';
+
+  @override
+  String get emailPasswordNote => 'Not: Bu e-posta ve şifre yalnızca hesabınız içindir. Not şifreleme anahtarı bundan sonra ayrıca ayarlanır.';
+
+  @override
+  String get passwordTooShortMessage => 'Şifre en az 8 karakter olmalıdır';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'Şifreler eşleşmiyor';
+
+  @override
+  String get invalidCredentialsMessage => 'E-posta veya şifre hatalı';
+
+  @override
+  String get accountExistsMessage => 'Bu e-posta zaten kayıtlı. Bunun yerine oturum açın.';
+
+  @override
+  String get tooManyAttemptsMessage => 'Çok fazla deneme - daha sonra tekrar deneyin';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'E-posta adresinize tek kullanımlık bir şifre (OTP) gönderdik: $email';
   }

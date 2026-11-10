@@ -685,6 +685,39 @@ class AppLocalizationsHe extends AppLocalizations {
   String get sendOtpLabel => 'שלח OTP';
 
   @override
+  String get enterPasswordLabel => 'הזן סיסמה';
+
+  @override
+  String get confirmPasswordLabel => 'אישור סיסמה';
+
+  @override
+  String get signInButtonLabel => 'התחבר';
+
+  @override
+  String get createAccountButtonLabel => 'יצירת חשבון';
+
+  @override
+  String get alreadyHaveAccountLabel => 'כבר יש לך חשבון? התחבר';
+
+  @override
+  String get emailPasswordNote => 'שים לב: אימייל וסיסמה אלה מיועדים לחשבונך בלבד. מפתח הצפנת הפתקים מוגדר בנפרד, לאחר מכן.';
+
+  @override
+  String get passwordTooShortMessage => 'הסיסמה חייבת להכיל לפחות 8 תווים';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'הסיסמאות אינן תואמות';
+
+  @override
+  String get invalidCredentialsMessage => 'אימייל או סיסמה שגויים';
+
+  @override
+  String get accountExistsMessage => 'אימייל זה כבר רשום. התחבר במקום זאת.';
+
+  @override
+  String get tooManyAttemptsMessage => 'יותר מדי ניסיונות - נסו שוב מאוחר יותר';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'שלחנו סיסמה חד-פעמית (OTP) לאימייל שלך $email';
   }

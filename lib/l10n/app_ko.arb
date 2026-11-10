@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "비밀번호 입력",
+  "confirmPasswordLabel": "비밀번호 확인",
+  "signInButtonLabel": "로그인",
+  "createAccountButtonLabel": "회원가입",
+  "alreadyHaveAccountLabel": "이미 계정이 있나요? 로그인",
+  "emailPasswordNote": "참고: 이 이메일과 비밀번호는 계정용입니다. 노트 암호화 키는 이후 별도로 설정합니다.",
+  "passwordTooShortMessage": "비밀번호는 8자 이상이어야 합니다",
+  "passwordsDoNotMatchMessage": "비밀번호가 일치하지 않습니다",
+  "invalidCredentialsMessage": "이메일 또는 비밀번호가 잘못되었습니다",
+  "accountExistsMessage": "이 이메일은 이미 등록되어 있습니다. 대신 로그인하세요.",
+  "tooManyAttemptsMessage": "시도 횟수가 너무 많습니다 - 나중에 다시 시도하세요",
   "otpSentToEmailMessage": "귀하의 이메일 {email}로 일회용 비밀번호(OTP)를 전송했습니다.",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

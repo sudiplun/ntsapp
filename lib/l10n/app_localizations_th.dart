@@ -685,6 +685,39 @@ class AppLocalizationsTh extends AppLocalizations {
   String get sendOtpLabel => 'ส่ง OTP';
 
   @override
+  String get enterPasswordLabel => 'ใส่รหัสผ่าน';
+
+  @override
+  String get confirmPasswordLabel => 'ยืนยันรหัสผ่าน';
+
+  @override
+  String get signInButtonLabel => 'เข้าสู่ระบบ';
+
+  @override
+  String get createAccountButtonLabel => 'สร้างบัญชีผู้ใช้';
+
+  @override
+  String get alreadyHaveAccountLabel => 'มีบัญชีอยู่แล้ว? เข้าสู่ระบบ';
+
+  @override
+  String get emailPasswordNote => 'หมายเหตุ: อีเมลและรหัสผ่านนี้ใช้สำหรับบัญชีของคุณเท่านั้น คีย์เข้ารหัสโน้ตจะตั้งค่าแยกต่างหากหลังจากนี้';
+
+  @override
+  String get passwordTooShortMessage => 'รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'รหัสผ่านไม่ตรงกัน';
+
+  @override
+  String get invalidCredentialsMessage => 'อีเมลหรือรหัสผ่านไม่ถูกต้อง';
+
+  @override
+  String get accountExistsMessage => 'อีเมลนี้ลงทะเบียนแล้ว เข้าสู่ระบบแทน';
+
+  @override
+  String get tooManyAttemptsMessage => 'พยายามมากเกินไป - ลองอีกครั้งภายหลัง';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'เราได้ส่งรหัสผ่านใช้ครั้งเดียว (OTP) ไปที่อีเมล $email ของคุณแล้ว';
   }

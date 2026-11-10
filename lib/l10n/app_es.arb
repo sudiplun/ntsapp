@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "Introduce la contraseña",
+  "confirmPasswordLabel": "Confirmar contraseña",
+  "signInButtonLabel": "Iniciar sesión",
+  "createAccountButtonLabel": "Crear cuenta",
+  "alreadyHaveAccountLabel": "¿Ya tienes una cuenta? Iniciar sesión",
+  "emailPasswordNote": "Nota: este email y contraseña son solo para tu cuenta. La clave de cifrado de notas se configura por separado, después de esto.",
+  "passwordTooShortMessage": "La contraseña debe tener al menos 8 caracteres",
+  "passwordsDoNotMatchMessage": "Las contraseñas no coinciden",
+  "invalidCredentialsMessage": "Email o contraseña incorrectos",
+  "accountExistsMessage": "Este email ya está registrado. Inicia sesión en su lugar.",
+  "tooManyAttemptsMessage": "Demasiados intentos - inténtalo más tarde",
   "otpSentToEmailMessage": "Hemos enviado una contraseña de un solo uso (OTP) a tu email {email}",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

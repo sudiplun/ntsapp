@@ -685,6 +685,39 @@ class AppLocalizationsVi extends AppLocalizations {
   String get sendOtpLabel => 'Gửi OTP';
 
   @override
+  String get enterPasswordLabel => 'Nhập mật khẩu';
+
+  @override
+  String get confirmPasswordLabel => 'Xác nhận mật khẩu';
+
+  @override
+  String get signInButtonLabel => 'Đăng nhập';
+
+  @override
+  String get createAccountButtonLabel => 'Tạo tài khoản';
+
+  @override
+  String get alreadyHaveAccountLabel => 'Đã có tài khoản? Đăng nhập';
+
+  @override
+  String get emailPasswordNote => 'Lưu ý: email và mật khẩu này chỉ dùng cho tài khoản của bạn. Khóa mã hóa ghi chú sẽ được thiết lập riêng sau bước này.';
+
+  @override
+  String get passwordTooShortMessage => 'Mật khẩu phải có ít nhất 8 ký tự';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'Mật khẩu không khớp';
+
+  @override
+  String get invalidCredentialsMessage => 'Email hoặc mật khẩu không đúng';
+
+  @override
+  String get accountExistsMessage => 'Email này đã được đăng ký. Hãy đăng nhập thay thế.';
+
+  @override
+  String get tooManyAttemptsMessage => 'Quá nhiều lần thử - thử lại sau';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'Chúng tôi đã gửi mật khẩu một lần (OTP) đến email $email của bạn';
   }

@@ -1,25 +1,16 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import { JWT } from "npm:google-auth-library@9";
 
-export async function getUser(authorization: string) {
-  const supabaseClient = createClient(
-    Deno.env.get("SUPABASE_URL") ?? "",
-    Deno.env.get("SUPABASE_ANON_KEY") ?? "",
-    {
-      global: {
-        headers: { Authorization: authorization },
-      },
-    },
-  );
-  // First get the token from the Authorization header
-  const userToken = authorization.replace("Bearer ", "");
-
-  // Now we can get the session or user object
-  const {
-    data: { user },
-  } = await supabaseClient.auth.getUser(userToken);
-  return { user };
-}
+// =============================================================================
+// Shared helpers for the remaining Edge Functions.
+//
+// Removed with the Supabase-only migration (0006):
+//   * Backblaze B2 helpers (authenticateB2 lived in _shared/backblaze.ts)
+//   * FCM helpers (getFcmAccessToken) and the service-account.json import
+//   * files-table writers (setFileEntry / setFileUploaded / setDownloadToken /
+//     getFile / deleteFileEntry / setB2FileId) — the app now writes its own
+//     files rows and uploads bytes straight to the "media" Storage bucket.
+//   * getUser (only RevenueCat / FCM functions used it).
+// =============================================================================
 
 export async function getUserPlanStatus(
   authorization: string,
@@ -47,7 +38,7 @@ export async function getUserPlanStatus(
   } = await supabaseClient.auth.getUser(userToken);
   const userId = user?.id;
 
-  // Get user plan
+  // Get user plan (free default plan seeded by handle_new_user, 0006).
   const { data: plan, error: planError } = await supabaseClient
     .from("plans")
     .select("b2_limit,expires_at,devices")
@@ -104,134 +95,3 @@ export async function getUserPlanStatus(
 
   return { status, userId, error, devices };
 }
-
-export async function setFileEntry(
-  userId: string,
-  fileId: string,
-  cipher: string,
-  nonce: string,
-  parts: number,
-  size: number,
-) {
-  const supabaseClient = createClient(
-    Deno.env.get("SUPABASE_URL") ?? "",
-    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-  );
-
-  const { data: existingFile } = await supabaseClient.from("files").select().eq(
-    "id",
-    fileId,
-  ).single();
-  if (existingFile) {
-    return existingFile;
-  } else {
-    const { data: file } = await supabaseClient.from("files").insert({
-      id: fileId,
-      user_id: userId,
-      key_cipher: cipher,
-      key_nonce: nonce,
-      parts: parts,
-      size: size,
-    }).select().single();
-    return file;
-  }
-}
-
-export async function setFileUploaded(
-  fileId: string,
-  parts: number,
-) {
-  const supabaseClient = createClient(
-    Deno.env.get("SUPABASE_URL") ?? "",
-    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-  );
-  const now = new Date().getTime();
-  await supabaseClient.from("files").update({
-    parts_uploaded: parts,
-    uploaded_at: now,
-  }).eq(
-    "id",
-    fileId,
-  ).lt("uploaded_at", now);
-}
-
-export async function setDownloadToken(
-  userFileId: string,
-  token: string,
-  expires: number,
-) {
-  const supabaseClient = createClient(
-    Deno.env.get("SUPABASE_URL") ?? "",
-    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-  );
-
-  // update token and expiry
-  await supabaseClient
-    .from("files")
-    .update({ token: token, expires: expires })
-    .eq("id", userFileId);
-}
-
-export async function getFile(fileId: string) {
-  const supabaseClient = createClient(
-    Deno.env.get("SUPABASE_URL") ?? "",
-    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-  );
-
-  // Fetch
-  const { data: file, error } = await supabaseClient
-    .from("files")
-    .select()
-    .eq("id", fileId)
-    .single();
-  if (!error) {
-    return file;
-  }
-  return null;
-}
-export async function deleteFileEntry(fileId: string) {
-  const supabaseClient = createClient(
-    Deno.env.get("SUPABASE_URL") ?? "",
-    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-  );
-
-  await supabaseClient
-    .from("files")
-    .delete()
-    .eq("id", fileId);
-}
-
-export async function setB2FileId(userFileId: string, b2FileId: string) {
-  const supabaseClient = createClient(
-    Deno.env.get("SUPABASE_URL") ?? "",
-    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-  );
-  // update b2fileid
-  await supabaseClient
-    .from("files")
-    .update({ b2_id: b2FileId })
-    .eq("id", userFileId).is("b2_id", null);
-}
-
-export const getFcmAccessToken = ({
-  clientEmail,
-  privateKey,
-}: {
-  clientEmail: string;
-  privateKey: string;
-}): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    const jwtClient = new JWT({
-      email: clientEmail,
-      key: privateKey,
-      scopes: ["https://www.googleapis.com/auth/firebase.messaging"],
-    });
-    jwtClient.authorize((err, tokens) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      resolve(tokens!.access_token!);
-    });
-  });
-};

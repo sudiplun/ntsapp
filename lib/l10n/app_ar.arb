@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "أدخل كلمة المرور",
+  "confirmPasswordLabel": "تأكيد كلمة المرور",
+  "signInButtonLabel": "تسجيل الدخول",
+  "createAccountButtonLabel": "إنشاء حساب",
+  "alreadyHaveAccountLabel": "لديك حساب بالفعل؟ تسجيل الدخول",
+  "emailPasswordNote": "ملاحظة: هذا البريد الإلكتروني وكلمة المرور مخصصان لحسابك فقط. يتم إعداد مفتاح تشفير الملاحظات على حدة بعد ذلك.",
+  "passwordTooShortMessage": "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل",
+  "passwordsDoNotMatchMessage": "كلمتا المرور غير متطابقتين",
+  "invalidCredentialsMessage": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+  "accountExistsMessage": "هذا البريد الإلكتروني مسجل بالفعل. قم بتسجيل الدخول بدلاً من ذلك.",
+  "tooManyAttemptsMessage": "محاولات كثيرة جداً - حاول مرة أخرى لاحقاً",
   "otpSentToEmailMessage": "لقد أرسلنا رمز تحقق (OTP) إلى بريدك الإلكتروني {email}",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

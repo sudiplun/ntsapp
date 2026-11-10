@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "رمز عبور را وارد کنید",
+  "confirmPasswordLabel": "تأیید رمز عبور",
+  "signInButtonLabel": "ورود",
+  "createAccountButtonLabel": "ایجاد حساب",
+  "alreadyHaveAccountLabel": "قبلاً حساب ساخته‌اید؟ ورود",
+  "emailPasswordNote": "توجه: این ایمیل و رمز عبور فقط برای حساب شماست. کلید رمزنگاری یادداشت‌ها بعداً به‌صورت جداگانه تنظیم می‌شود.",
+  "passwordTooShortMessage": "رمز عبور باید حداقل ۸ نویسه باشد",
+  "passwordsDoNotMatchMessage": "رمزهای عبور مطابقت ندارند",
+  "invalidCredentialsMessage": "ایمیل یا رمز عبور اشتباه است",
+  "accountExistsMessage": "این ایمیل قبلاً ثبت شده است. به‌جای آن وارد شوید.",
+  "tooManyAttemptsMessage": "تلاش‌های بیش از حد - بعداً دوباره امتحان کنید",
   "otpSentToEmailMessage": "ما یک کد تایید (OTP) به ایمیل شما {email} ارسال کردیم",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

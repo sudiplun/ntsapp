@@ -4,9 +4,8 @@
 
 // Setup type definitions for built-in Supabase Runtime APIs
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-import { getFcmAccessToken, getUserPlanStatus } from "../_shared/supabase.ts";
+import { getUserPlanStatus } from "../_shared/supabase.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import serviceAccount from "../service-account.json" with { type: "json" };
 
 Deno.serve(async (req) => {
   if (req.method !== "POST") {
@@ -33,55 +32,11 @@ Deno.serve(async (req) => {
           );
       }
     } else if (deviceId) {
-      const { data: device, error } = await supabaseClient.from("devices")
-        .update({ "status": 0 }).eq(
-          "id",
-          deviceId,
-        ).eq("user_id", plan.userId).select().maybeSingle();
-      // send fcm
-      if (device && !error) {
-        const fcmToken = device.fcm_id;
-        if (fcmToken) {
-          const accessToken = await getFcmAccessToken({
-            clientEmail: serviceAccount.client_email,
-            privateKey: serviceAccount.private_key,
-          });
-          await fetch(
-            `https://fcm.googleapis.com/v1/projects/${serviceAccount.project_id}/messages:send`,
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
-              },
-              body: JSON.stringify({
-                message: {
-                  token: fcmToken,
-                  data: {
-                    type: "Sync",
-                    timestamp: Date.now().toString(),
-                  },
-                  apns: {
-                    headers: {
-                      "apns-expiration": "0",
-                    },
-                  },
-                  android: {
-                    ttl: "0s",
-                  },
-                  webpush: {
-                    headers: {
-                      "TTL": "0",
-                    },
-                  },
-                },
-              }),
-            },
-          );
-        } else {
-          console.error(`FcmId not found ${deviceId}`);
-        }
-      }
+      // disable device (the removed device signs out on its next sync)
+      await supabaseClient.from("devices").update({ "status": 0 }).eq(
+        "id",
+        deviceId,
+      ).eq("user_id", plan.userId);
     } else {
       return new Response(JSON.stringify({ error: "Missing deviceId" }), {
         status: 400,
@@ -115,7 +70,7 @@ Deno.serve(async (req) => {
   2. Make an HTTP request:
 
   curl -i --location --request POST 'http://127.0.0.1:54321/functions/v1/remove_device' \
-    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZWRlbW8iLCJyb2xlIjoiYW5vbiIsImV4cCI6MTk4MzgxMjk5Nn0.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
     --header 'Content-Type: application/json' \
     --data '{"name":"Functions"}'
 

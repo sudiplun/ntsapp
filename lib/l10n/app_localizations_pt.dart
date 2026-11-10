@@ -685,6 +685,39 @@ class AppLocalizationsPt extends AppLocalizations {
   String get sendOtpLabel => 'Enviar OTP';
 
   @override
+  String get enterPasswordLabel => 'Digite a senha';
+
+  @override
+  String get confirmPasswordLabel => 'Confirme a senha';
+
+  @override
+  String get signInButtonLabel => 'Entrar';
+
+  @override
+  String get createAccountButtonLabel => 'Criar conta';
+
+  @override
+  String get alreadyHaveAccountLabel => 'Já tem uma conta? Entrar';
+
+  @override
+  String get emailPasswordNote => 'Nota: este e-mail e senha são apenas para sua conta. A chave de criptografia das notas é configurada separadamente, depois disso.';
+
+  @override
+  String get passwordTooShortMessage => 'A senha deve ter pelo menos 8 caracteres';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'As senhas não coincidem';
+
+  @override
+  String get invalidCredentialsMessage => 'E-mail ou senha inválidos';
+
+  @override
+  String get accountExistsMessage => 'Este e-mail já está registrado. Entre em vez disso.';
+
+  @override
+  String get tooManyAttemptsMessage => 'Muitas tentativas - tente novamente mais tarde';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'Enviamos uma senha única (OTP) para seu e-mail $email';
   }

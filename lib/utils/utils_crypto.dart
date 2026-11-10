@@ -9,8 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sodium_libs/sodium_libs_sumo.dart';
 import 'package:crypto/crypto.dart';
 import 'enums.dart';
-
-import 'package:http/http.dart' as http;
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'utils_sync.dart';
 
@@ -144,51 +143,55 @@ class CryptoUtils {
   Future<bool> downloadDecryptFile(Map<String, dynamic> data) async {
     bool downloadDecrypted = false;
     String fileName = data["name"];
-    Map<String, dynamic> serverData = await getDataToDownloadFile(fileName);
+    String? userId = SyncUtils.getSignedInUserId();
     String? masterKeyBase64 = await SyncUtils.getMasterKey();
-    if (serverData.containsKey("url") && serverData["url"].isNotEmpty) {
-      String downloadUrl = serverData["url"];
+    if (userId == null || masterKeyBase64 == null) {
+      return false;
+    }
+    try {
+      SupabaseClient supabase = Supabase.instance.client;
+      final rows = await supabase
+          .from("files")
+          .select("key_cipher,key_nonce,uploaded_at")
+          .eq("id", "$userId|$fileName")
+          .maybeSingle();
+      if (rows == null) {
+        logger.error("downloadDecryptFile|no server row:$fileName");
+        return false;
+      }
+      int uploadedAt = (rows["uploaded_at"] as num).toInt();
+      if (uploadedAt == 0) {
+        logger.error("downloadDecryptFile|not uploaded yet:$fileName");
+        return false;
+      }
+      Uint8List encryptedBytes = await supabase.storage
+          .from("media")
+          .download("$userId/$fileName");
       Directory tempDir = await getTemporaryDirectory();
       String fileInPath = "${tempDir.path}/$fileName";
       File fileIn = File(fileInPath);
-      IOSink fileInSink = fileIn.openWrite();
-      try {
-        var request = http.Request("GET", Uri.parse(downloadUrl));
-        http.StreamedResponse response = await request.send();
-        if (response.statusCode == 200) {
-          // Stream file data to avoid memory overuse
-          await response.stream.forEach((chunk) => fileInSink.add(chunk));
-          await fileInSink.close();
-          // decrypt file
-          String mimeDirectory = data["mime"].split("/").first;
-          String fileOutPath = await getFilePath(mimeDirectory, fileName);
-          await checkAndCreateDirectory(fileOutPath);
-          String keyCipherBase64 = serverData[AppString.key.string];
-          String keyNonceBase64 = serverData[AppString.nonce.string];
-          Uint8List? fileEncryptionKeyBytes = getFileEncryptionKeyBytes(
-              keyCipherBase64, keyNonceBase64, masterKeyBase64!);
-          if (fileEncryptionKeyBytes != null) {
-            ExecutionResult decryptionResult = await decryptFile(
-                fileInPath, fileOutPath, fileEncryptionKeyBytes);
-            if (decryptionResult.isSuccess) {
-              downloadDecrypted = true;
-              logger.info("Fetched & decrypted");
-            } else {
-              String error = decryptionResult.failureReason ?? "";
-              logger.error("Fetched but decryption failed", error: error);
-            }
-          } else {
-            logger.error("failed to getFileEncryptionKeyBytes:$fileName");
-          }
+      await fileIn.writeAsBytes(encryptedBytes, flush: true);
+      // decrypt file
+      String mimeDirectory = data["mime"].split("/").first;
+      String fileOutPath = await getFilePath(mimeDirectory, fileName);
+      await checkAndCreateDirectory(fileOutPath);
+      Uint8List? fileEncryptionKeyBytes = getFileEncryptionKeyBytes(
+          rows["key_cipher"], rows["key_nonce"], masterKeyBase64);
+      if (fileEncryptionKeyBytes != null) {
+        ExecutionResult decryptionResult = await decryptFile(
+            fileInPath, fileOutPath, fileEncryptionKeyBytes);
+        if (decryptionResult.isSuccess) {
+          downloadDecrypted = true;
+          logger.info("Fetched & decrypted");
         } else {
-          logger.error(
-              "Request to fetch:$downloadUrl; NOT OK:${response.statusCode} -> ${response.reasonPhrase ?? ''}");
+          String error = decryptionResult.failureReason ?? "";
+          logger.error("Fetched but decryption failed", error: error);
         }
-      } catch (e, s) {
-        logger.error("Error Fetching File", error: e, stackTrace: s);
-      } finally {
-        await fileInSink.close();
+      } else {
+        logger.error("failed to getFileEncryptionKeyBytes:$fileName");
       }
+    } catch (e, s) {
+      logger.error("Error Fetching File", error: e, stackTrace: s);
     }
     return downloadDecrypted;
   }

@@ -685,6 +685,39 @@ class AppLocalizationsEl extends AppLocalizations {
   String get sendOtpLabel => 'Αποστολή OTP';
 
   @override
+  String get enterPasswordLabel => 'Εισάγετε κωδικό';
+
+  @override
+  String get confirmPasswordLabel => 'Επιβεβαίωση κωδικού';
+
+  @override
+  String get signInButtonLabel => 'Σύνδεση';
+
+  @override
+  String get createAccountButtonLabel => 'Δημιουργία λογαριασμού';
+
+  @override
+  String get alreadyHaveAccountLabel => 'Έχετε ήδη λογαριασμό; Σύνδεση';
+
+  @override
+  String get emailPasswordNote => 'Σημείωση: αυτό το email και ο κωδικός αφορούν μόνο τον λογαριασμό σας. Το κλειδί κρυπτογράφησης σημειώσεων ρυθμίζεται ξεχωριστά, μετά από αυτό.';
+
+  @override
+  String get passwordTooShortMessage => 'Ο κωδικός πρέπει να έχει τουλάχιστον 8 χαρακτήρες';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'Οι κωδικοί δεν ταιριάζουν';
+
+  @override
+  String get invalidCredentialsMessage => 'Λάθος email ή κωδικός';
+
+  @override
+  String get accountExistsMessage => 'Αυτό το email είναι ήδη καταχωρημένο. Συνδεθείτε αντί αυτού.';
+
+  @override
+  String get tooManyAttemptsMessage => 'Πάρα πολλές προσπάθειες - δοκιμάστε ξανά αργότερα';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'Έχουμε στείλει έναν κωδικό μιας χρήσης (OTP) στο email σας $email';
   }

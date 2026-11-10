@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "पासवर्ड दर्ज करें",
+  "confirmPasswordLabel": "पासवर्ड की पुष्टि करें",
+  "signInButtonLabel": "साइन इन करें",
+  "createAccountButtonLabel": "खाता बनाएँ",
+  "alreadyHaveAccountLabel": "पहले से खाता है? साइन इन करें",
+  "emailPasswordNote": "नोट: यह ईमेल और पासवर्ड केवल आपके खाते के लिए हैं। नोट एन्क्रिप्शन कुंजी इसके बाद अलग से सेट की जाती है।",
+  "passwordTooShortMessage": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए",
+  "passwordsDoNotMatchMessage": "पासवर्ड मेल नहीं खाते",
+  "invalidCredentialsMessage": "ईमेल या पासवर्ड गलत है",
+  "accountExistsMessage": "यह ईमेल पहले से पंजीकृत है। इसके बजाय साइन इन करें।",
+  "tooManyAttemptsMessage": "बहुत अधिक प्रयास - बाद में फिर से प्रयास करें",
   "otpSentToEmailMessage": "हमने आपके ईमेल {email} पर एक वन-टाइम पासवर्ड (OTP) भेजा है",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

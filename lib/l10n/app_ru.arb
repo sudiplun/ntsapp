@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "Введите пароль",
+  "confirmPasswordLabel": "Подтвердите пароль",
+  "signInButtonLabel": "Войти",
+  "createAccountButtonLabel": "Создать аккаунт",
+  "alreadyHaveAccountLabel": "Уже есть аккаунт? Войти",
+  "emailPasswordNote": "Примечание: этот email и пароль — только для аккаунта. Ключ шифрования заметок настраивается отдельно, после этого.",
+  "passwordTooShortMessage": "Пароль должен содержать не менее 8 символов",
+  "passwordsDoNotMatchMessage": "Пароли не совпадают",
+  "invalidCredentialsMessage": "Неверный email или пароль",
+  "accountExistsMessage": "Этот email уже зарегистрирован. Войдите вместо этого.",
+  "tooManyAttemptsMessage": "Слишком много попыток - попробуйте позже",
   "otpSentToEmailMessage": "Мы отправили одноразовый пароль (OTP) на вашу почту {email}",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

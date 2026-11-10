@@ -685,6 +685,39 @@ class AppLocalizationsId extends AppLocalizations {
   String get sendOtpLabel => 'Kirim OTP';
 
   @override
+  String get enterPasswordLabel => 'Masukkan kata sandi';
+
+  @override
+  String get confirmPasswordLabel => 'Konfirmasi kata sandi';
+
+  @override
+  String get signInButtonLabel => 'Masuk';
+
+  @override
+  String get createAccountButtonLabel => 'Buat akun';
+
+  @override
+  String get alreadyHaveAccountLabel => 'Sudah punya akun? Masuk';
+
+  @override
+  String get emailPasswordNote => 'Catatan: email dan kata sandi ini hanya untuk akun Anda. Kunci enkripsi catatan disiapkan terpisah, setelah ini.';
+
+  @override
+  String get passwordTooShortMessage => 'Kata sandi minimal 8 karakter';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'Kata sandi tidak cocok';
+
+  @override
+  String get invalidCredentialsMessage => 'Email atau kata sandi salah';
+
+  @override
+  String get accountExistsMessage => 'Email ini sudah terdaftar. Masuk saja.';
+
+  @override
+  String get tooManyAttemptsMessage => 'Terlalu banyak percobaan - coba lagi nanti';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'Kami telah mengirimkan kata sandi satu kali (OTP) ke email Anda $email';
   }

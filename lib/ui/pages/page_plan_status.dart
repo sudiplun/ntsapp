@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:ntsapp/l10n/app_localizations.dart';
@@ -12,7 +10,6 @@ import 'package:ntsapp/services/service_events.dart';
 import 'package:ntsapp/services/service_logger.dart';
 import 'package:ntsapp/storage/storage_secure.dart';
 import 'package:ntsapp/utils/utils_sync.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../utils/enums.dart';
@@ -37,7 +34,6 @@ class _PagePlanStatusState extends State<PagePlanStatus> {
   bool hasPlan = false;
   bool planExpired = false;
   String accessKeyType = "";
-  String? subscriptionManagementUrl;
 
   SupabaseClient supabaseClient = Supabase.instance.client;
   Session? currentSession = Supabase.instance.client.auth.currentSession;
@@ -74,14 +70,6 @@ class _PagePlanStatusState extends State<PagePlanStatus> {
         processing = true;
         errorFetching = false;
       });
-    }
-    if (Platform.isAndroid || Platform.isIOS) {
-      try {
-        CustomerInfo customerInfo = await Purchases.getCustomerInfo();
-        subscriptionManagementUrl = customerInfo.managementURL;
-      } catch (e) {
-        logger.error("Error fetching customer info from purchases");
-      }
     }
     String keyForKeyType = '${userId}_kt';
     String? keyType = await secureStorage.read(key: keyForKeyType);
@@ -340,19 +328,6 @@ class _PagePlanStatusState extends State<PagePlanStatus> {
                               ? loc.viewAccessKeyLabel
                               : loc.changeKeyPasswordLabel),
                           onTap: manageKey,
-                          trailing: Icon(Icons.arrow_forward_ios, size: 18),
-                        ),
-                        Divider()
-                      ],
-
-                      // Subscription manage
-                      if (subscriptionManagementUrl != null) ...[
-                        ListTile(
-                          leading: Icon(LucideIcons.receipt),
-                          title: Text(loc.manageSubscriptionLabel),
-                          onTap: () {
-                            openURL(subscriptionManagementUrl!);
-                          },
                           trailing: Icon(Icons.arrow_forward_ios, size: 18),
                         ),
                         Divider()

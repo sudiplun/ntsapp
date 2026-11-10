@@ -685,6 +685,39 @@ class AppLocalizationsHi extends AppLocalizations {
   String get sendOtpLabel => 'OTP भेजें';
 
   @override
+  String get enterPasswordLabel => 'पासवर्ड दर्ज करें';
+
+  @override
+  String get confirmPasswordLabel => 'पासवर्ड की पुष्टि करें';
+
+  @override
+  String get signInButtonLabel => 'साइन इन करें';
+
+  @override
+  String get createAccountButtonLabel => 'खाता बनाएँ';
+
+  @override
+  String get alreadyHaveAccountLabel => 'पहले से खाता है? साइन इन करें';
+
+  @override
+  String get emailPasswordNote => 'नोट: यह ईमेल और पासवर्ड केवल आपके खाते के लिए हैं। नोट एन्क्रिप्शन कुंजी इसके बाद अलग से सेट की जाती है।';
+
+  @override
+  String get passwordTooShortMessage => 'पासवर्ड कम से कम 8 अक्षरों का होना चाहिए';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'पासवर्ड मेल नहीं खाते';
+
+  @override
+  String get invalidCredentialsMessage => 'ईमेल या पासवर्ड गलत है';
+
+  @override
+  String get accountExistsMessage => 'यह ईमेल पहले से पंजीकृत है। इसके बजाय साइन इन करें।';
+
+  @override
+  String get tooManyAttemptsMessage => 'बहुत अधिक प्रयास - बाद में फिर से प्रयास करें';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'हमने आपके ईमेल $email पर एक वन-टाइम पासवर्ड (OTP) भेजा है';
   }

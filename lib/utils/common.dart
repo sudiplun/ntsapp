@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 
@@ -45,9 +44,6 @@ bool isDebugEnabled = kDebugMode;
 bool simulateOnboarding() {
   return ModelSetting.get(AppString.simulateTesting.string, "no") == "yes";
 }
-
-bool revenueCatSupported =
-    Platform.isIOS || Platform.isAndroid; // TODO || Platform.isMacOS
 
 bool runningOnMobile = Platform.isAndroid || Platform.isIOS;
 
@@ -708,22 +704,6 @@ Future<int> checkDownloadNetworkImage(String itemId, String imageUrl) async {
     logger.error("Exception", error: e, stackTrace: s);
   }
   return portrait;
-}
-
-Future<Map<String, dynamic>> getDataToDownloadFile(String fileName) async {
-  SupabaseClient supabase = Supabase.instance.client;
-  Map<String, dynamic> downloadData = {};
-  try {
-    final res = await supabase.functions
-        .invoke('get_download_url', body: {'fileName': fileName});
-    Map<String, dynamic> data = jsonDecode(res.data);
-    downloadData.addAll(data);
-  } on FunctionException catch (e) {
-    downloadData["error"] = e.details.toString();
-  } catch (e) {
-    downloadData["error"] = e.toString();
-  }
-  return downloadData;
 }
 
 Future<String?> getAudioDuration(String filePath,

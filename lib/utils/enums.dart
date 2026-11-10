@@ -11,7 +11,6 @@ enum PageType {
   mediaViewer,
   userTask,
   planStatus,
-  planSubscribe,
   signIn,
   selectKeyType,
   accessKey,
@@ -146,6 +145,7 @@ enum AppString {
 
   //sign-in
   signedIn,
+  signedInEmail,
   otpSentTo,
   otpSentAt,
 
@@ -184,6 +184,8 @@ extension AppStringExtension on AppString {
         return "simulate_testing";
       case AppString.signedIn:
         return "signed_in";
+      case AppString.signedInEmail:
+        return "signed_in_email";
       case AppString.dataSeeded:
         return "data_seeded";
       case AppString.loggingEnabled:

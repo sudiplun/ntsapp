@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "Şifre girin",
+  "confirmPasswordLabel": "Şifreyi onayla",
+  "signInButtonLabel": "Oturum aç",
+  "createAccountButtonLabel": "Hesap oluştur",
+  "alreadyHaveAccountLabel": "Zaten hesabınız var mı? Oturum aç",
+  "emailPasswordNote": "Not: Bu e-posta ve şifre yalnızca hesabınız içindir. Not şifreleme anahtarı bundan sonra ayrıca ayarlanır.",
+  "passwordTooShortMessage": "Şifre en az 8 karakter olmalıdır",
+  "passwordsDoNotMatchMessage": "Şifreler eşleşmiyor",
+  "invalidCredentialsMessage": "E-posta veya şifre hatalı",
+  "accountExistsMessage": "Bu e-posta zaten kayıtlı. Bunun yerine oturum açın.",
+  "tooManyAttemptsMessage": "Çok fazla deneme - daha sonra tekrar deneyin",
   "otpSentToEmailMessage": "E-posta adresinize tek kullanımlık bir şifre (OTP) gönderdik: {email}",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

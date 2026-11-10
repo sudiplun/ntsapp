@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "הזן סיסמה",
+  "confirmPasswordLabel": "אישור סיסמה",
+  "signInButtonLabel": "התחבר",
+  "createAccountButtonLabel": "יצירת חשבון",
+  "alreadyHaveAccountLabel": "כבר יש לך חשבון? התחבר",
+  "emailPasswordNote": "שים לב: אימייל וסיסמה אלה מיועדים לחשבונך בלבד. מפתח הצפנת הפתקים מוגדר בנפרד, לאחר מכן.",
+  "passwordTooShortMessage": "הסיסמה חייבת להכיל לפחות 8 תווים",
+  "passwordsDoNotMatchMessage": "הסיסמאות אינן תואמות",
+  "invalidCredentialsMessage": "אימייל או סיסמה שגויים",
+  "accountExistsMessage": "אימייל זה כבר רשום. התחבר במקום זאת.",
+  "tooManyAttemptsMessage": "יותר מדי ניסיונות - נסו שוב מאוחר יותר",
   "otpSentToEmailMessage": "שלחנו סיסמה חד-פעמית (OTP) לאימייל שלך {email}",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

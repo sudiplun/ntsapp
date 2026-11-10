@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "Voer wachtwoord in",
+  "confirmPasswordLabel": "Bevestig wachtwoord",
+  "signInButtonLabel": "Inloggen",
+  "createAccountButtonLabel": "Account aanmaken",
+  "alreadyHaveAccountLabel": "Heb je al een account? Inloggen",
+  "emailPasswordNote": "Let op: dit e-mailadres en wachtwoord zijn alleen voor je account. De versleutelingssleutel voor notities wordt daarna apart ingesteld.",
+  "passwordTooShortMessage": "Het wachtwoord moet minstens 8 tekens bevatten",
+  "passwordsDoNotMatchMessage": "Wachtwoorden komen niet overeen",
+  "invalidCredentialsMessage": "E-mailadres of wachtwoord is onjuist",
+  "accountExistsMessage": "Dit e-mailadres is al geregistreerd. Log in plaats daarvan in.",
+  "tooManyAttemptsMessage": "Te veel pogingen - probeer het later opnieuw",
   "otpSentToEmailMessage": "We hebben een eenmalig wachtwoord (OTP) naar je e-mail {email} gestuurd",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

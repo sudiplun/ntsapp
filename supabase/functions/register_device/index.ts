@@ -21,7 +21,7 @@ Deno.serve(async (req) => {
         status: plan.status,
       });
     }
-    const { deviceId, title, fcmId } = await req.json();
+    const { deviceId, title } = await req.json();
     if (!deviceId || !title) {
       return new Response(JSON.stringify({ error: "deviceId required" }), {
         status: 400,
@@ -50,7 +50,6 @@ Deno.serve(async (req) => {
           "user_id": plan.userId,
           "title": title,
           "last_at": now,
-          "fcm_id": fcmId,
           "status": 1,
         });
         return new Response("", { status: 200 });

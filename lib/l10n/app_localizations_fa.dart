@@ -685,6 +685,39 @@ class AppLocalizationsFa extends AppLocalizations {
   String get sendOtpLabel => 'ارسال کد تایید';
 
   @override
+  String get enterPasswordLabel => 'رمز عبور را وارد کنید';
+
+  @override
+  String get confirmPasswordLabel => 'تأیید رمز عبور';
+
+  @override
+  String get signInButtonLabel => 'ورود';
+
+  @override
+  String get createAccountButtonLabel => 'ایجاد حساب';
+
+  @override
+  String get alreadyHaveAccountLabel => 'قبلاً حساب ساخته‌اید؟ ورود';
+
+  @override
+  String get emailPasswordNote => 'توجه: این ایمیل و رمز عبور فقط برای حساب شماست. کلید رمزنگاری یادداشت‌ها بعداً به‌صورت جداگانه تنظیم می‌شود.';
+
+  @override
+  String get passwordTooShortMessage => 'رمز عبور باید حداقل ۸ نویسه باشد';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'رمزهای عبور مطابقت ندارند';
+
+  @override
+  String get invalidCredentialsMessage => 'ایمیل یا رمز عبور اشتباه است';
+
+  @override
+  String get accountExistsMessage => 'این ایمیل قبلاً ثبت شده است. به‌جای آن وارد شوید.';
+
+  @override
+  String get tooManyAttemptsMessage => 'تلاش‌های بیش از حد - بعداً دوباره امتحان کنید';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'ما یک کد تایید (OTP) به ایمیل شما $email ارسال کردیم';
   }

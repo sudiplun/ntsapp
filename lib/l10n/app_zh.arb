@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "输入密码",
+  "confirmPasswordLabel": "确认密码",
+  "signInButtonLabel": "登录",
+  "createAccountButtonLabel": "创建账号",
+  "alreadyHaveAccountLabel": "已有账号？去登录",
+  "emailPasswordNote": "注意：此邮箱和密码仅用于你的账号。笔记加密密钥将在之后单独设置。",
+  "passwordTooShortMessage": "密码至少需要8个字符",
+  "passwordsDoNotMatchMessage": "两次输入的密码不一致",
+  "invalidCredentialsMessage": "邮箱或密码不正确",
+  "accountExistsMessage": "该邮箱已注册，请直接登录。",
+  "tooManyAttemptsMessage": "尝试次数过多，请稍后再试",
   "otpSentToEmailMessage": "我们已将一次性密码 (OTP) 发送到您的电子邮件 {email}",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

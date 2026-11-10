@@ -3,7 +3,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ntsapp/services/service_events.dart';
@@ -16,42 +15,17 @@ import 'package:ntsapp/storage/storage_sqlite.dart';
 import 'package:ntsapp/utils/utils_sync.dart';
 import 'package:provider/provider.dart';
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:window_size/window_size.dart';
 
 import 'l10n/app_localizations.dart';
 import 'services/service_locale.dart';
 import 'ui/pages/page_media_migration.dart';
 import 'services/service_logger.dart';
-import 'services/service_notification.dart';
 import 'models/model_setting.dart';
 import 'storage/storage_secure.dart';
 import 'ui/themes.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:workmanager/workmanager.dart';
-
-@pragma('vm:entry-point')
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  // Process the sync message
-  if (message.data['type'] == 'Sync') {
-    try {
-      await StorageSqlite.initialize(mode: ExecutionMode.fcmBackground);
-      await initializeDependencies(mode: ExecutionMode.fcmBackground);
-    } catch (e, s) {
-      AppLogger(prefixes: ["FcmBg"])
-          .error("Sync error", error: e, stackTrace: s);
-    }
-    try {
-      await SyncUtils().triggerSync(true);
-    } catch (e, s) {
-      AppLogger(prefixes: ["FcmBg"])
-          .error("Sync error", error: e, stackTrace: s);
-    }
-  }
-}
 
 // Mobile-specific callback - must be top-level function
 @pragma('vm:entry-point')
@@ -121,48 +95,14 @@ Future<void> main() async {
 Future<void> initializeRestInParallel() async {
   await Future.wait(([
     initializeDependencies(mode: ExecutionMode.appForeground),
-    initializeFirebase(),
     initializeBackgroundSync(),
-    initializePurchases()
   ]));
-}
-
-Future<void> initializeFirebase() async {
-  if (runningOnMobile) {
-    //initialize notificatins
-    await Firebase.initializeApp();
-    logger.info("initialized firebase");
-    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-    logger.info("initialized firebase background handler");
-    if (await SyncUtils.canSync()) {
-      await NotificationService.instance.initialize();
-      logger.info("initialized notification service");
-    }
-  }
 }
 
 Future<void> initializeBackgroundSync() async {
   //initialize background sync
   await DataSync.initialize();
   logger.info("initialized datasync");
-}
-
-Future<void> initializePurchases() async {
-  // initialize purchases -- not required in background tasks
-  if (revenueCatSupported) {
-    String rcKey = "";
-    if (Platform.isAndroid) {
-      rcKey = const String.fromEnvironment("RC_KEY_ANDROID");
-    }
-    if (rcKey.isNotEmpty) {
-      if (isDebugEnabled) {
-        await Purchases.setLogLevel(LogLevel.debug);
-      }
-      PurchasesConfiguration configuration = PurchasesConfiguration(rcKey);
-      await Purchases.configure(configuration);
-      logger.info("Initialized purchases");
-    }
-  }
 }
 
 Future<void> initializeMediaParams() async {

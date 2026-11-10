@@ -16,7 +16,6 @@ import 'package:ntsapp/ui/pages/page_media_viewer.dart';
 import 'package:ntsapp/ui/pages/page_password_key_create.dart';
 import 'package:ntsapp/ui/pages/page_password_key_input.dart';
 import 'package:ntsapp/ui/pages/page_plan_status.dart';
-import 'package:ntsapp/ui/pages/page_plan_subscribe.dart';
 import 'package:ntsapp/ui/pages/page_search.dart';
 import 'package:ntsapp/ui/pages/page_select_key_type.dart';
 import 'package:ntsapp/ui/pages/page_signin.dart';
@@ -69,7 +68,6 @@ class _PageCategoriesGroupsPaneState extends State<PageCategoriesGroupsPane> {
   bool showMediaViewer = false;
   bool showUserTask = false;
   bool showSignIn = false;
-  bool showSubscribe = false;
   bool showSelectKeyType = false;
   bool showPasswordInput = false;
   bool showAccessKeyInput = false;
@@ -145,9 +143,6 @@ class _PageCategoriesGroupsPaneState extends State<PageCategoriesGroupsPane> {
         case PageType.userTask:
           showUserTask = showHide;
           appTask = params.appTask;
-          break;
-        case PageType.planSubscribe:
-          showSubscribe = showHide;
           break;
         case PageType.signIn:
           showSignIn = showHide;
@@ -290,11 +285,6 @@ class _PageCategoriesGroupsPaneState extends State<PageCategoriesGroupsPane> {
                     if (showArchived)
                       PageArchived(
                         runningOnDesktop: true,
-                        setShowHidePage: _setShowHidePage,
-                      ),
-                    if (showSubscribe)
-                      PagePlanSubscribe(
-                        runningOnDesktop: _runningOnDesktop,
                         setShowHidePage: _setShowHidePage,
                       ),
                     if (showSignIn)

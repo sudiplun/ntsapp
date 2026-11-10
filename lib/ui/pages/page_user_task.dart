@@ -2,16 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:ntsapp/l10n/app_localizations.dart';
 import 'package:ntsapp/utils/common.dart';
 import 'package:ntsapp/utils/enums.dart';
 import 'package:ntsapp/models/model_preferences.dart';
 import 'package:ntsapp/models/model_setting.dart';
-import 'package:ntsapp/ui/pages/page_plan_subscribe.dart';
 import 'package:ntsapp/services/service_logger.dart';
 import 'package:ntsapp/storage/storage_secure.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:uuid/uuid.dart';
 
@@ -117,9 +114,6 @@ class _PageUserTaskState extends State<PageUserTask> {
       processing = true;
       errorFetching = false;
     });
-    bool hasSubscriptionPlan = false;
-    bool hasValidPlan = false;
-    String rcId = "";
     // check signed in
     bool signedIn = simulateOnboarding()
         ? ModelSetting.get(AppString.signedIn.string, "no") == "yes"
@@ -130,7 +124,7 @@ class _PageUserTaskState extends State<PageUserTask> {
         try {
           final planResponse = await supabaseClient
               .from("plans")
-              .select("expires_at,rc_id")
+              .select("expires_at")
               .eq("user_id", userId)
               .order("expires_at", ascending: false) // Get the latest plan
               .limit(1) // Ensure only one row is returned
@@ -139,91 +133,18 @@ class _PageUserTaskState extends State<PageUserTask> {
             int expiresAt = int.parse(planResponse["expires_at"].toString());
             int now = DateTime.now().toUtc().millisecondsSinceEpoch;
             if (expiresAt > now) {
-              hasValidPlan = true;
-              rcId = planResponse["rc_id"];
               await ModelPreferences.set(AppString.hasValidPlan.string, "yes");
             } else {
+              await ModelPreferences.set(AppString.hasValidPlan.string, "no");
               logger.info("User signed-in but no valid plan");
             }
           }
         } catch (e) {
           logger.error("Error Fetching Plan:", error: e);
         }
-        if (revenueCatSupported && hasValidPlan) {
-          LogInResult loginResult = await Purchases.logIn(rcId);
-          hasSubscriptionPlan = true;
-          logger.info("Has valid plan:${loginResult.customerInfo.toString()}");
-        }
       }
     } else {
       logger.info("Not signed-in");
-    }
-    // check plan in rc
-    if (revenueCatSupported && !hasValidPlan) {
-      String? savedPlanRcId = await ModelPreferences.get(
-          AppString.planRcId.string); // set only after a purchase
-      try {
-        CustomerInfo customerInfo = await Purchases.getCustomerInfo();
-        if (savedPlanRcId != null &&
-            savedPlanRcId != customerInfo.originalAppUserId) {
-          logger.warning("Purchase:PurchaserId and CustomerId do not match");
-          LogInResult logInResult = await Purchases.logIn(savedPlanRcId);
-          if (logInResult.customerInfo.entitlements.active.isNotEmpty) {
-            hasSubscriptionPlan = true;
-            rcId = savedPlanRcId;
-            await ModelPreferences.set(AppString.hasValidPlan.string, "yes");
-            logger.info(
-                "Purchaser has subscription plan:${logInResult.customerInfo.toString()}");
-          }
-        } else if (customerInfo.entitlements.active.isNotEmpty) {
-          hasSubscriptionPlan = true;
-          rcId = customerInfo.originalAppUserId;
-          await ModelPreferences.set(AppString.hasValidPlan.string, "yes");
-          logger.info(
-              "Customer has subscription plan:${customerInfo.toString()}");
-        }
-      } on PlatformException catch (e) {
-        logger.error("checkRcPlan", error: e);
-        setState(() {
-          processing = false;
-          errorFetching = true;
-          displayMessage = loc.couldNotFetchMessage;
-          buttonText = loc.retryButtonLabel;
-        });
-        return;
-      }
-    }
-    // check association of rc id with supa user id
-    if (hasSubscriptionPlan && signedIn) {
-      try {
-        logger.info("Setting userId for rcId:$rcId");
-        await supabaseClient.functions
-            .invoke("set_id_rc", body: {"rc_id": rcId});
-        hasValidPlan = true;
-      } on FunctionException catch (e) {
-        errorFetching = false;
-        Map<String, dynamic> errorDetails =
-            e.details is String ? jsonDecode(e.details) : e.details;
-        setState(() {
-          processing = false;
-          displayMessage = errorDetails["error"];
-          if (displayMessage.contains("mismatch")) {
-            displayMessage = loc.subscriptionEmailMismatchMessage;
-            userIdMismatch = true;
-          }
-          buttonText = loc.continueLabel;
-        });
-        return;
-      } catch (e, s) {
-        logger.error("set id rc", error: e, stackTrace: s);
-        setState(() {
-          processing = false;
-          errorFetching = true;
-          displayMessage = loc.errorCheckingPlanDetailsMessage;
-          buttonText = loc.retryButtonLabel;
-        });
-        return;
-      }
     }
     bool deviceRegistered = await ModelPreferences.get(
             AppString.deviceRegistered.string,
@@ -233,28 +154,12 @@ class _PageUserTaskState extends State<PageUserTask> {
     // set debug params
     if (simulateOnboarding()) {
       await Future.delayed(const Duration(seconds: 1));
-      hasValidPlan = true;
-      hasSubscriptionPlan = true;
       await ModelPreferences.set(AppString.hasValidPlan.string, "yes");
     }
     setState(() {
       processing = false;
     });
-    if (revenueCatSupported && !hasSubscriptionPlan && mounted) {
-      if (widget.runningOnDesktop) {
-        widget.setShowHidePage!(PageType.planSubscribe, true, PageParams());
-        widget.setShowHidePage!(PageType.userTask, false, PageParams());
-      } else if (mounted) {
-        Navigator.of(context).pushReplacement(
-          AnimatedPageRoute(
-            child: PagePlanSubscribe(
-              runningOnDesktop: widget.runningOnDesktop,
-              setShowHidePage: widget.setShowHidePage,
-            ),
-          ),
-        );
-      }
-    } else if (!signedIn && mounted) {
+    if (!signedIn && mounted) {
       if (widget.runningOnDesktop) {
         widget.setShowHidePage!(PageType.signIn, true, PageParams());
         widget.setShowHidePage!(PageType.userTask, false, PageParams());
@@ -262,20 +167,6 @@ class _PageUserTaskState extends State<PageUserTask> {
         Navigator.of(context).pushReplacement(
           AnimatedPageRoute(
             child: PageSignin(
-              runningOnDesktop: widget.runningOnDesktop,
-              setShowHidePage: widget.setShowHidePage,
-            ),
-          ),
-        );
-      }
-    } else if (!hasValidPlan && mounted) {
-      if (widget.runningOnDesktop) {
-        widget.setShowHidePage!(PageType.planSubscribe, true, PageParams());
-        widget.setShowHidePage!(PageType.userTask, false, PageParams());
-      } else if (mounted) {
-        Navigator.of(context).pushReplacement(
-          AnimatedPageRoute(
-            child: PagePlanSubscribe(
               runningOnDesktop: widget.runningOnDesktop,
               setShowHidePage: widget.setShowHidePage,
             ),
@@ -327,9 +218,8 @@ class _PageUserTaskState extends State<PageUserTask> {
           await ModelPreferences.set(AppString.deviceId.string, deviceId);
         }
         String deviceTitle = await getDeviceName();
-        String? fcmId = await ModelPreferences.get(AppString.fcmId.string);
         await supabaseClient.functions.invoke("register_device",
-            body: {"deviceId": deviceId, "title": deviceTitle, "fcmId": fcmId});
+            body: {"deviceId": deviceId, "title": deviceTitle});
         User user = currentSession!.user;
         String userId = user.id;
         await ModelPreferences.set(AppString.deviceRegistered.string, userId);

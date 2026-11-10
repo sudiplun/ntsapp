@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "Nhập mật khẩu",
+  "confirmPasswordLabel": "Xác nhận mật khẩu",
+  "signInButtonLabel": "Đăng nhập",
+  "createAccountButtonLabel": "Tạo tài khoản",
+  "alreadyHaveAccountLabel": "Đã có tài khoản? Đăng nhập",
+  "emailPasswordNote": "Lưu ý: email và mật khẩu này chỉ dùng cho tài khoản của bạn. Khóa mã hóa ghi chú sẽ được thiết lập riêng sau bước này.",
+  "passwordTooShortMessage": "Mật khẩu phải có ít nhất 8 ký tự",
+  "passwordsDoNotMatchMessage": "Mật khẩu không khớp",
+  "invalidCredentialsMessage": "Email hoặc mật khẩu không đúng",
+  "accountExistsMessage": "Email này đã được đăng ký. Hãy đăng nhập thay thế.",
+  "tooManyAttemptsMessage": "Quá nhiều lần thử - thử lại sau",
   "otpSentToEmailMessage": "Chúng tôi đã gửi mật khẩu một lần (OTP) đến email {email} của bạn",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",

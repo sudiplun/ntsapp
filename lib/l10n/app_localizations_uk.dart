@@ -685,6 +685,39 @@ class AppLocalizationsUk extends AppLocalizations {
   String get sendOtpLabel => 'Надіслати OTP';
 
   @override
+  String get enterPasswordLabel => 'Введіть пароль';
+
+  @override
+  String get confirmPasswordLabel => 'Підтвердіть пароль';
+
+  @override
+  String get signInButtonLabel => 'Увійти';
+
+  @override
+  String get createAccountButtonLabel => 'Створити акаунт';
+
+  @override
+  String get alreadyHaveAccountLabel => 'Вже є акаунт? Увійти';
+
+  @override
+  String get emailPasswordNote => 'Примітка: цей email і пароль — лише для акаунта. Ключ шифрування нотаток налаштовується окремо, після цього.';
+
+  @override
+  String get passwordTooShortMessage => 'Пароль має містити не менше 8 символів';
+
+  @override
+  String get passwordsDoNotMatchMessage => 'Паролі не збігаються';
+
+  @override
+  String get invalidCredentialsMessage => 'Невірний email або пароль';
+
+  @override
+  String get accountExistsMessage => 'Цей email вже зареєстрований. Увійдіть замість цього.';
+
+  @override
+  String get tooManyAttemptsMessage => 'Забагато спроб - спробуйте пізніше';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return 'Ми надіслали одноразовий пароль (OTP) на вашу електронну пошту $email';
   }

@@ -685,6 +685,39 @@ class AppLocalizationsZh extends AppLocalizations {
   String get sendOtpLabel => '发送 OTP';
 
   @override
+  String get enterPasswordLabel => '输入密码';
+
+  @override
+  String get confirmPasswordLabel => '确认密码';
+
+  @override
+  String get signInButtonLabel => '登录';
+
+  @override
+  String get createAccountButtonLabel => '创建账号';
+
+  @override
+  String get alreadyHaveAccountLabel => '已有账号？去登录';
+
+  @override
+  String get emailPasswordNote => '注意：此邮箱和密码仅用于你的账号。笔记加密密钥将在之后单独设置。';
+
+  @override
+  String get passwordTooShortMessage => '密码至少需要8个字符';
+
+  @override
+  String get passwordsDoNotMatchMessage => '两次输入的密码不一致';
+
+  @override
+  String get invalidCredentialsMessage => '邮箱或密码不正确';
+
+  @override
+  String get accountExistsMessage => '该邮箱已注册，请直接登录。';
+
+  @override
+  String get tooManyAttemptsMessage => '尝试次数过多，请稍后再试';
+
+  @override
   String otpSentToEmailMessage(String email) {
     return '我们已将一次性密码 (OTP) 发送到您的电子邮件 $email';
   }

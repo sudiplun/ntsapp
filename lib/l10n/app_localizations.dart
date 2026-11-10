@@ -1465,6 +1465,72 @@ abstract class AppLocalizations {
   /// **'Send OTP'**
   String get sendOtpLabel;
 
+  /// No description provided for @enterPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Password'**
+  String get enterPasswordLabel;
+
+  /// No description provided for @confirmPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPasswordLabel;
+
+  /// No description provided for @signInButtonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signInButtonLabel;
+
+  /// No description provided for @createAccountButtonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get createAccountButtonLabel;
+
+  /// No description provided for @alreadyHaveAccountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account? Sign In'**
+  String get alreadyHaveAccountLabel;
+
+  /// No description provided for @emailPasswordNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Note: this email and password are for your account only. The note encryption key is set up separately, after this.'**
+  String get emailPasswordNote;
+
+  /// No description provided for @passwordTooShortMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 8 characters'**
+  String get passwordTooShortMessage;
+
+  /// No description provided for @passwordsDoNotMatchMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsDoNotMatchMessage;
+
+  /// No description provided for @invalidCredentialsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email or password'**
+  String get invalidCredentialsMessage;
+
+  /// No description provided for @accountExistsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This email is already registered. Sign in instead.'**
+  String get accountExistsMessage;
+
+  /// No description provided for @tooManyAttemptsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts - try again later'**
+  String get tooManyAttemptsMessage;
+
   /// Message confirming the OTP was sent to the email.
   ///
   /// In en, this message translates to:

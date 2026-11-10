@@ -913,6 +913,17 @@
   "@sendOtpLabel": {
     "description": "Label for the send OTP button."
   },
+  "enterPasswordLabel": "ใส่รหัสผ่าน",
+  "confirmPasswordLabel": "ยืนยันรหัสผ่าน",
+  "signInButtonLabel": "เข้าสู่ระบบ",
+  "createAccountButtonLabel": "สร้างบัญชีผู้ใช้",
+  "alreadyHaveAccountLabel": "มีบัญชีอยู่แล้ว? เข้าสู่ระบบ",
+  "emailPasswordNote": "หมายเหตุ: อีเมลและรหัสผ่านนี้ใช้สำหรับบัญชีของคุณเท่านั้น คีย์เข้ารหัสโน้ตจะตั้งค่าแยกต่างหากหลังจากนี้",
+  "passwordTooShortMessage": "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร",
+  "passwordsDoNotMatchMessage": "รหัสผ่านไม่ตรงกัน",
+  "invalidCredentialsMessage": "อีเมลหรือรหัสผ่านไม่ถูกต้อง",
+  "accountExistsMessage": "อีเมลนี้ลงทะเบียนแล้ว เข้าสู่ระบบแทน",
+  "tooManyAttemptsMessage": "พยายามมากเกินไป - ลองอีกครั้งภายหลัง",
   "otpSentToEmailMessage": "เราได้ส่งรหัสผ่านใช้ครั้งเดียว (OTP) ไปที่อีเมล {email} ของคุณแล้ว",
   "@otpSentToEmailMessage": {
     "description": "Message confirming the OTP was sent to the email.",
