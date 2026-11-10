@@ -178,6 +178,12 @@ class _PageUserTaskState extends State<PageUserTask> {
     } else if (!canSync || simulateOnboarding()) {
       checkEncryptionKeys();
     } else if (mounted) {
+      // Attach the realtime listener and fetch right away: neither survives an
+      // app restart, and waiting for the 60s polling fallback is not spontaneous.
+      if (!simulateOnboarding()) {
+        await SyncUtils.startRealtimeSync();
+        SyncUtils.waitAndSyncChanges();
+      }
       await signalToUpdateHome();
       if (mounted) {
         if (widget.runningOnDesktop) {
