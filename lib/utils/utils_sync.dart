@@ -470,12 +470,28 @@ class SyncUtils {
         await ModelChange.upgradeTypeForIds(changeIds);
         await ModelPreferences.set(AppString.hasValidPlan.string, "yes");
         logger.info("Pushed Map Changes");
-      } on FunctionException catch (e) {
-        String error = jsonDecode(e.details)["error"];
+      } on FunctionException catch (e, s) {
+        dynamic details = e.details;
+        String error = "";
+        try {
+          Map<String, dynamic> errorMap =
+              details is String ? jsonDecode(details) : details;
+          error = errorMap["error"]?.toString() ?? "";
+        } catch (_) {
+          error = details?.toString() ?? "";
+        }
         if (error == "Plan expired") {
           await ModelPreferences.set(AppString.hasValidPlan.string, "no");
           EventStream().publish(AppEvent(type: EventType.checkPlanStatus));
           logger.error("pushMapChanges|Supabase", error: "Plan Expired");
+        } else {
+          // Keep the changes queued (still type pushMap) so the next sync
+          // retries them, and make the failure visible in the logs.
+          logger.error(
+            "pushMapChanges|Supabase",
+            error: "FunctionException ${e.status}: $error",
+            stackTrace: s,
+          );
         }
       } catch (e, s) {
         logger.error("pushMapChanges|Supabase", error: e, stackTrace: s);

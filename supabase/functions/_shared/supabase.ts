@@ -38,6 +38,19 @@ export async function getUserPlanStatus(
   } = await supabaseClient.auth.getUser(userToken);
   const userId = user?.id;
 
+  if (!userId) {
+    status = 401;
+    error = "Unauthorized";
+    return { status, userId, error, devices };
+  }
+
+  // The devices heartbeat below is a server-side write: clients have no
+  // UPDATE policy on public.devices (0003), so it must run as service_role.
+  const adminClient = createClient(
+    Deno.env.get("SUPABASE_URL") ?? "",
+    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
+  );
+
   // Get user plan (free default plan seeded by handle_new_user, 0006).
   const { data: plan, error: planError } = await supabaseClient
     .from("plans")
@@ -81,12 +94,12 @@ export async function getUserPlanStatus(
 
   if (deviceId.length > 0) {
     const now = new Date().getTime();
-    const { data: device, error: deviceError } = await supabaseClient.from(
+    const { data: device, error: deviceError } = await adminClient.from(
       "devices",
     ).update({ "last_at": now }).eq("id", deviceId).eq("user_id", userId).eq(
       "status",
       1,
-    ).select().single();
+    ).select("id").maybeSingle();
     if (deviceError || !device) {
       error = "device not registered";
       status = 400;

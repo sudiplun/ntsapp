@@ -27,17 +27,65 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
     );
-    for (const { table, changes } of allChanges) {
-      for (const change of changes) {
-        const { id, user_id, updated_at } = change;
-        await supabaseClient.from(table).upsert(change, { onConflict: "id" })
-          .eq(
-            "id",
-            id,
-          ).eq("user_id", user_id).lt("updated_at", updated_at);
+    const userId = plan.userId;
+
+    // Only the sync tables may be written through this endpoint (it runs with
+    // the service role, so an arbitrary `table` would bypass RLS entirely).
+    const allowedTables = new Set(["category", "itemgroup", "item"]);
+    for (const entry of allChanges ?? []) {
+      if (!allowedTables.has(entry.table)) {
+        return new Response(
+          JSON.stringify({ error: `Table not allowed: ${entry.table}` }),
+          { status: 400 },
+        );
       }
     }
-    const userId = plan.userId;
+
+    for (const { table, changes } of allChanges ?? []) {
+      if (!Array.isArray(changes) || changes.length === 0) continue;
+      for (const change of changes) {
+        if (change.user_id !== userId) {
+          return new Response(
+            JSON.stringify({ error: "user_id mismatch" }),
+            { status: 403 },
+          );
+        }
+      }
+
+      // Optimistic concurrency: never let a stale device overwrite a newer
+      // server row. (Filters on an upsert are ignored by PostgREST, so the
+      // guard has to be applied here.)
+      const ids = changes.map((change) => change.id);
+      const { data: existing, error: readError } = await supabaseClient
+        .from(table)
+        .select("id,updated_at")
+        .in("id", ids);
+      if (readError) {
+        return new Response(
+          JSON.stringify({ error: `${table}|read: ${readError.message}` }),
+          { status: 500 },
+        );
+      }
+      const existingUpdatedAt = new Map<string, number>(
+        (existing ?? []).map((
+          row: { id: string; updated_at: number },
+        ) => [row.id, row.updated_at]),
+      );
+      const pending = changes.filter((change) =>
+        (existingUpdatedAt.get(change.id) ?? -1) < change.updated_at
+      );
+      if (pending.length === 0) continue;
+
+      const { error: upsertError } = await supabaseClient
+        .from(table)
+        .upsert(pending, { onConflict: "id" });
+      if (upsertError) {
+        return new Response(
+          JSON.stringify({ error: `${table}|upsert: ${upsertError.message}` }),
+          { status: 500 },
+        );
+      }
+    }
     // Notify the user's other devices via Realtime (no Firebase FCM).
     await supabaseClient.from("sync_events").insert({
       user_id: userId,
