@@ -33,6 +33,8 @@ class SyncUtils {
   Timer? _syncTimer;
   Timer? _processTimer;
   bool _hasPendingChanges = false;
+  // A sync request that arrived while another sync was running.
+  bool _syncAgain = false;
   static final logger = AppLogger(prefixes: [
     "utils_sync",
   ]);
@@ -52,18 +54,30 @@ class SyncUtils {
   }
 
   static RealtimeChannel? _syncChannel;
+  static bool _realtimeStarting = false;
+  static Timer? _realtimeRetryTimer;
+  static int _realtimeRetryDelay = 5;
 
   // Listen for pushes from the user's other devices via Supabase Realtime.
-  static Future<void> startRealtimeSync() async {
+  //
+  // This is the fast path for cross-device sync; the 60s auto-sync timer
+  // (startAutoSync) is only the fallback. The subscription does NOT survive an
+  // app restart, so this must be called again on every startup/resume. It is
+  // idempotent unless `restart` is true.
+  static Future<void> startRealtimeSync({bool restart = false}) async {
     if (simulateOnboarding()) return;
+    if (_syncChannel != null && !restart) return;
+    if (_realtimeStarting) return;
     String? userId = getSignedInUserId();
     if (userId == null) return;
-    String deviceId = await ModelPreferences.get(AppString.deviceId.string,
-        defaultValue: "");
-    await stopRealtimeSync();
+    _realtimeStarting = true;
     try {
-      _syncChannel = Supabase.instance.client
-          .channel('sync-events')
+      String deviceId = await ModelPreferences.get(AppString.deviceId.string,
+          defaultValue: "");
+      await stopRealtimeSync();
+      final channel = Supabase.instance.client.channel('sync-events');
+      _syncChannel = channel;
+      channel
           .onPostgresChanges(
         event: PostgresChangeEvent.insert,
         schema: 'public',
@@ -75,19 +89,48 @@ class SyncUtils {
         ),
         callback: (payload) {
           final eventDeviceId = payload.newRecord['device_id'];
+          logger.info("Realtime event received from device:$eventDeviceId");
           if (eventDeviceId != deviceId) {
             waitAndSyncChanges();
           }
         },
-      );
-      _syncChannel!.subscribe();
+      )
+          .subscribe((status, error) {
+        logger.info(
+            "Realtime channel status:$status${error == null ? "" : "|$error"}");
+        if (status == RealtimeSubscribeStatus.subscribed) {
+          _realtimeRetryDelay = 5;
+        } else if (status == RealtimeSubscribeStatus.channelError ||
+            status == RealtimeSubscribeStatus.timedOut) {
+          // Drop the broken channel so the retry can create a fresh one.
+          if (identical(_syncChannel, channel)) {
+            unawaited(stopRealtimeSync());
+          }
+          _scheduleRealtimeRetry();
+        }
+      });
       logger.info("Realtime sync listener started");
     } catch (e, s) {
       logger.error("startRealtimeSync", error: e, stackTrace: s);
+      _scheduleRealtimeRetry();
+    } finally {
+      _realtimeStarting = false;
     }
   }
 
+  static void _scheduleRealtimeRetry() {
+    if (_realtimeRetryTimer != null) return;
+    final int delay = _realtimeRetryDelay;
+    _realtimeRetryDelay = delay < 30 ? delay * 2 : 60;
+    _realtimeRetryTimer = Timer(Duration(seconds: delay), () {
+      _realtimeRetryTimer = null;
+      unawaited(startRealtimeSync(restart: true));
+    });
+  }
+
   static Future<void> stopRealtimeSync() async {
+    _realtimeRetryTimer?.cancel();
+    _realtimeRetryTimer = null;
     if (_syncChannel != null) {
       try {
         await Supabase.instance.client.removeChannel(_syncChannel!);
@@ -133,8 +176,16 @@ class SyncUtils {
     int? lastRunningAt =
         lastRunningAtString == null ? null : int.parse(lastRunningAtString);
     if (lastRunningAt != null && (startedAt - lastRunningAt < 2000)) {
+      // Don't drop the request: run once more when this sync finishes.
+      _syncAgain = true;
       logger.warning("$mode|Sync|Already Syncing");
       return;
+    }
+    if (!inBackground) {
+      // The realtime listener does not survive app restarts; re-arm it here
+      // (idempotent) so cross-device changes arrive without waiting for the
+      // 60s polling fallback.
+      unawaited(startRealtimeSync());
     }
     await ModelPreferences.set(processRunningAt, startedAt);
     // set timer to update running state every seconds
@@ -180,6 +231,12 @@ class SyncUtils {
     logger.info("$mode|Sync|------------------ENDED----------------");
     if (!inBackground && (hasPendingUploads || hasMoreMapChangesToPush)) {
       logger.info("$mode|Sync| more tasks.. will continue..");
+      _handleChange(inBackground, manualSync: manualSync);
+    }
+    if (_syncAgain) {
+      // A change arrived while this sync was running (e.g. a realtime event).
+      _syncAgain = false;
+      logger.info("$mode|Sync| queued change found, syncing again..");
       _handleChange(inBackground, manualSync: manualSync);
     }
   }
