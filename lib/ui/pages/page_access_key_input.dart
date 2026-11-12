@@ -11,7 +11,7 @@ import 'package:ntsapp/ui/common_widgets.dart';
 import 'package:ntsapp/ui/pages/page_user_task.dart';
 import 'package:ntsapp/storage/storage_secure.dart';
 import 'package:ntsapp/utils/utils_crypto.dart';
-import 'package:sodium_libs/sodium_libs_sumo.dart';
+import 'package:sodium/sodium_sumo.dart';
 
 import '../../utils/enums.dart';
 import '../../models/model_preferences.dart';
@@ -167,8 +167,8 @@ class _PageAccessKeyInputState extends State<PageAccessKeyInput> {
         type: FileType.custom,
         allowedExtensions: ['txt'],
       );
-      if (result != null) {
-        final file = File(result.files.single.path!);
+      if (result.isNotEmpty) {
+        final file = File(result.single.path!);
         final content = await file.readAsString();
         if (_validateWordCount(content)) {
           setState(() {

@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:ntsapp/utils/common.dart';
 import 'package:ntsapp/services/service_logger.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:sodium_libs/sodium_libs_sumo.dart';
+import 'package:sodium/sodium_sumo.dart';
 import 'package:crypto/crypto.dart';
 import 'enums.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -31,14 +31,14 @@ class CryptoUtils {
     required String password,
     required Uint8List salt,
   }) async {
-    return await _sodium.runIsolated((sodium, secureKeys, keyPairs) {
-      return sodium.crypto.pwhash.call(
+    return await _sodium.runIsolated((secureKeys, keyPairs) {
+      return _sodium.crypto.pwhash.callRaw(
         password: password.toCharArray(),
         salt: salt,
-        outLen: sodium.crypto.secretBox.keyBytes,
-        opsLimit: sodium.crypto.pwhash.opsLimitSensitive *
+        outLen: _sodium.crypto.secretBox.keyBytes,
+        opsLimit: _sodium.crypto.pwhash.opsLimitSensitive *
             4, // compensation for memlimit
-        memLimit: sodium.crypto.pwhash.memLimitModerate,
+        memLimit: _sodium.crypto.pwhash.memLimitModerate,
         alg: CryptoPwhashAlgorithm.argon2id13,
       );
     });
