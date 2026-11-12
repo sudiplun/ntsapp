@@ -104,13 +104,10 @@ class StorageSqlite {
     if (_databaseCompleter != null) return _databaseCompleter!.future;
     _databaseCompleter = Completer();
     try {
-      String? dbFileName = await secureStorage.read(key: "db_file");
-      if (dbFileName == null) {
-        // Fallback if media params not yet initialized
-        dbFileName = "notetoself.db";
-        await secureStorage.write(key: "db_file", value: dbFileName);
-        logger.info("DbFile: using fallback 'notetoself.db'");
-      }
+      // SecureStorage supplies the default file name, so this does not need a
+      // write (or a second keychain round-trip) on a fresh install.
+      final dbFileName =
+          await secureStorage.read(key: "db_file") ?? "notetoself.db";
       _database = await _initDB(dbFileName);
       _databaseCompleter!.complete(_database);
     } catch (e) {
@@ -156,7 +153,7 @@ class StorageSqlite {
     bool runningOnMobile = Platform.isIOS || Platform.isAndroid;
     if (!runningOnMobile) {
       // Initialize sqflite for FFI (non-mobile platforms)
-      if (Platform.isLinux) {
+      if (Platform.isLinux && kDebugMode) {
         // Diagnostics: verify that libsqlite3.so can be loaded before proceeding
         _probeSqliteLibrary();
       }

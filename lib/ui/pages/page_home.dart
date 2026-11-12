@@ -70,7 +70,9 @@ class _PageCategoriesGroupsState extends State<PageCategoriesGroups> {
 
   ModelCategory? category;
   ModelGroup? selectedGroup;
-  String? appName = "";
+  // Default brand name so the first frame does not have to wait for a keychain
+  // read; the stored value (when present) is applied asynchronously below.
+  String? appName = "Note Safe";
   List<ModelCategoryGroup> _categoriesGroupsDisplayList = [];
   bool _isFetchingFromServer = false;
   bool _hasInitiated = false;
@@ -244,13 +246,22 @@ class _PageCategoriesGroupsState extends State<PageCategoriesGroups> {
     }
   }
 
+  Future<void> _loadAppName() async {
+    final storedName = await secureStorage.read(key: AppString.appName.string);
+    if (storedName != null && storedName != appName && mounted) {
+      setState(() {
+        appName = storedName;
+      });
+    }
+  }
+
   // executes once while initstate
   Future<void> checkAuthAndLoad() async {
     if (isAuthenticating) return;
     isAuthenticating = true;
-    appName = await secureStorage.read(key: AppString.appName.string);
-    await checkUpdateStateVariables();
-    setState(() {});
+    // Neither the stored app name nor the plan/sync flags are required to paint
+    // the first list of notes, so they must not block it.
+    unawaited(_loadAppName());
     try {
       if (ModelSetting.get("local_auth", "no") == "no" || Platform.isLinux) {
         await loadCategoriesGroups();

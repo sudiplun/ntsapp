@@ -22,7 +22,6 @@ import 'services/service_locale.dart';
 import 'ui/pages/page_media_migration.dart';
 import 'services/service_logger.dart';
 import 'models/model_setting.dart';
-import 'storage/storage_secure.dart';
 import 'ui/themes.dart';
 import 'package:flutter/foundation.dart';
 import 'package:workmanager/workmanager.dart';
@@ -38,7 +37,7 @@ void backgroundTaskDispatcher() {
     } catch (e, s) {
       AppLogger(prefixes: ["BG"])
           .error("Initialize failed", error: e, stackTrace: s);
-      return Future.value(false);
+      return false;
     }
     try {
       switch (taskName) {
@@ -46,10 +45,10 @@ void backgroundTaskDispatcher() {
           await SyncUtils().triggerSync(true);
           break;
       }
-      return Future.value(true);
+      return true;
     } catch (e, s) {
       AppLogger(prefixes: ["BG"]).error("Sync failed", error: e, stackTrace: s);
-      return Future.value(false);
+      return false;
     }
   });
 }
@@ -62,8 +61,12 @@ Future<void> main() async {
       if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
         setWindowMinSize(const Size(720, 640));
       }
-      await initializeMediaParams();
+      // Path-related settings have safe defaults in SecureStorage, so there is
+      // no need to block startup on a keychain read/write round-trip here.
       await StorageSqlite.initialize(mode: ExecutionMode.appForeground);
+      // Supabase is initialized after the first frame. Mark it unavailable in
+      // memory now so early UI cannot use a stale persisted value.
+      ModelSetting.settingJson[AppString.supabaseInitialized.string] = "no";
     } catch (e, s) {
       // Write fatal initialization error to stderr before anything else
       stderr.writeln('FATAL [main init]: $e');
@@ -84,7 +87,12 @@ Future<void> main() async {
         child: const MainApp(),
       ),
     );
-    unawaited(initializeRestInParallel());
+    // Let the first frame paint before starting crypto/media/supabase setup.
+    // Those initializers run synchronously up to their first await and used to
+    // delay the first frame on every launch.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      unawaited(initializeRestInParallel());
+    });
   }, (error, stack) {
     stderr.writeln('UNCAUGHT ZONE ERROR: $error');
     stderr.writeln('Zone stack trace: $stack');
@@ -103,21 +111,6 @@ Future<void> initializeBackgroundSync() async {
   //initialize background sync
   await DataSync.initialize();
   logger.info("initialized datasync");
-}
-
-Future<void> initializeMediaParams() async {
-  // initialized media params once before accessing sqlite
-  SecureStorage secureStorage = SecureStorage();
-  String mediaParamsInitialized =
-      await secureStorage.read(key: "media_params_initialized") ?? "no";
-  if (mediaParamsInitialized == "no") {
-    await secureStorage.write(
-        key: AppString.appName.string, value: "Note Safe");
-    await secureStorage.write(key: "media_dir", value: "ntsmedia");
-    await secureStorage.write(key: "backup_dir", value: "ntsbackup");
-    await secureStorage.write(key: "db_file", value: "notetoself.db");
-    await secureStorage.write(key: "media_params_initialized", value: "yes");
-  }
 }
 
 class MainApp extends StatefulWidget {

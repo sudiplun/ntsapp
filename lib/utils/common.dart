@@ -1124,7 +1124,9 @@ Future<void> initializeSupabase(
   ByteData certData = await PlatformAssetBundle().load('assets/cacert.pem');
   SecurityContext.defaultContext
       .setTrustedCertificatesBytes(certData.buffer.asUint8List());
-  await ModelSetting.set(AppString.supabaseInitialized.string, "no");
+  // Supabase is re-initialized on every launch. Reset the flag in memory only;
+  // persisting this transient "no" added a database write to every startup.
+  ModelSetting.settingJson[AppString.supabaseInitialized.string] = "no";
   final String supaUrl = const String.fromEnvironment("SUPABASE_URL");
   final String supaKey = const String.fromEnvironment("SUPABASE_KEY");
   if (supaUrl.isNotEmpty && supaKey.isNotEmpty) {
