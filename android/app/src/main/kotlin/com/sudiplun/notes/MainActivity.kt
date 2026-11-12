@@ -1,4 +1,4 @@
-package com.makenotetoself
+package com.sudiplun.notes
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

@@ -574,7 +574,7 @@ class _PageCategoriesGroupsState extends State<PageCategoriesGroups> {
                   // Handle "Leave a review" action
                   Navigator.pop(context);
                   const url =
-                      'https://play.google.com/store/apps/details?id=com.makenotetoself';
+                      'https://play.google.com/store/apps/details?id=com.sudiplun.notes';
                   // Use package name
                   openURL(url);
                 },

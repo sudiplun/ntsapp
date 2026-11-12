@@ -171,7 +171,7 @@ class _LocationPickerState extends State<LocationPicker> {
         children: [
           TileLayer(
             urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-            userAgentPackageName: 'com.makenotetoself',
+            userAgentPackageName: 'com.sudiplun.notes',
           ),
           MarkerLayer(markers: [
             Marker(

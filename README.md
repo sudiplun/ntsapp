@@ -8,13 +8,13 @@ Notes app with chat like interface and end-to-end encrypted cloud backup/sync.
 
 ## Install
 
-* Android - [Play Store](https://play.google.com/store/apps/details?id=com.makenotetoself)
+* Android - [Play Store](https://play.google.com/store/apps/details?id=com.sudiplun.notes)
 * Windows/Linux/MacOS - [Github release](https://github.com/jeerovan/ntsapp/releases/)
 * iOS - Coming soon!
 
 [<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
     alt="Get it on Play Store"
-    height="80">](https://play.google.com/store/apps/details?id=com.makenotetoself)
+    height="80">](https://play.google.com/store/apps/details?id=com.sudiplun.notes)
 [<img src="https://raw.githubusercontent.com/mateusz-bak/openreads/master/doc/github/get-it-on-github.png"
     alt="Get it on Github"
     height="80">](https://github.com/jeerovan/ntsapp/releases/)

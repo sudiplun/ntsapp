@@ -791,7 +791,7 @@ class SettingsPageState extends State<SettingsPage> {
 
   void _redirectToFeedback() {
     const url =
-        'https://play.google.com/store/apps/details?id=com.makenotetoself';
+        'https://play.google.com/store/apps/details?id=com.sudiplun.notes';
     // Use your package name
     openURL(url);
   }
@@ -801,7 +801,7 @@ class SettingsPageState extends State<SettingsPage> {
     String? appName = await secureStorage.read(key: AppString.appName.string);
     appName = appName ?? "";
     const String appLink =
-        'https://play.google.com/store/apps/details?id=com.makenotetoself';
+        'https://play.google.com/store/apps/details?id=com.sudiplun.notes';
     final params = ShareParams(text: loc.shareAppMessage(appName, appLink));
     await SharePlus.instance.share(params);
   }
