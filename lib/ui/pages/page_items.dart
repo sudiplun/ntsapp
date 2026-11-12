@@ -1310,12 +1310,12 @@ class _PageItemsState extends State<PageItems> {
   void _addMedia(String type) async {
     if (type == "files") {
       try {
-        FilePickerResult? result = await FilePicker.pickFiles(
+        final result = await FilePicker.pickFiles(
           type: FileType.any, // Allows picking files of any type
         );
 
-        if (result != null) {
-          List<PlatformFile> pickedFiles = result.files;
+        if (result.isNotEmpty) {
+          List<PlatformFile> pickedFiles = result;
           List<String> filePaths = [];
 
           for (var pickedFile in pickedFiles) {

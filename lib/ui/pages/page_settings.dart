@@ -288,15 +288,15 @@ class SettingsPageState extends State<SettingsPage> {
 
   Future<void> restoreZipBackup() async {
     final loc = AppLocalizations.of(context)!;
-    FilePickerResult? result = await FilePicker.pickFiles(
+    final result = await FilePicker.pickFiles(
       type: FileType.custom,
       allowedExtensions: ["zip"],
     );
-    if (result != null) {
-      if (result.files.isNotEmpty) {
+    if (result.isNotEmpty) {
+      if (result.isNotEmpty) {
         Directory directory = await getApplicationDocumentsDirectory();
         String dirPath = directory.path;
-        PlatformFile selectedFile = result.files[0];
+        PlatformFile selectedFile = result[0];
         String? backupDir = await secureStorage.read(key: "backup_dir");
         String zipFilePath = selectedFile.path!;
         String error = "";
