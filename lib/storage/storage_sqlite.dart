@@ -591,11 +591,20 @@ class StorageSqlite {
 
   Future<int> insert(String tableName, Map<String, dynamic> row) async {
     final db = await instance.database;
-    return await db.insert(
-      tableName,
-      row,
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
+    try {
+      return await db.insert(tableName, row);
+    } on DatabaseException catch (e) {
+      if (!e.isUniqueConstraintError()) rethrow;
+      dynamic id = row['id'];
+      if (id == null) rethrow;
+      // NOTE: this used to use ConflictAlgorithm.replace. `INSERT OR REPLACE`
+      // deletes the conflicting row first, and that DELETE fires the
+      // ON DELETE CASCADE of the child tables: replacing an "itemgroup" row
+      // wiped every note in that group and replacing a "category" row wiped
+      // all of its groups. Updating in place keeps the children intact.
+      await db.update(tableName, row, where: 'id = ?', whereArgs: [id]);
+      return 1;
+    }
   }
 
   Future<int> update(

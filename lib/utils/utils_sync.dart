@@ -15,6 +15,7 @@ import 'package:ntsapp/models/model_setting.dart';
 import 'package:ntsapp/services/service_events.dart';
 import 'package:ntsapp/services/service_logger.dart';
 import 'package:ntsapp/storage/storage_secure.dart';
+import 'package:ntsapp/storage/storage_sqlite.dart';
 import 'package:ntsapp/utils/utils_crypto.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sodium/sodium_sumo.dart';
@@ -35,6 +36,16 @@ class SyncUtils {
   bool _hasPendingChanges = false;
   // A sync request that arrived while another sync was running.
   bool _syncAgain = false;
+  // True only while a sync cycle is actually running.
+  //
+  // This used to be derived from the persisted `processRunningAt` timestamp,
+  // but that value is written at the start of a cycle and refreshed by a
+  // 1s timer while it runs - it is never cleared when the cycle ends. The
+  // stale timestamp therefore made the *next* legitimate run look like an
+  // overlapping one, so the request was parked in `_syncAgain` with no sync
+  // running to pick it up. Both the push (new notes) and the pull (notes
+  // arriving from another device) were silently dropped that way.
+  bool _isSyncing = false;
   static final logger = AppLogger(prefixes: [
     "utils_sync",
   ]);
@@ -167,58 +178,68 @@ class SyncUtils {
       {bool manualSync = false, bool firstFetch = false}) async {
     String mode = inBackground ? "Background" : "Foreground";
     logger.info("sync request from:$mode");
-    bool canSync = await SyncUtils.canSync();
-    if (!canSync) return;
-    bool hasInternet = await hasInternetConnection();
-    if (!hasInternet) return;
-    int startedAt = DateTime.now().millisecondsSinceEpoch;
-    String? lastRunningAtString = await ModelPreferences.get(processRunningAt);
-    int? lastRunningAt =
-        lastRunningAtString == null ? null : int.parse(lastRunningAtString);
-    if (lastRunningAt != null && (startedAt - lastRunningAt < 2000)) {
-      // Don't drop the request: run once more when this sync finishes.
+    if (_isSyncing) {
+      // A sync is already running: remember the request and let the running
+      // cycle pick it up when it ends (see the `_syncAgain` handling below).
       _syncAgain = true;
       logger.warning("$mode|Sync|Already Syncing");
       return;
     }
-    if (!inBackground) {
-      // The realtime listener does not survive app restarts; re-arm it here
-      // (idempotent) so cross-device changes arrive without waiting for the
-      // 60s polling fallback.
-      unawaited(startRealtimeSync());
-    }
-    await ModelPreferences.set(processRunningAt, startedAt);
-    // set timer to update running state every seconds
-    _processTimer = Timer.periodic(Duration(seconds: 1), (timer) async {
-      await ModelPreferences.set(
-          processRunningAt, DateTime.now().millisecondsSinceEpoch);
-    });
-    logger.info("$mode|Sync|------------------START----------------");
+    // Claim the cycle right away - before the first await - so two requests
+    // that arrive back to back cannot both start a cycle.
+    _isSyncing = true;
     bool hasPendingUploads = false;
     bool hasMoreMapChangesToPush = false;
     try {
-      bool removed = await SyncUtils.checkDeviceStatus();
-      if (!removed) {
-        hasMoreMapChangesToPush = await pushMapChanges();
+      bool canSync = await SyncUtils.canSync();
+      bool hasInternet = canSync ? await hasInternetConnection() : false;
+      if (canSync && hasInternet) {
+        int startedAt = DateTime.now().millisecondsSinceEpoch;
+        if (!inBackground) {
+          // The realtime listener does not survive app restarts; re-arm it here
+          // (idempotent) so cross-device changes arrive without waiting for the
+          // 60s polling fallback.
+          unawaited(startRealtimeSync());
+        }
+        await ModelPreferences.set(processRunningAt, startedAt);
+        // set timer to update running state every seconds
+        _processTimer = Timer.periodic(Duration(seconds: 1), (timer) async {
+          await ModelPreferences.set(
+              processRunningAt, DateTime.now().millisecondsSinceEpoch);
+        });
+        logger.info("$mode|Sync|------------------START----------------");
+        bool removed = await SyncUtils.checkDeviceStatus();
+        if (!removed) {
+          hasMoreMapChangesToPush = await pushMapChanges();
 
-        await deleteFiles();
-        await deleteThumbnails();
+          await deleteFiles();
+          await deleteThumbnails();
 
-        await pushThumbnails(startedAt, inBackground);
+          await pushThumbnails(startedAt, inBackground);
 
-        await fetchMapChanges();
-        await fetchThumbnails();
+          await fetchMapChanges();
+          await fetchThumbnails();
 
-        // pushing files is a time consuming task
-        hasPendingUploads = await pushFiles(startedAt, inBackground);
-        // large files over 20 mb are not fetched
-        await fetchFiles(startedAt, inBackground);
+          // pushing files is a time consuming task
+          hasPendingUploads = await pushFiles(startedAt, inBackground);
+          // large files over 20 mb are not fetched
+          await fetchFiles(startedAt, inBackground);
+        }
+      } else {
+        logger.info(
+            "$mode|Sync|skipped (canSync:$canSync|internet:$hasInternet)");
       }
     } catch (e) {
       logger.error("⚠ Sync failed: $e");
+    } finally {
+      // Release the cycle before anything can ask for another one.
+      _isSyncing = false;
+      _processTimer?.cancel();
+      _processTimer = null;
+      // Drop the persisted marker as well: leaving it behind made the next
+      // run look like it was overlapping the one that just finished.
+      await ModelPreferences.delete(processRunningAt);
     }
-    _processTimer?.cancel();
-    _processTimer = null;
     if (manualSync) {
       // Send Signal to update home with DND category
       await signalToUpdateHome();
@@ -704,6 +725,174 @@ class SyncUtils {
     }
   }
 
+  /// Makes sure the group a fetched note belongs to exists locally.
+  ///
+  /// The local `item` table has a NOT NULL foreign key on `itemgroup(id)`
+  /// (ON DELETE CASCADE), so a note whose group has not been synced yet
+  /// cannot be inserted - the FK violation aborted the whole pull and no
+  /// note ever arrived from the other device.
+  ///
+  /// When the group is missing, a placeholder group with the *same id* is
+  /// created under the DND category. The real group row replaces it as soon
+  /// as it is fetched, because its `updated_at` is newer.
+  static Future<void> ensureGroupExists(Map<String, dynamic> itemMap) async {
+    String groupId = getValueFromMap(itemMap, "group_id", defaultValue: "");
+    if (groupId.isEmpty) return;
+    final dbHelper = StorageSqlite.instance;
+    List<Map<String, dynamic>> rows =
+        await dbHelper.getWithId("itemgroup", groupId);
+    if (rows.isNotEmpty) return;
+    try {
+      ModelCategory dndCategory = await ModelCategory.getDND();
+      int now = DateTime.now().toUtc().millisecondsSinceEpoch;
+      await dbHelper.insert("itemgroup", {
+        'id': groupId,
+        'category_id': dndCategory.id ?? "",
+        'title': getNoteGroupDateTitle(),
+        'pinned': 0,
+        'position': 0,
+        'archived_at': 0,
+        'color': colorToHex(getIndexedColor(0)),
+        'at': now,
+        // 0 keeps the placeholder "older" than the real group row, so the
+        // real one always wins when it arrives.
+        'updated_at': 0,
+        'thumbnail': null,
+        'data': null,
+        'state': 0,
+      });
+      logger.info("ensureGroupExists|placeholder group created|$groupId");
+    } catch (e, s) {
+      logger.error("ensureGroupExists|$groupId", error: e, stackTrace: s);
+    }
+  }
+
+  /// Applies one encrypted row fetched from the server to the local database.
+  ///
+  /// Split out of [fetchMapChanges] so a single failing row (for example a
+  /// note whose group does not exist locally yet) can be isolated and
+  /// retried instead of aborting the whole batch.
+  static Future<void> applyFetchedRow(String table,
+      Map<String, dynamic> changeMap, Uint8List masterKeyBytes,
+      CryptoUtils cryptoUtils) async {
+    Uint8List? decryptedBytes =
+        cryptoUtils.getDecryptedBytesFromMap(changeMap, masterKeyBytes);
+    if (decryptedBytes == null) return;
+    String jsonString = utf8.decode(decryptedBytes);
+    Map<String, dynamic> map = jsonDecode(jsonString);
+    String changeId = changeMap["id"];
+    String rowId = map["id"];
+    int deleteTask = int.parse(map.remove("deleted").toString());
+    bool hasThumbnail =
+        int.parse(map.remove("thumbnail").toString()) == 1 ? true : false;
+    if (deleteTask > 0) {
+      // thumbnail and file already been deleted from server
+      switch (table) {
+        case "category":
+          await ModelCategory.deletedFromServer(rowId);
+        case "itemgroup":
+          await ModelGroup.deletedFromServer(rowId);
+        case "item":
+          await ModelItem.deletedFromServer(rowId);
+      }
+      return;
+    }
+    Map<String, dynamic>? dataMap;
+    switch (table) {
+      case "category":
+        ModelCategory category = await ModelCategory.fromMap(map);
+        await category.upcertFromServer();
+      case "itemgroup":
+        ModelGroup group = await ModelGroup.fromMap(map);
+        await group.upcertFromServer();
+      case "item":
+        // The group must exist before the note can be inserted (foreign key).
+        await ensureGroupExists(map);
+        ModelItem item = await ModelItem.fromMap(map);
+        dataMap = item.data;
+        item.state = SyncState.downloaded.value;
+        await item.upcertFromServer();
+        // fix file path in data map
+        if (dataMap != null) {
+          if (dataMap.containsKey("path")) {
+            String fileName = dataMap["name"];
+            String mimeDirectory = dataMap["mime"].split("/").first;
+            String fileOutPath = await getFilePath(mimeDirectory, fileName);
+            dataMap["path"] = fileOutPath;
+            item.data = dataMap;
+            await item.update(["data"], pushToSync: false);
+            // check file
+            File fileOut = File(fileOutPath);
+            if (fileOut.existsSync()) {
+              // duplicate note item (may be different group)
+              if (item.id == null) {
+                logger.warning(
+                    "fetchMapChanges|Item ID is null, skipping file check");
+              } else {
+                ModelItemFile itemFile =
+                    ModelItemFile(id: item.id!, fileHash: fileName);
+                await itemFile.insert();
+              }
+            }
+          }
+          // check for urls and add preview image
+          if (dataMap.containsKey("url_info")) {
+            Map<String, dynamic> urlInfo = dataMap["url_info"];
+            String imageUrl = urlInfo["image"];
+            if (item.id != null) {
+              await checkDownloadNetworkImage(item.id!, imageUrl);
+            } else {
+              logger.warning(
+                  "fetchMapChanges|Item ID is null, skipping image check");
+            }
+          } else {
+            // remove if exists
+            String fileName = '${item.id}-urlimage.png';
+            File? imageFile = await getFile("image", fileName);
+            if (imageFile != null && imageFile.existsSync()) {
+              imageFile.deleteSync();
+            }
+          }
+        }
+    }
+    SyncChangeTask changeType = SyncChangeTask.delete;
+    switch (table) {
+      case "category":
+      case "itemgroup":
+        if (hasThumbnail) {
+          changeType = SyncChangeTask.fetchThumbnail;
+        }
+      case "item":
+        ItemType? itemType = ItemTypeExtension.fromValue(map["type"]);
+        switch (itemType) {
+          case ItemType.document:
+          case ItemType.audio:
+            changeType = SyncChangeTask.fetchFile;
+          case ItemType.contact:
+            if (hasThumbnail) {
+              changeType = SyncChangeTask.fetchThumbnail;
+            }
+          case ItemType.image:
+          case ItemType.video:
+            changeType = SyncChangeTask.fetchThumbnailFile;
+          case ItemType.text:
+          case ItemType.task:
+          case ItemType.completedTask:
+          case ItemType.location:
+          case ItemType.date:
+          case null:
+            changeType = SyncChangeTask.delete;
+        }
+    }
+    if (changeType.value > SyncChangeTask.delete.value) {
+      await ModelChange.addUpdate(changeId, table, "", changeType.value,
+          dataMap: dataMap);
+      logger.info(
+          "fetchChangesForTable|$table|Added change:$table|$changeId|${changeType.value}");
+      await ModelChange.updateTypeState(changeId, SyncState.downloading);
+    }
+  }
+
   static Future<void> fetchMapChanges() async {
     logger.info("Fetching map changes");
     String? masterKeyBase64 = await getMasterKey();
@@ -738,127 +927,39 @@ class SyncUtils {
       Map<String, dynamic> tableChanges = jsonDecode(response.data);
       List<String> tables = ["category", "itemgroup", "item"];
       bool hadChanges = false;
+      // Rows that could not be applied on the first pass. A note whose group
+      // has not been created locally yet fails on the itemgroup foreign key,
+      // so the failures are retried once the rest of the batch has been
+      // applied.
+      List<Map<String, dynamic>> failedRows = [];
       for (String table in tables) {
         if (!tableChanges.containsKey(table)) continue;
         hadChanges = true;
         List<dynamic> changesMap = tableChanges[table];
         for (Map<String, dynamic> changeMap in changesMap) {
-          Uint8List? decryptedBytes =
-              cryptoUtils.getDecryptedBytesFromMap(changeMap, masterKeyBytes);
-          if (decryptedBytes == null) continue;
-          String jsonString = utf8.decode(decryptedBytes);
-          Map<String, dynamic> map = jsonDecode(jsonString);
-          String changeId = changeMap["id"];
-          String rowId = map["id"];
-          int deleteTask = int.parse(map.remove("deleted").toString());
-          bool hasThumbnail =
-              int.parse(map.remove("thumbnail").toString()) == 1 ? true : false;
-          if (deleteTask > 0) {
-            // thumbnail and file already been deleted from server
-            switch (table) {
-              case "category":
-                await ModelCategory.deletedFromServer(rowId);
-              case "itemgroup":
-                await ModelGroup.deletedFromServer(rowId);
-              case "item":
-                await ModelItem.deletedFromServer(rowId);
-            }
-          } else {
-            Map<String, dynamic>? dataMap;
-            switch (table) {
-              case "category":
-                ModelCategory category = await ModelCategory.fromMap(map);
-                await category.upcertFromServer();
-              case "itemgroup":
-                ModelGroup group = await ModelGroup.fromMap(map);
-                await group.upcertFromServer();
-              case "item":
-                ModelItem item = await ModelItem.fromMap(map);
-                dataMap = item.data;
-                item.state = SyncState.downloaded.value;
-                await item.upcertFromServer();
-                // fix file path in data map
-                if (dataMap != null) {
-                  if (dataMap.containsKey("path")) {
-                    String fileName = dataMap["name"];
-                    String mimeDirectory = dataMap["mime"].split("/").first;
-                    String fileOutPath =
-                        await getFilePath(mimeDirectory, fileName);
-                    dataMap["path"] = fileOutPath;
-                    item.data = dataMap;
-                    await item.update(["data"], pushToSync: false);
-                    // check file
-                    File fileOut = File(fileOutPath);
-                    if (fileOut.existsSync()) {
-                      // duplicate note item (may be different group)
-                      if (item.id == null) {
-                        logger.warning(
-                            "fetchMapChanges|Item ID is null, skipping file check");
-                      } else {
-                        ModelItemFile itemFile =
-                            ModelItemFile(id: item.id!, fileHash: fileName);
-                        await itemFile.insert();
-                      }
-                    }
-                  }
-                  // check for urls and add preview image
-                  if (dataMap.containsKey("url_info")) {
-                    Map<String, dynamic> urlInfo = dataMap["url_info"];
-                    String imageUrl = urlInfo["image"];
-                    if (item.id != null) {
-                      await checkDownloadNetworkImage(item.id!, imageUrl);
-                    } else {
-                      logger.warning(
-                          "fetchMapChanges|Item ID is null, skipping image check");
-                    }
-                  } else {
-                    // remove if exists
-                    String fileName = '${item.id}-urlimage.png';
-                    File? imageFile = await getFile("image", fileName);
-                    if (imageFile != null && imageFile.existsSync()) {
-                      imageFile.deleteSync();
-                    }
-                  }
-                }
-            }
-            SyncChangeTask changeType = SyncChangeTask.delete;
-            switch (table) {
-              case "category":
-              case "itemgroup":
-                if (hasThumbnail) {
-                  changeType = SyncChangeTask.fetchThumbnail;
-                }
-              case "item":
-                ItemType? itemType = ItemTypeExtension.fromValue(map["type"]);
-                switch (itemType) {
-                  case ItemType.document:
-                  case ItemType.audio:
-                    changeType = SyncChangeTask.fetchFile;
-                  case ItemType.contact:
-                    if (hasThumbnail) {
-                      changeType = SyncChangeTask.fetchThumbnail;
-                    }
-                  case ItemType.image:
-                  case ItemType.video:
-                    changeType = SyncChangeTask.fetchThumbnailFile;
-                  case ItemType.text:
-                  case ItemType.task:
-                  case ItemType.completedTask:
-                  case ItemType.location:
-                  case ItemType.date:
-                  case null:
-                    changeType = SyncChangeTask.delete;
-                }
-            }
-            if (changeType.value > SyncChangeTask.delete.value) {
-              await ModelChange.addUpdate(changeId, table, "", changeType.value,
-                  dataMap: dataMap);
-              logger.info(
-                  "fetchChangesForTable|$table|Added change:$table|$changeId|${changeType.value}");
-              await ModelChange.updateTypeState(
-                  changeId, SyncState.downloading);
-            }
+          try {
+            await applyFetchedRow(table, changeMap, masterKeyBytes, cryptoUtils);
+          } catch (e, s) {
+            // Never let a single bad row abort the whole batch: that used to
+            // leave `lastChangesFetchedAt` untouched, so the same batch was
+            // re-fetched (and failed) on every sync, forever.
+            logger.error("fetchMapChanges|apply|$table|${changeMap["id"]}",
+                error: e, stackTrace: s);
+            failedRows.add({"table": table, "changeMap": changeMap});
           }
+        }
+      }
+      // Second pass: the rows that failed above may have failed only because
+      // their parent row (category / group) was not in the database yet.
+      for (Map<String, dynamic> failed in failedRows) {
+        String table = failed["table"];
+        Map<String, dynamic> changeMap = failed["changeMap"];
+        try {
+          await applyFetchedRow(table, changeMap, masterKeyBytes, cryptoUtils);
+          logger.info("fetchMapChanges|retry ok|$table|${changeMap["id"]}");
+        } catch (e, s) {
+          logger.error("fetchMapChanges|retry failed|$table|${changeMap["id"]}",
+              error: e, stackTrace: s);
         }
       }
       // update last fetched at iso time
@@ -870,10 +971,23 @@ class SyncUtils {
       await ModelPreferences.set(AppString.hasValidPlan.string, "yes");
       logger.info("Fetched Map Changes");
     } on FunctionException catch (e) {
-      String error = jsonDecode(e.details)["error"];
+      String error = "";
+      try {
+        dynamic details = e.details;
+        Map<String, dynamic> errorMap =
+            details is String ? jsonDecode(details) : details;
+        error = errorMap["error"]?.toString() ?? "";
+      } catch (_) {
+        error = e.details?.toString() ?? "";
+      }
       if (error == "Plan expired") {
         await ModelPreferences.set(AppString.hasValidPlan.string, "no");
         logger.error("fetchMapChanges|Supabase", error: "Plan Expired");
+      } else {
+        // Every other failure was silently swallowed here, so a broken pull
+        // looked like "nothing to sync".
+        logger.error("fetchMapChanges|Supabase",
+            error: "FunctionException ${e.status}: $error");
       }
     } catch (e, s) {
       logger.error("fetchMapChanges|Supabase", error: e, stackTrace: s);

@@ -123,8 +123,49 @@ class ModelCategory {
       where: "title = ?",
       whereArgs: ["DND"],
     );
+    if (rows.isEmpty) {
+      // The DND row can be gone: ModelCategory.deleteAll() (sign-out) removes
+      // every category, and the seed only runs when the database is created.
+      // `rows.first` used to throw a StateError here, and because
+      // ModelGroup.fromMap() calls this for every group received from another
+      // device, that single missing row aborted the whole pull - the groups
+      // and the notes never arrived.
+      await createDNDIfMissing();
+      rows = await db.query(
+        "category",
+        where: "title = ?",
+        whereArgs: ["DND"],
+      );
+    }
+    if (rows.isEmpty) {
+      // Still nothing: fall back to an in-memory DND category rather than
+      // throwing and breaking the sync.
+      return ModelCategory(
+        id: "",
+        title: "DND",
+        color: colorToHex(getIndexedColor(0)),
+      );
+    }
     Map<String, dynamic> map = rows.first;
     return await fromMap(map);
+  }
+
+  /// Creates the DND category when it is missing (see [getDND]).
+  static Future<void> createDNDIfMissing() async {
+    final dbHelper = StorageSqlite.instance;
+    final db = await dbHelper.database;
+    int at = DateTime.now().toUtc().millisecondsSinceEpoch;
+    String dndCategoryId = const Uuid().v4();
+    await db.insert("category", {
+      "id": dndCategoryId,
+      "title": "DND",
+      "color": colorToHex(getIndexedColor(0)),
+      "thumbnail": null,
+      "position": 0,
+      "archived_at": 0,
+      "at": at,
+      "updated_at": at,
+    });
   }
 
   static Future<ModelCategory?> get(String id) async {
