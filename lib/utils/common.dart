@@ -89,6 +89,30 @@ dynamic getValueFromMap(Map<String, dynamic> map, String key,
   return value;
 }
 
+/// The columns to write when a row is updated.
+///
+/// Only a change that is pushed to the server may move "updated_at" forward.
+/// The sync engine updates rows locally all the time (the download state,
+/// the rewritten file path, the downloaded thumbnail) and those must not
+/// look like a new edit: the local copy would claim to be newer than the
+/// server's row and every later change coming from the other device would
+/// be rejected as "older".
+Map<String, dynamic> updatedRowColumns(
+  Map<String, dynamic> row,
+  List<String> attrs, {
+  required bool pushToSync,
+  required int updatedAt,
+}) {
+  Map<String, dynamic> updatedMap = {};
+  for (String attr in attrs) {
+    updatedMap[attr] = row[attr];
+  }
+  if (pushToSync) {
+    updatedMap["updated_at"] = updatedAt;
+  }
+  return updatedMap;
+}
+
 /* input validations -- starts */
 String? validateString(BuildContext context, String? value) {
   if (value == null || value.isEmpty) {

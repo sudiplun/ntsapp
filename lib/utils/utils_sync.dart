@@ -494,10 +494,14 @@ class SyncUtils {
       }
       SyncChangeTask changeTask = SyncChangeTask.pushMap;
       if (deleteTask == 0) {
-        if (mediaChanges) {
-          changeTask =
-              ModelChange.getPushChangeTaskType(table, thumbnail == null, map);
-        }
+        SyncChangeTask? pending = await ModelChange.getTaskType(changeId);
+        changeTask = ModelChange.nextTaskAfterUpdate(
+          table: table,
+          thumbnailIsNull: thumbnail == null,
+          map: map,
+          mediaChanges: mediaChanges,
+          pending: pending,
+        );
       } else if (deleteTask == 2) {
         changeTask = SyncChangeTask.pushMapDeleteThumbnailFile;
       } else if (deleteTask == 1) {
@@ -660,7 +664,14 @@ class SyncUtils {
     String userId = userIdRowId[0];
     String rowId = userIdRowId[1];
     thumbnail ??= await ModelChange.getThumbnail(table, rowId);
-    if (thumbnail == null) return;
+    if (thumbnail == null) {
+      // There is no thumbnail to upload. Leaving the change on this step
+      // blocked the file behind it: the change was never advanced, so the
+      // media file was never pushed either.
+      logger.info("pushThumbnail|no thumbnail to upload|$changeId");
+      await ModelChange.upgradeSyncTask(changeId);
+      return;
+    }
     Uint8List thumbnailBytes = base64Decode(thumbnail);
 
     String? masterKeyBase64 = await getMasterKey();
@@ -1043,14 +1054,23 @@ class SyncUtils {
         continue;
       }
       try {
-        Uint8List encryptedThumbnailBytes = await supabaseClient.storage
-            .from('thmbs')
-            .download('$userId/$rowId');
-        // if successfull fetch cipher keys
+        // The key material of the thumbnail. If the server has no row for
+        // it, the thumbnail does not exist (the note may simply have none)
+        // - advance the task instead of retrying it for ever, otherwise the
+        // file behind the thumbnail is never downloaded.
         final listMap = await supabaseClient
             .from('thmbs')
             .select('cipher_nonce,key_cipher,key_nonce')
             .eq('id', changeId);
+        if (listMap.isEmpty) {
+          logger.warning("fetchThumbnails|no thumbnail on server|$changeId");
+          await ModelChange.upgradeSyncTask(changeId);
+          continue;
+        }
+        Uint8List encryptedThumbnailBytes = await supabaseClient.storage
+            .from('thmbs')
+            .download('$userId/$rowId');
+        // if successfull fetch cipher keys
         Map<String, dynamic> map = listMap.first;
         map[AppString.cipherText.string] =
             base64Encode(encryptedThumbnailBytes);
@@ -1060,6 +1080,14 @@ class SyncUtils {
           typedModel.thumbnail = decryptedThumbnailBytes;
           await typedModel.update(["thumbnail"], pushToSync: false);
           await ModelChange.upgradeSyncTask(changeId);
+        }
+      } on StorageException catch (e, s) {
+        // The object is gone from the bucket (404): nothing to download.
+        if (e.statusCode == "404") {
+          logger.warning("fetchThumbnails|thumbnail not found|$changeId");
+          await ModelChange.upgradeSyncTask(changeId);
+        } else {
+          logger.error("fetchThumbnails", error: e, stackTrace: s);
         }
       } catch (e, s) {
         logger.error("fetchThumbnails", error: e, stackTrace: s);
@@ -1087,9 +1115,20 @@ class SyncUtils {
         continue;
       }
       Map<String, dynamic>? data = change.map;
-      if (data == null) continue;
-      String fileName = data["name"];
-      String filePath = data["path"];
+      if (data == null) {
+        // No file to download - do not leave the change stuck on this step.
+        logger.warning("fetchFiles|no file data|$changeId");
+        await ModelChange.upgradeSyncTask(changeId);
+        continue;
+      }
+      String? fileName = getValueFromMap(data, "name", defaultValue: null);
+      String? filePath = getValueFromMap(data, "path", defaultValue: null);
+      if (fileName == null || fileName.isEmpty || filePath == null) {
+        // Nothing to download - do not leave the change stuck on this step.
+        logger.warning("fetchFiles|no file in the change data|$changeId");
+        await ModelChange.upgradeSyncTask(changeId);
+        continue;
+      }
       File fileOut = File(filePath);
       if (fileOut.existsSync()) {
         // duplicate note item (may be different groups)
@@ -1111,7 +1150,7 @@ class SyncUtils {
           logger.debug("not available to be fetched yet:$changeId");
           continue;
         }
-        int fileSize = data["size"];
+        int fileSize = getValueFromMap(data, "size", defaultValue: 0);
         if (fileSize > 20 * 1024 * 1024) {
           // mark set downloadable
           logger.debug("Marking downloadable:$changeId");
@@ -1193,7 +1232,15 @@ class SyncUtils {
       String userId = userIdRowId[0];
       String? fileIn = getValueFromMap(dataMap, "path", defaultValue: null);
       if (fileIn != null) {
-        String fileName = path.basename(fileIn);
+        // The file name in the change data is the name the other device
+        // looks the file up with - the basename of the local path can differ
+        // (a renamed or restored file), and then the upload would land under
+        // an id nobody looks for.
+        String? nameFromData =
+            getValueFromMap(dataMap, "name", defaultValue: null);
+        String fileName = (nameFromData == null || nameFromData.isEmpty)
+            ? path.basename(fileIn)
+            : nameFromData;
         String fileId = '$userId|$fileName';
         ModelFile? existingModelFile = await ModelFile.get(fileId);
         if (existingModelFile != null) {

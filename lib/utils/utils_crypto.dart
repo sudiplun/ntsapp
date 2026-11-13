@@ -172,7 +172,12 @@ class CryptoUtils {
       File fileIn = File(fileInPath);
       await fileIn.writeAsBytes(encryptedBytes, flush: true);
       // decrypt file
-      String mimeDirectory = data["mime"].split("/").first;
+      String? mime = data["mime"];
+      if (mime == null || mime.isEmpty) {
+        logger.error("downloadDecryptFile|no mime type:$fileName");
+        return false;
+      }
+      String mimeDirectory = mime.split("/").first;
       String fileOutPath = await getFilePath(mimeDirectory, fileName);
       await checkAndCreateDirectory(fileOutPath);
       Uint8List? fileEncryptionKeyBytes = getFileEncryptionKeyBytes(
@@ -189,6 +194,15 @@ class CryptoUtils {
         }
       } else {
         logger.error("failed to getFileEncryptionKeyBytes:$fileName");
+      }
+      // The encrypted copy in the temp folder is not needed anymore - it is
+      // as big as the file itself.
+      if (fileIn.existsSync()) {
+        try {
+          fileIn.deleteSync();
+        } catch (e) {
+          logger.warning("downloadDecryptFile|temp file not removed:$e");
+        }
       }
     } catch (e, s) {
       logger.error("Error Fetching File", error: e, stackTrace: s);

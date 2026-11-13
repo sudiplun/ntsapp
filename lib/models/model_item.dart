@@ -395,10 +395,12 @@ class ModelItem {
     final dbHelper = StorageSqlite.instance;
     Map<String, dynamic> map = toMap();
     int utcNow = DateTime.now().toUtc().millisecondsSinceEpoch;
-    Map<String, dynamic> updatedMap = {"updated_at": utcNow};
-    for (String attr in attrs) {
-      updatedMap[attr] = map[attr];
-    }
+    Map<String, dynamic> updatedMap = updatedRowColumns(
+      map,
+      attrs,
+      pushToSync: pushToSync,
+      updatedAt: utcNow,
+    );
     int updated = await dbHelper.update("item", updatedMap, id);
     bool syncEnabled = await ModelPreferences.get(
             AppString.hasEncryptionKeys.string,
@@ -423,6 +425,12 @@ class ModelItem {
       int existingUpdatedAt = rows[0]["updated_at"];
       int incomingUpdatedAt = map["updated_at"];
       if (incomingUpdatedAt > existingUpdatedAt) {
+        // The map row never carries the thumbnail - it travels through its own
+        // sync step - so keep the thumbnail we already have instead of
+        // clearing it.
+        if (map["thumbnail"] == null && rows[0]["thumbnail"] != null) {
+          map["thumbnail"] = rows[0]["thumbnail"];
+        }
         result = await dbHelper.update("item", map, id);
       } else {
         result = 0;

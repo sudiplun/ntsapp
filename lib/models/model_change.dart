@@ -202,6 +202,60 @@ class ModelChange {
     return await Future.wait(rows.map((map) => fromMap(map)));
   }
 
+  /// The current step of a queued change, or null when nothing is queued.
+  ///
+  /// Used to find out whether a row still has a thumbnail/file upload
+  /// pending, so that editing the row does not cancel it.
+  static Future<SyncChangeTask?> getTaskType(String changeId) async {
+    final dbHelper = StorageSqlite.instance;
+    List<Map<String, dynamic>> list =
+        await dbHelper.getWithId("change", changeId);
+    if (list.isEmpty) return null;
+    return SyncChangeTaskExtension.fromValue(list.first["type"]);
+  }
+
+  /// True for the steps that carry a thumbnail and/or a file.
+  ///
+  /// These are the steps that must not be dropped when a row is edited:
+  /// the media is uploaded once and the change row is deleted afterwards.
+  static bool isMediaUploadTask(SyncChangeTask? type) {
+    switch (type) {
+      case SyncChangeTask.pushMapFile:
+      case SyncChangeTask.pushMapThumbnail:
+      case SyncChangeTask.pushMapThumbnailFile:
+      case SyncChangeTask.pushThumbnail:
+      case SyncChangeTask.pushThumbnailFile:
+      case SyncChangeTask.pushFile:
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  /// The step a change goes to after its row was updated.
+  ///
+  /// [pending] is the step the change is currently at (null when nothing is
+  /// queued for the row).
+  ///
+  /// When the update did not touch the media but a media upload is still
+  /// pending, the pipeline is kept at its map step: the edited map is pushed
+  /// and the media upload continues afterwards. Dropping it to a plain
+  /// [SyncChangeTask.pushMap] cancelled the upload - the change row was
+  /// deleted after the map push, so the file never reached the server and
+  /// the other device got a note without its media.
+  static SyncChangeTask nextTaskAfterUpdate({
+    required String table,
+    required bool thumbnailIsNull,
+    required Map<String, dynamic> map,
+    required bool mediaChanges,
+    required SyncChangeTask? pending,
+  }) {
+    if (mediaChanges || isMediaUploadTask(pending)) {
+      return getPushChangeTaskType(table, thumbnailIsNull, map);
+    }
+    return SyncChangeTask.pushMap;
+  }
+
   static Future<void> upgradeTypeForIds(List<String> ids) async {
     for (String id in ids) {
       await upgradeSyncTask(id);
