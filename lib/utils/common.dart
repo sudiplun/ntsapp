@@ -1079,11 +1079,21 @@ Future<String> getDeviceName() async {
 // Helper to check internet connectivity
 Future<bool> hasInternetConnection() async {
   try {
-    // Try to actually establish a socket connection to Google's DNS
-    final socket = await Socket.connect('8.8.8.8', 53,
-        timeout: const Duration(seconds: 2));
-    socket.destroy();
-    return true;
+    // Resolve a hostname instead of opening a raw TCP socket to Google's DNS
+    // on port 53.
+    //
+    // Plenty of networks (corporate firewalls, some mobile carriers, cloud
+    // VMs) block outbound *TCP*/53 while UDP/53 works perfectly well, so the
+    // old socket probe reported "no internet" on perfectly usable
+    // connections - and the sync used to skip itself entirely because of it.
+    //
+    // This is only a hint for the UI now: the sync itself lets the actual
+    // Supabase call report connectivity (see SyncUtils.triggerSync).
+    final List<InternetAddress> addresses = await InternetAddress.lookup(
+      'example.com',
+    ).timeout(const Duration(seconds: 3));
+    return addresses.isNotEmpty &&
+        addresses.any((InternetAddress address) => address.rawAddress.isNotEmpty);
   } catch (e) {
     return false;
   }

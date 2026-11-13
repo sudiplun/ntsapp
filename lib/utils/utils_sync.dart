@@ -192,8 +192,7 @@ class SyncUtils {
     bool hasMoreMapChangesToPush = false;
     try {
       bool canSync = await SyncUtils.canSync();
-      bool hasInternet = canSync ? await hasInternetConnection() : false;
-      if (canSync && hasInternet) {
+      if (canSync) {
         int startedAt = DateTime.now().millisecondsSinceEpoch;
         if (!inBackground) {
           // The realtime listener does not survive app restarts; re-arm it here
@@ -212,12 +211,17 @@ class SyncUtils {
         if (!removed) {
           hasMoreMapChangesToPush = await pushMapChanges();
 
+          // Pull the changes made by the other devices right away. This used
+          // to run after the media uploads, so a note sent from another
+          // device only showed up once every pending thumbnail had been
+          // uploaded - two round trips per thumbnail.
+          await fetchMapChanges();
+
           await deleteFiles();
           await deleteThumbnails();
 
           await pushThumbnails(startedAt, inBackground);
 
-          await fetchMapChanges();
           await fetchThumbnails();
 
           // pushing files is a time consuming task
@@ -226,8 +230,7 @@ class SyncUtils {
           await fetchFiles(startedAt, inBackground);
         }
       } else {
-        logger.info(
-            "$mode|Sync|skipped (canSync:$canSync|internet:$hasInternet)");
+        logger.info("$mode|Sync|skipped (canSync:$canSync)");
       }
     } catch (e) {
       logger.error("⚠ Sync failed: $e");
@@ -911,6 +914,17 @@ class SyncUtils {
         AppString.lastChangesFetchedAt.string,
         defaultValue: "2011-11-11 11:11:11.111111+00");
     try {
+      // The cursor is taken BEFORE the request goes out.
+      //
+      // The server filters with `server_at > lastAt` and stamps `server_at`
+      // with its own clock. A row pushed by another device *while* this batch
+      // is being fetched therefore has a `server_at` between the request and
+      // the moment the batch finished. Saving the local time after the batch
+      // as the new cursor would skip that row forever - it would never be
+      // > the cursor again. Taking the cursor up front can only cause a row
+      // to be fetched twice (the upsert is idempotent), it can never lose
+      // one.
+      String cursorBeforeFetch = nowUtcInISO();
       // fetch public profile changes
       /* logger.info("fetch profile changes");
       final profileChanges = await supabaseClient
@@ -964,9 +978,8 @@ class SyncUtils {
       }
       // update last fetched at iso time
       if (hadChanges) {
-        String nowUtcCurrent = nowUtcInISO();
         await ModelPreferences.set(
-            AppString.lastChangesFetchedAt.string, nowUtcCurrent);
+            AppString.lastChangesFetchedAt.string, cursorBeforeFetch);
       }
       await ModelPreferences.set(AppString.hasValidPlan.string, "yes");
       logger.info("Fetched Map Changes");
