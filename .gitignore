@@ -73,6 +73,11 @@ node_modules
 # env
 .env
 
+# Keystores & signing keys
+*.jks
+*.keystore
+**/key.properties
+
 # Graphify
 /graphify-out/
 check_cache.py
