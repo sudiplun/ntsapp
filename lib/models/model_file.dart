@@ -131,11 +131,18 @@ class ModelFile {
   Future<int> delete() async {
     final dbHelper = StorageSqlite.instance;
     Directory tempDir = await getTemporaryDirectory();
-    String fileName = path.basename(filePath);
+    String fileName =
+        id.contains("|") ? id.split("|")[1] : path.basename(filePath);
     String encryptedFilePath = path.join(tempDir.path, '$fileName.crypt');
     File encryptedFile = File(encryptedFilePath);
     if (encryptedFile.existsSync()) {
       encryptedFile.deleteSync();
+    }
+    String fallbackPath =
+        path.join(tempDir.path, '${path.basename(filePath)}.crypt');
+    File fallbackFile = File(fallbackPath);
+    if (fallbackFile.existsSync()) {
+      fallbackFile.deleteSync();
     }
     int deleted = await dbHelper.delete("files", id);
     return deleted;

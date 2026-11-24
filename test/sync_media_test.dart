@@ -94,7 +94,8 @@ void main() {
       );
       expect(task, SyncChangeTask.pushMapThumbnailFile);
       // ... and the pipeline continues from there.
-      expect(ModelChange.getNextTaskType(task), SyncChangeTask.pushThumbnailFile);
+      expect(
+          ModelChange.getNextTaskType(task), SyncChangeTask.pushThumbnailFile);
     });
 
     test('editing a note with nothing queued only pushes the map', () {
@@ -179,8 +180,7 @@ void main() {
       const int editedAt = 1500;
 
       return () async {
-        final Directory dir =
-            Directory.systemTemp.createTempSync('ntsapp_lww');
+        final Directory dir = Directory.systemTemp.createTempSync('ntsapp_lww');
         final Database db = await openItemSchema(p.join(dir.path, 'db.db'));
 
         await db.insert('item', {

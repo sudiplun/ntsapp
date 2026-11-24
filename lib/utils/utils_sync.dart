@@ -786,8 +786,10 @@ class SyncUtils {
   /// Split out of [fetchMapChanges] so a single failing row (for example a
   /// note whose group does not exist locally yet) can be isolated and
   /// retried instead of aborting the whole batch.
-  static Future<void> applyFetchedRow(String table,
-      Map<String, dynamic> changeMap, Uint8List masterKeyBytes,
+  static Future<void> applyFetchedRow(
+      String table,
+      Map<String, dynamic> changeMap,
+      Uint8List masterKeyBytes,
       CryptoUtils cryptoUtils) async {
     Uint8List? decryptedBytes =
         cryptoUtils.getDecryptedBytesFromMap(changeMap, masterKeyBytes);
@@ -963,7 +965,8 @@ class SyncUtils {
         List<dynamic> changesMap = tableChanges[table];
         for (Map<String, dynamic> changeMap in changesMap) {
           try {
-            await applyFetchedRow(table, changeMap, masterKeyBytes, cryptoUtils);
+            await applyFetchedRow(
+                table, changeMap, masterKeyBytes, cryptoUtils);
           } catch (e, s) {
             // Never let a single bad row abort the whole batch: that used to
             // leave `lastChangesFetchedAt` untouched, so the same batch was
@@ -1209,7 +1212,6 @@ class SyncUtils {
     List<ModelFile> pendingUploads = await ModelFile.pendingUploads();
     for (ModelFile pendingFile in pendingUploads) {
       await pushFile(pendingFile);
-      hasPendingUploads = true;
     }
     logger.info(
         "pushed Pending Uploads. Spent: ${DateTime.now().toUtc().millisecondsSinceEpoch - startedAt}");
@@ -1217,7 +1219,6 @@ class SyncUtils {
     List<ModelChange> changes = await ModelChange.requiresFilePush();
     for (ModelChange change in changes) {
       await checkPushFile(change);
-      hasPendingUploads = true;
     }
     logger.info(
         "Created New Uploads. Spent: ${DateTime.now().toUtc().millisecondsSinceEpoch - startedAt}");
@@ -1305,7 +1306,8 @@ class SyncUtils {
                 if (encryptedFile.existsSync()) encryptedFile.deleteSync();
                 return;
               }
-              String keyCipher = encryptionKeyCipher[AppString.keyCipher.string];
+              String keyCipher =
+                  encryptionKeyCipher[AppString.keyCipher.string];
               String keyNonce = encryptionKeyCipher[AppString.keyNonce.string];
               // insert server row (uploaded_at = 0, parts = 1)
               await supabaseClient.from("files").insert({
@@ -1372,9 +1374,9 @@ class SyncUtils {
       logger.info("pushFile| $fileName not uploaded");
       SodiumSumo sodium = await SodiumSumoInit.init();
       CryptoUtils cryptoUtils = CryptoUtils(sodium);
-      File? fileOut = await getCreateEncryptedFileToUpload(
-          modelFile.filePath, modelFile.keyCipher, modelFile.keyNonce,
-          cryptoUtils);
+      File? fileOut = await getCreateEncryptedFileToUpload(modelFile.filePath,
+          modelFile.keyCipher, modelFile.keyNonce, cryptoUtils,
+          fileName: fileName);
       if (fileOut == null) {
         logger.error("pushFile|error creating encrypted file");
         return;
@@ -1383,14 +1385,17 @@ class SyncUtils {
       await supabaseClient.storage.from("media").uploadBinary(
             "$userId/$fileName",
             bytes,
-            fileOptions:
-                const FileOptions(upsert: true, cacheControl: "3600"),
+            fileOptions: const FileOptions(upsert: true, cacheControl: "3600"),
           );
       int now = DateTime.now().toUtc().millisecondsSinceEpoch;
-      await supabaseClient.from("files").update({
-        "parts_uploaded": 1,
-        "uploaded_at": now,
-      }).eq("id", modelFile.id).eq("uploaded_at", 0);
+      await supabaseClient
+          .from("files")
+          .update({
+            "parts_uploaded": 1,
+            "uploaded_at": now,
+          })
+          .eq("id", modelFile.id)
+          .eq("uploaded_at", 0);
       modelFile.partsUploaded = 1;
       modelFile.uploadedAt = now;
       await modelFile.update(["parts_uploaded", "uploaded_at"]);
@@ -1404,13 +1409,11 @@ class SyncUtils {
     }
   }
 
-  static Future<File?> getCreateEncryptedFileToUpload(
-      String fileInPath,
-      String keyCipherBase64,
-      String keyNonceBase64,
-      CryptoUtils cryptoUtils) async {
+  static Future<File?> getCreateEncryptedFileToUpload(String fileInPath,
+      String keyCipherBase64, String keyNonceBase64, CryptoUtils cryptoUtils,
+      {String? fileName}) async {
     Directory tempDir = await getTemporaryDirectory();
-    String fileName = path.basename(fileInPath);
+    fileName ??= path.basename(fileInPath);
     String fileOutPath = path.join(tempDir.path, '$fileName.crypt');
     File fileOut = File(fileOutPath);
     File fileIn = File(fileInPath);
@@ -1449,5 +1452,4 @@ class SyncUtils {
       return fileOut;
     }
   }
-
 }

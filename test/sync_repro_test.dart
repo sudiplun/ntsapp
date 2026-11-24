@@ -75,7 +75,8 @@ Future<Database> openSchema(String path) {
 
 /// The upsert used by StorageSqlite.insert() after the fix: a plain INSERT,
 /// and on a unique-constraint violation an in-place UPDATE.
-Future<int> upsertRow(Database db, String table, Map<String, dynamic> row) async {
+Future<int> upsertRow(
+    Database db, String table, Map<String, dynamic> row) async {
   try {
     return await db.insert(table, row);
   } on DatabaseException catch (e) {
@@ -137,8 +138,8 @@ void main() {
       'updated_at': 1,
     });
 
-    await upsertRow(db, 'category',
-        {'id': 'c1', 'title': 'Renamed', 'updated_at': 2});
+    await upsertRow(
+        db, 'category', {'id': 'c1', 'title': 'Renamed', 'updated_at': 2});
 
     expect((await db.query('itemgroup')).length, 1);
     expect((await db.query('item')).length, 1);
@@ -165,7 +166,8 @@ void main() {
         reason: 'FK violation: item.group_id -> itemgroup.id is enforced');
   });
 
-  test('a note whose group is missing can be stored after the placeholder '
+  test(
+      'a note whose group is missing can be stored after the placeholder '
       'group is created', () async {
     final dir = Directory.systemTemp.createTempSync('ntsapp_placeholder');
     final db = await openSchema(p.join(dir.path, 'db.db'));

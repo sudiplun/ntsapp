@@ -55,7 +55,8 @@ String packageRoot() {
   while (!File(p_join(dir.path, 'pubspec.yaml')).existsSync()) {
     final Directory parent = dir.parent;
     if (parent.path == dir.path) {
-      throw StateError('pubspec.yaml not found above ${Directory.current.path}');
+      throw StateError(
+          'pubspec.yaml not found above ${Directory.current.path}');
     }
     dir = parent;
   }
@@ -69,8 +70,8 @@ String p_join(String a, String b) {
 
 /// The source of `SyncUtils.triggerSync()`.
 String triggerSyncSource() {
-  final String source =
-      File(p_join(packageRoot(), 'lib/utils/utils_sync.dart')).readAsStringSync();
+  final String source = File(p_join(packageRoot(), 'lib/utils/utils_sync.dart'))
+      .readAsStringSync();
   final int start = source.indexOf('Future<void> triggerSync(');
   expect(start, greaterThan(0), reason: 'triggerSync() not found');
   final int end = source.indexOf('static String? getSignedInUserId()', start);
@@ -93,8 +94,7 @@ void main() {
     final DateTime batchFinishedAt = DateTime.utc(2026, 1, 1, 10, 0, 3);
     final List<ServerRow> serverRows = [ServerRow('note-1', pushedAt)];
 
-    test('a note pushed while the pull runs is picked up by the next pull',
-        () {
+    test('a note pushed while the pull runs is picked up by the next pull', () {
       // The first pull misses the note: it was pushed after the query ran.
       final PullResult first = pull(
         serverRows: serverRows,
@@ -151,7 +151,8 @@ void main() {
       final int pushThumbnails = body.indexOf('pushThumbnails(');
       final int pushFiles = body.indexOf('pushFiles(');
       expect(pull, greaterThan(0), reason: 'fetchMapChanges() not called');
-      expect(pushThumbnails, greaterThan(0), reason: 'pushThumbnails() not called');
+      expect(pushThumbnails, greaterThan(0),
+          reason: 'pushThumbnails() not called');
       expect(pushFiles, greaterThan(0), reason: 'pushFiles() not called');
       // Notes sent from another device must show up without waiting for the
       // (much slower) media uploads.
@@ -171,8 +172,10 @@ void main() {
       final String source = File(p_join(packageRoot(), 'lib/utils/common.dart'))
           .readAsStringSync();
       final int start = source.indexOf('Future<bool> hasInternetConnection()');
-      expect(start, greaterThan(0), reason: 'hasInternetConnection() not found');
-      final int end = source.indexOf('SupabaseClient? getSupabaseClient()', start);
+      expect(start, greaterThan(0),
+          reason: 'hasInternetConnection() not found');
+      final int end =
+          source.indexOf('SupabaseClient? getSupabaseClient()', start);
       final String body = source.substring(start, end);
       expect(body.contains('Socket.connect'), isFalse);
       expect(body.contains('8.8.8.8'), isFalse);
