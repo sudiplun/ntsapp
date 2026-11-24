@@ -12,7 +12,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get importantTitle => 'Belangrijk';
 
   @override
-  String get accessKeyNoticeDescription1 => 'Op de volgende pagina krijg je een reeks van 24 woorden te zien. Dit is je unieke en privé-versleutelingssleutel en het is de ENIGE manier om je notities te herstellen in het geval van uitloggen, verlies van het apparaat of een storing.';
+  String get accessKeyNoticeDescription1 =>
+      'Op de volgende pagina krijg je een reeks van 24 woorden te zien. Dit is je unieke en privé-versleutelingssleutel en het is de ENIGE manier om je notities te herstellen in het geval van uitloggen, verlies van het apparaat of een storing.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -23,7 +24,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get iUnderstandShowMeTheKey => 'Ik begrijp het.\nToon de sleutel.';
 
   @override
-  String get selectGroupToViewNotes => 'Selecteer een groep om notities te bekijken';
+  String get selectGroupToViewNotes =>
+      'Selecteer een groep om notities te bekijken';
 
   @override
   String get accessKeyShareText => 'Hier is je toegangssleutel.';
@@ -38,7 +40,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get accessKeyTitle => 'Toegangssleutel';
 
   @override
-  String get accessKeyDescription => 'Sla deze sleutel op een veilige plek op. Je hebt hem nodig om notities te synchroniseren op een ander apparaat.';
+  String get accessKeyDescription =>
+      'Sla deze sleutel op een veilige plek op. Je hebt hem nodig om notities te synchroniseren op een ander apparaat.';
 
   @override
   String get copyLabel => 'Kopiëren';
@@ -112,7 +115,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get pleaseEnterYourRecoveryPhrase => 'Voer je herstelzin in';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'De herstelzin moet exact 24 woorden bevatten';
+  String get recoveryPhraseMustContain24Words =>
+      'De herstelzin moet exact 24 woorden bevatten';
 
   @override
   String get submitLabel => 'Verzenden';
@@ -133,7 +137,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get enableSyncTitle => 'Synchronisatie inschakelen';
 
   @override
-  String get passwordRequirementsDescription => 'Voer de sleutel (wachtwoord) in die je hebt aangemaakt. Deze moet minimaal 10 tekens lang zijn en minstens 1 cijfer, 1 kleine letter, 1 hoofdletter en 1 speciaal teken bevatten.';
+  String get passwordRequirementsDescription =>
+      'Voer de sleutel (wachtwoord) in die je hebt aangemaakt. Deze moet minimaal 10 tekens lang zijn en minstens 1 cijfer, 1 kleine letter, 1 hoofdletter en 1 speciaal teken bevatten.';
 
   @override
   String get enterKeyLabel => 'Voer sleutel in';
@@ -196,10 +201,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get addressesShareLabel => 'Adressen:';
 
   @override
-  String get microphoneNotAvailable => 'Microfoon is mogelijk niet beschikbaar.';
+  String get microphoneNotAvailable =>
+      'Microfoon is mogelijk niet beschikbaar.';
 
   @override
-  String get microphonePermissionRequired => 'Microfoontoestemming is vereist om audio op te nemen.';
+  String get microphonePermissionRequired =>
+      'Microfoontoestemming is vereist om audio op te nemen.';
 
   @override
   String get couldNotGetDuration => 'Kon duur niet ophalen';
@@ -283,7 +290,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get accessKeyInputTitle => 'Synchronisatie inschakelen';
 
   @override
-  String get accessKeyInputDescription => 'Voer je 24-woordige herstelzin in of laad een .txt-bestand dat deze bevat.';
+  String get accessKeyInputDescription =>
+      'Voer je 24-woordige herstelzin in of laad een .txt-bestand dat deze bevat.';
 
   @override
   String get editMenuItemLabel => 'Bewerken';
@@ -292,10 +300,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get filterMenuItemLabel => 'Filters';
 
   @override
-  String get externalStoragePermissionDenied => 'Toestemming voor toegang tot externe opslag geweigerd.';
+  String get externalStoragePermissionDenied =>
+      'Toestemming voor toegang tot externe opslag geweigerd.';
 
   @override
-  String get pressLongToStartRecording => 'Houd ingedrukt om opname te starten.';
+  String get pressLongToStartRecording =>
+      'Houd ingedrukt om opname te starten.';
 
   @override
   String get didYouKnowTitle => 'Wist je dat?';
@@ -351,7 +361,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get holdAndDragReorderTooltip => 'Houd vast en sleep om te sorteren';
 
   @override
-  String get emptyHomePageMessage => 'Hallo!\n\nHet ziet er hier nogal leeg uit.\n\nTik op de +-knop en maak wat notities voor jezelf. :)';
+  String get emptyHomePageMessage =>
+      'Hallo!\n\nHet ziet er hier nogal leeg uit.\n\nTik op de +-knop en maak wat notities voor jezelf. :)';
 
   @override
   String get reorderingTitle => 'Sorteren';
@@ -393,7 +404,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get locationPermissionRequiredTitle => 'Locatietoestemming vereist';
 
   @override
-  String get enableLocationPermissionsContent => 'Schakel locatietoestemmingen in bij de app-instellingen.';
+  String get enableLocationPermissionsContent =>
+      'Schakel locatietoestemmingen in bij de app-instellingen.';
 
   @override
   String get cancelButtonLabel => 'Annuleren';
@@ -426,7 +438,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dbViewerTitle => 'DB-viewer';
 
   @override
-  String get selectTableToViewData => 'Selecteer een tabel om de data te bekijken';
+  String get selectTableToViewData =>
+      'Selecteer een tabel om de data te bekijken';
 
   @override
   String get selectTableDropdownHint => 'Selecteer een tabel';
@@ -468,13 +481,15 @@ class AppLocalizationsNl extends AppLocalizations {
   String get deviceDisabledMessage => 'Apparaat uitgeschakeld!';
 
   @override
-  String get cannotRemoveThisDeviceMessage => 'Kan dit apparaat niet verwijderen!';
+  String get cannotRemoveThisDeviceMessage =>
+      'Kan dit apparaat niet verwijderen!';
 
   @override
   String get confirmRemoveTitle => 'Verwijderen bevestigen';
 
   @override
-  String get confirmRemoveDeviceContent => 'Weet je het zeker? Dit verwijdert alle gegevens op dit apparaat.';
+  String get confirmRemoveDeviceContent =>
+      'Weet je het zeker? Dit verwijdert alle gegevens op dit apparaat.';
 
   @override
   String get okButtonLabel => 'OK';
@@ -557,7 +572,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get encryptionKeyTitle => 'Versleutelingssleutel';
 
   @override
-  String get createKeyDescription => 'Voer een lange en moeilijk te raden sleutel (wachtwoord) in. Vergeet niet deze ergens veilig op te slaan. Als deze verloren gaat of vergeten wordt, kan deze niet worden hersteld.';
+  String get createKeyDescription =>
+      'Voer een lange en moeilijk te raden sleutel (wachtwoord) in. Vergeet niet deze ergens veilig op te slaan. Als deze verloren gaat of vergeten wordt, kan deze niet worden hersteld.';
 
   @override
   String get seeExamplesTooltip => 'Bekijk voorbeelden';
@@ -632,13 +648,16 @@ class AppLocalizationsNl extends AppLocalizations {
   String get helloTitle => 'Hallo';
 
   @override
-  String get selectKeyMasterKeyDescription => 'Om je gegevens te versleutelen, hebben we een hoofd-versleutelingssleutel nodig.';
+  String get selectKeyMasterKeyDescription =>
+      'Om je gegevens te versleutelen, hebben we een hoofd-versleutelingssleutel nodig.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'Er zijn 2 opties: of je maakt zelf een sleutel aan (vergelijkbaar met een wachtwoord), of wij maken deze voor je aan.';
+  String get selectKeyTwoOptionsDescription =>
+      'Er zijn 2 opties: of je maakt zelf een sleutel aan (vergelijkbaar met een wachtwoord), of wij maken deze voor je aan.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'Ik begrijp dat als ik de versleutelingssleutel kwijtraak/vergeet, ik de gegevens kan verliezen.';
+  String get understandLoseKeyAcknowledgement =>
+      'Ik begrijp dat als ik de versleutelingssleutel kwijtraak/vergeet, ik de gegevens kan verliezen.';
 
   @override
   String get createKeyForMeButtonLabel => 'Maak de sleutel voor mij aan';
@@ -658,19 +677,23 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'Wij gebruiken end-to-end versleuteling om ervoor te zorgen dat al je notities veilig zijn en niemand anders ze kan zien, zelfs wij niet.';
+  String get e2eEncryptionDescription =>
+      'Wij gebruiken end-to-end versleuteling om ervoor te zorgen dat al je notities veilig zijn en niemand anders ze kan zien, zelfs wij niet.';
 
   @override
-  String get timeToStartEncryptionLabel => 'Tijd om de versleuteling te starten!';
+  String get timeToStartEncryptionLabel =>
+      'Tijd om de versleuteling te starten!';
 
   @override
   String get nextButtonLabel => 'Volgende';
 
   @override
-  String get sendingOtpFailedMessage => 'Verzenden van OTP mislukt. Probeer het opnieuw!';
+  String get sendingOtpFailedMessage =>
+      'Verzenden van OTP mislukt. Probeer het opnieuw!';
 
   @override
-  String get otpVerificationFailedMessage => 'OTP-verificatie mislukt. Probeer het opnieuw!';
+  String get otpVerificationFailedMessage =>
+      'OTP-verificatie mislukt. Probeer het opnieuw!';
 
   @override
   String get emailSignInTitle => 'E-mail inloggen';
@@ -700,22 +723,27 @@ class AppLocalizationsNl extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'Heb je al een account? Inloggen';
 
   @override
-  String get emailPasswordNote => 'Let op: dit e-mailadres en wachtwoord zijn alleen voor je account. De versleutelingssleutel voor notities wordt daarna apart ingesteld.';
+  String get emailPasswordNote =>
+      'Let op: dit e-mailadres en wachtwoord zijn alleen voor je account. De versleutelingssleutel voor notities wordt daarna apart ingesteld.';
 
   @override
-  String get passwordTooShortMessage => 'Het wachtwoord moet minstens 8 tekens bevatten';
+  String get passwordTooShortMessage =>
+      'Het wachtwoord moet minstens 8 tekens bevatten';
 
   @override
   String get passwordsDoNotMatchMessage => 'Wachtwoorden komen niet overeen';
 
   @override
-  String get invalidCredentialsMessage => 'E-mailadres of wachtwoord is onjuist';
+  String get invalidCredentialsMessage =>
+      'E-mailadres of wachtwoord is onjuist';
 
   @override
-  String get accountExistsMessage => 'Dit e-mailadres is al geregistreerd. Log in plaats daarvan in.';
+  String get accountExistsMessage =>
+      'Dit e-mailadres is al geregistreerd. Log in plaats daarvan in.';
 
   @override
-  String get tooManyAttemptsMessage => 'Te veel pogingen - probeer het later opnieuw';
+  String get tooManyAttemptsMessage =>
+      'Te veel pogingen - probeer het later opnieuw';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,10 +766,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get couldNotFetchMessage => 'Kon niet ophalen';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'Je abonnement is gekoppeld aan een ander e-mailadres. Log uit en gebruik dat e-mailadres om cloudopslag in te schakelen.';
+  String get subscriptionEmailMismatchMessage =>
+      'Je abonnement is gekoppeld aan een ander e-mailadres. Log uit en gebruik dat e-mailadres om cloudopslag in te schakelen.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'Fout bij controleren abonnementsdetails';
+  String get errorCheckingPlanDetailsMessage =>
+      'Fout bij controleren abonnementsdetails';
 
   @override
   String get registerDeviceTitle => 'Apparaat registreren';
@@ -776,7 +806,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get invalidAccessKey => 'Ongeldige toegangssleutel';
 
   @override
-  String get fileDoesNotContain24Words => 'Het bestand bevat niet precies 24 woorden.';
+  String get fileDoesNotContain24Words =>
+      'Het bestand bevat niet precies 24 woorden.';
 
   @override
   String get errorReadingFile => 'Fout bij lezen bestand';
@@ -1067,7 +1098,8 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1151,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get seedGroupFitness => 'Fitness';
 
   @override
-  String get seedItemWelcome => 'Welkom bij Note Safe!\nIdeeën, lijstjes of wat je ook maar bezighoudt, bewaar het hier.\n\nHoud deze notitie ingedrukt voor verwijderen, bewerken en andere opties.';
+  String get seedItemWelcome =>
+      'Welkom bij Note Safe!\nIdeeën, lijstjes of wat je ook maar bezighoudt, bewaar het hier.\n\nHoud deze notitie ingedrukt voor verwijderen, bewerken en andere opties.';
 
   @override
   String get seedItemMorningWorkout => 'Ochtendtraining';

@@ -12,7 +12,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get importantTitle => 'هام';
 
   @override
-  String get accessKeyNoticeDescription1 => 'في الصفحة التالية، ستظهر لك سلسلة مكونة من 24 كلمة. هذا هو مفتاح التشفير الخاص والفريد الخاص بك، وهو الطريقة الوحيدة لاستعادة ملاحظاتك في حال تسجيل الخروج أو فقدان الجهاز أو تعطل التطبيق.';
+  String get accessKeyNoticeDescription1 =>
+      'في الصفحة التالية، ستظهر لك سلسلة مكونة من 24 كلمة. هذا هو مفتاح التشفير الخاص والفريد الخاص بك، وهو الطريقة الوحيدة لاستعادة ملاحظاتك في حال تسجيل الخروج أو فقدان الجهاز أو تعطل التطبيق.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -38,7 +39,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get accessKeyTitle => 'مفتاح الوصول';
 
   @override
-  String get accessKeyDescription => 'يرجى حفظ هذا المفتاح في مكان آمن. ستحتاجه لمزامنة ملاحظاتك على جهاز آخر.';
+  String get accessKeyDescription =>
+      'يرجى حفظ هذا المفتاح في مكان آمن. ستحتاجه لمزامنة ملاحظاتك على جهاز آخر.';
 
   @override
   String get copyLabel => 'نسخ';
@@ -109,10 +111,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enterYourRecoveryPhraseHere => 'أدخل عبارة الاسترداد هنا';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'يرجى إدخال عبارة الاسترداد الخاصة بك';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'يرجى إدخال عبارة الاسترداد الخاصة بك';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'يجب أن تحتوي عبارة الاسترداد على 24 كلمة بالضبط';
+  String get recoveryPhraseMustContain24Words =>
+      'يجب أن تحتوي عبارة الاسترداد على 24 كلمة بالضبط';
 
   @override
   String get submitLabel => 'إرسال';
@@ -133,7 +137,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enableSyncTitle => 'تفعيل المزامنة';
 
   @override
-  String get passwordRequirementsDescription => 'يرجى إدخال المفتاح (كلمة المرور) الذي أنشأته. يجب أن يتكون من 10 أحرف على الأقل، متضمناً رقماً واحداً، وحرفاً صغيراً، وحرفاً كبيراً، ورمزاً خاصاً.';
+  String get passwordRequirementsDescription =>
+      'يرجى إدخال المفتاح (كلمة المرور) الذي أنشأته. يجب أن يتكون من 10 أحرف على الأقل، متضمناً رقماً واحداً، وحرفاً صغيراً، وحرفاً كبيراً، ورمزاً خاصاً.';
 
   @override
   String get enterKeyLabel => 'أدخل المفتاح';
@@ -199,7 +204,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get microphoneNotAvailable => 'قد لا يكون الميكروفون متاحاً.';
 
   @override
-  String get microphonePermissionRequired => 'إذن الوصول للميكروفون مطلوب لتسجيل الصوت.';
+  String get microphonePermissionRequired =>
+      'إذن الوصول للميكروفون مطلوب لتسجيل الصوت.';
 
   @override
   String get couldNotGetDuration => 'تعذر الحصول على المدة';
@@ -283,7 +289,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get accessKeyInputTitle => 'تفعيل المزامنة';
 
   @override
-  String get accessKeyInputDescription => 'يرجى إدخال عبارة الاسترداد المكونة من 24 كلمة أو تحميل ملف .txt يحتوي عليها.';
+  String get accessKeyInputDescription =>
+      'يرجى إدخال عبارة الاسترداد المكونة من 24 كلمة أو تحميل ملف .txt يحتوي عليها.';
 
   @override
   String get editMenuItemLabel => 'تعديل';
@@ -292,7 +299,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get filterMenuItemLabel => 'الفلاتر';
 
   @override
-  String get externalStoragePermissionDenied => 'تم رفض إذن الوصول إلى وحدة التخزين الخارجية.';
+  String get externalStoragePermissionDenied =>
+      'تم رفض إذن الوصول إلى وحدة التخزين الخارجية.';
 
   @override
   String get pressLongToStartRecording => 'اضغط مطولاً للبدء في التسجيل.';
@@ -351,7 +359,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get holdAndDragReorderTooltip => 'اضغط مع السحب لإعادة الترتيب';
 
   @override
-  String get emptyHomePageMessage => 'أهلاً بك!\n\nتبدو الصفحة فارغة هنا.\n\nاضغط على زر + لإنشاء ملاحظاتك الخاصة. :)';
+  String get emptyHomePageMessage =>
+      'أهلاً بك!\n\nتبدو الصفحة فارغة هنا.\n\nاضغط على زر + لإنشاء ملاحظاتك الخاصة. :)';
 
   @override
   String get reorderingTitle => 'إعادة الترتيب';
@@ -393,7 +402,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get locationPermissionRequiredTitle => 'مطلوب إذن الوصول للموقع';
 
   @override
-  String get enableLocationPermissionsContent => 'يرجى تفعيل إذن الوصول للموقع من إعدادات التطبيق.';
+  String get enableLocationPermissionsContent =>
+      'يرجى تفعيل إذن الوصول للموقع من إعدادات التطبيق.';
 
   @override
   String get cancelButtonLabel => 'إلغاء';
@@ -474,7 +484,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirmRemoveTitle => 'تأكيد الإزالة';
 
   @override
-  String get confirmRemoveDeviceContent => 'هل أنت متأكد؟ سيؤدي هذا إلى حذف جميع البيانات الموجودة على الجهاز.';
+  String get confirmRemoveDeviceContent =>
+      'هل أنت متأكد؟ سيؤدي هذا إلى حذف جميع البيانات الموجودة على الجهاز.';
 
   @override
   String get okButtonLabel => 'موافق';
@@ -557,7 +568,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get encryptionKeyTitle => 'مفتاح التشفير';
 
   @override
-  String get createKeyDescription => 'يرجى إدخال مفتاح (كلمة مرور) طويل ويصعب تخمينه. تذكر حفظه في مكان آمن. في حال ضياعه أو نسيانه، لا يمكن استعادته.';
+  String get createKeyDescription =>
+      'يرجى إدخال مفتاح (كلمة مرور) طويل ويصعب تخمينه. تذكر حفظه في مكان آمن. في حال ضياعه أو نسيانه، لا يمكن استعادته.';
 
   @override
   String get seeExamplesTooltip => 'عرض الأمثلة';
@@ -632,13 +644,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get helloTitle => 'مرحباً';
 
   @override
-  String get selectKeyMasterKeyDescription => 'لتشفير بياناتك، نحتاج إلى مفتاح تشفير رئيسي.';
+  String get selectKeyMasterKeyDescription =>
+      'لتشفير بياناتك، نحتاج إلى مفتاح تشفير رئيسي.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'يوجد خياران: إما أن تنشئ المفتاح بنفسك (مثل كلمة المرور) أو ننشئه نحن نيابة عنك.';
+  String get selectKeyTwoOptionsDescription =>
+      'يوجد خياران: إما أن تنشئ المفتاح بنفسك (مثل كلمة المرور) أو ننشئه نحن نيابة عنك.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'أدرك أن فقدان أو نسيان مفتاح التشفير قد يؤدي إلى فقدان بياناتي.';
+  String get understandLoseKeyAcknowledgement =>
+      'أدرك أن فقدان أو نسيان مفتاح التشفير قد يؤدي إلى فقدان بياناتي.';
 
   @override
   String get createKeyForMeButtonLabel => 'أنشئ المفتاح نيابة عني';
@@ -658,7 +673,8 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'نستخدم التشفير من الطرف إلى الطرف لضمان خصوصية وأمان ملاحظاتك، بحيث لا يمكن لأحد الاطلاع عليها غيرك، ولا حتى نحن.';
+  String get e2eEncryptionDescription =>
+      'نستخدم التشفير من الطرف إلى الطرف لضمان خصوصية وأمان ملاحظاتك، بحيث لا يمكن لأحد الاطلاع عليها غيرك، ولا حتى نحن.';
 
   @override
   String get timeToStartEncryptionLabel => 'حان وقت بدء التشفير!';
@@ -667,10 +683,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get nextButtonLabel => 'التالي';
 
   @override
-  String get sendingOtpFailedMessage => 'فشل إرسال رمز التحقق. يرجى المحاولة مرة أخرى!';
+  String get sendingOtpFailedMessage =>
+      'فشل إرسال رمز التحقق. يرجى المحاولة مرة أخرى!';
 
   @override
-  String get otpVerificationFailedMessage => 'فشل التحقق من الرمز. يرجى المحاولة مرة أخرى!';
+  String get otpVerificationFailedMessage =>
+      'فشل التحقق من الرمز. يرجى المحاولة مرة أخرى!';
 
   @override
   String get emailSignInTitle => 'تسجيل الدخول بالبريد الإلكتروني';
@@ -700,22 +718,27 @@ class AppLocalizationsAr extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'لديك حساب بالفعل؟ تسجيل الدخول';
 
   @override
-  String get emailPasswordNote => 'ملاحظة: هذا البريد الإلكتروني وكلمة المرور مخصصان لحسابك فقط. يتم إعداد مفتاح تشفير الملاحظات على حدة بعد ذلك.';
+  String get emailPasswordNote =>
+      'ملاحظة: هذا البريد الإلكتروني وكلمة المرور مخصصان لحسابك فقط. يتم إعداد مفتاح تشفير الملاحظات على حدة بعد ذلك.';
 
   @override
-  String get passwordTooShortMessage => 'يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل';
+  String get passwordTooShortMessage =>
+      'يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل';
 
   @override
   String get passwordsDoNotMatchMessage => 'كلمتا المرور غير متطابقتين';
 
   @override
-  String get invalidCredentialsMessage => 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+  String get invalidCredentialsMessage =>
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة';
 
   @override
-  String get accountExistsMessage => 'هذا البريد الإلكتروني مسجل بالفعل. قم بتسجيل الدخول بدلاً من ذلك.';
+  String get accountExistsMessage =>
+      'هذا البريد الإلكتروني مسجل بالفعل. قم بتسجيل الدخول بدلاً من ذلك.';
 
   @override
-  String get tooManyAttemptsMessage => 'محاولات كثيرة جداً - حاول مرة أخرى لاحقاً';
+  String get tooManyAttemptsMessage =>
+      'محاولات كثيرة جداً - حاول مرة أخرى لاحقاً';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,10 +761,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get couldNotFetchMessage => 'تعذر الجلب';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'اشتراكك مرتبط ببريد إلكتروني آخر. يرجى تسجيل الخروج واستخدام ذلك البريد لتفعيل التخزين السحابي.';
+  String get subscriptionEmailMismatchMessage =>
+      'اشتراكك مرتبط ببريد إلكتروني آخر. يرجى تسجيل الخروج واستخدام ذلك البريد لتفعيل التخزين السحابي.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'خطأ أثناء التحقق من تفاصيل الخطة';
+  String get errorCheckingPlanDetailsMessage =>
+      'خطأ أثناء التحقق من تفاصيل الخطة';
 
   @override
   String get registerDeviceTitle => 'تسجيل الجهاز';
@@ -1067,7 +1092,8 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1145,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get seedGroupFitness => 'اللياقة البدنية';
 
   @override
-  String get seedItemWelcome => 'مرحباً بك في Note Safe!\nدوّن أفكارك، قوائمك، أو أي شيء يدور في ذهنك هنا.\n\nاضغط مطولاً على هذه الملاحظة للحذف، التعديل، أو عرض خيارات أخرى.';
+  String get seedItemWelcome =>
+      'مرحباً بك في Note Safe!\nدوّن أفكارك، قوائمك، أو أي شيء يدور في ذهنك هنا.\n\nاضغط مطولاً على هذه الملاحظة للحذف، التعديل، أو عرض خيارات أخرى.';
 
   @override
   String get seedItemMorningWorkout => 'تمارين الصباح';

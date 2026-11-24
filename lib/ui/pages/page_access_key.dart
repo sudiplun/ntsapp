@@ -141,7 +141,8 @@ class _PageAccessKeyState extends State<PageAccessKey> {
                 children: [
                   Text(
                     loc.accessKeyDescription,
-                    style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+                    style:
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 20.0),
@@ -153,7 +154,8 @@ class _PageAccessKeyState extends State<PageAccessKey> {
                     ),
                     child: Text(
                       sentence,
-                      style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.w400),
                       textAlign: TextAlign.justify,
                     ),
                   ),

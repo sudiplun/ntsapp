@@ -12,7 +12,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get importantTitle => 'Importante';
 
   @override
-  String get accessKeyNoticeDescription1 => 'Na próxima página, você verá uma série de 24 palavras. Esta é a sua chave de criptografia exclusiva e privada, e é a ÚNICA maneira de recuperar suas notas em caso de logout, perda ou mau funcionamento do dispositivo.';
+  String get accessKeyNoticeDescription1 =>
+      'Na próxima página, você verá uma série de 24 palavras. Esta é a sua chave de criptografia exclusiva e privada, e é a ÚNICA maneira de recuperar suas notas em caso de logout, perda ou mau funcionamento do dispositivo.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -23,7 +24,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get iUnderstandShowMeTheKey => 'Eu entendo.\nMostrar a chave.';
 
   @override
-  String get selectGroupToViewNotes => 'Selecione um grupo para visualizar notas';
+  String get selectGroupToViewNotes =>
+      'Selecione um grupo para visualizar notas';
 
   @override
   String get accessKeyShareText => 'Aqui está sua chave de acesso.';
@@ -38,7 +40,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get accessKeyTitle => 'Chave de Acesso';
 
   @override
-  String get accessKeyDescription => 'Por favor, salve esta chave em um local seguro. Você precisará dela para sincronizar notas em outro dispositivo.';
+  String get accessKeyDescription =>
+      'Por favor, salve esta chave em um local seguro. Você precisará dela para sincronizar notas em outro dispositivo.';
 
   @override
   String get copyLabel => 'Copiar';
@@ -59,7 +62,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get couldNotShareFile => 'Não foi possível compartilhar o arquivo';
 
   @override
-  String get hereIsTheBackupFile => 'Aqui está o arquivo de backup do seu aplicativo.';
+  String get hereIsTheBackupFile =>
+      'Aqui está o arquivo de backup do seu aplicativo.';
 
   @override
   String get errorTitle => 'Erro';
@@ -106,13 +110,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get enterYour24WordPhrase => 'Insira sua frase de 24 palavras';
 
   @override
-  String get enterYourRecoveryPhraseHere => 'Insira sua frase de recuperação aqui';
+  String get enterYourRecoveryPhraseHere =>
+      'Insira sua frase de recuperação aqui';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'Por favor, insira sua frase de recuperação';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'Por favor, insira sua frase de recuperação';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'A frase de recuperação deve conter exatamente 24 palavras';
+  String get recoveryPhraseMustContain24Words =>
+      'A frase de recuperação deve conter exatamente 24 palavras';
 
   @override
   String get submitLabel => 'Enviar';
@@ -133,7 +140,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get enableSyncTitle => 'Ativar Sincronização';
 
   @override
-  String get passwordRequirementsDescription => 'Por favor, insira a chave (senha) que você criou. Ela deve ter no mínimo 10 caracteres, incluindo 1 número, 1 letra minúscula, 1 letra maiúscula e 1 caractere especial.';
+  String get passwordRequirementsDescription =>
+      'Por favor, insira a chave (senha) que você criou. Ela deve ter no mínimo 10 caracteres, incluindo 1 número, 1 letra minúscula, 1 letra maiúscula e 1 caractere especial.';
 
   @override
   String get enterKeyLabel => 'Inserir chave';
@@ -199,7 +207,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get microphoneNotAvailable => 'O microfone pode não estar disponível.';
 
   @override
-  String get microphonePermissionRequired => 'A permissão de microfone é necessária para gravar áudio.';
+  String get microphonePermissionRequired =>
+      'A permissão de microfone é necessária para gravar áudio.';
 
   @override
   String get couldNotGetDuration => 'Não foi possível obter a duração';
@@ -226,7 +235,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get shareNotesTooltip => 'Compartilhar notas';
 
   @override
-  String get noNotesSelectedToShare => 'Nenhuma nota selecionada para compartilhar';
+  String get noNotesSelectedToShare =>
+      'Nenhuma nota selecionada para compartilhar';
 
   @override
   String get nothingToShare => 'Nada para compartilhar';
@@ -283,7 +293,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get accessKeyInputTitle => 'Ativar Sincronização';
 
   @override
-  String get accessKeyInputDescription => 'Por favor, insira sua frase de recuperação de 24 palavras ou carregue um arquivo .txt que a contenha.';
+  String get accessKeyInputDescription =>
+      'Por favor, insira sua frase de recuperação de 24 palavras ou carregue um arquivo .txt que a contenha.';
 
   @override
   String get editMenuItemLabel => 'Editar';
@@ -292,10 +303,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get filterMenuItemLabel => 'Filtros';
 
   @override
-  String get externalStoragePermissionDenied => 'A permissão para acessar o armazenamento externo foi negada.';
+  String get externalStoragePermissionDenied =>
+      'A permissão para acessar o armazenamento externo foi negada.';
 
   @override
-  String get pressLongToStartRecording => 'Pressione e segure para começar a gravar.';
+  String get pressLongToStartRecording =>
+      'Pressione e segure para começar a gravar.';
 
   @override
   String get didYouKnowTitle => 'Você sabia?';
@@ -351,7 +364,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get holdAndDragReorderTooltip => 'Segure e arraste para reordenar';
 
   @override
-  String get emptyHomePageMessage => 'Olá!\n\nParece um pouco vazio por aqui.\n\nToque no botão + e crie algumas notas para si mesmo. :)';
+  String get emptyHomePageMessage =>
+      'Olá!\n\nParece um pouco vazio por aqui.\n\nToque no botão + e crie algumas notas para si mesmo. :)';
 
   @override
   String get reorderingTitle => 'Reordenando';
@@ -390,10 +404,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get titleInputLabel => 'Título';
 
   @override
-  String get locationPermissionRequiredTitle => 'Permissão de Localização Necessária';
+  String get locationPermissionRequiredTitle =>
+      'Permissão de Localização Necessária';
 
   @override
-  String get enableLocationPermissionsContent => 'Por favor, ative as permissões de localização nas configurações do aplicativo.';
+  String get enableLocationPermissionsContent =>
+      'Por favor, ative as permissões de localização nas configurações do aplicativo.';
 
   @override
   String get cancelButtonLabel => 'Cancelar';
@@ -426,7 +442,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get dbViewerTitle => 'Visualizador de DB';
 
   @override
-  String get selectTableToViewData => 'Selecione uma tabela para ver seus dados';
+  String get selectTableToViewData =>
+      'Selecione uma tabela para ver seus dados';
 
   @override
   String get selectTableDropdownHint => 'Selecione uma tabela';
@@ -468,13 +485,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get deviceDisabledMessage => 'Dispositivo desativado!';
 
   @override
-  String get cannotRemoveThisDeviceMessage => 'Não é possível remover este dispositivo!';
+  String get cannotRemoveThisDeviceMessage =>
+      'Não é possível remover este dispositivo!';
 
   @override
   String get confirmRemoveTitle => 'Confirmar Remoção';
 
   @override
-  String get confirmRemoveDeviceContent => 'Tem certeza? Isso excluirá todos os dados do dispositivo.';
+  String get confirmRemoveDeviceContent =>
+      'Tem certeza? Isso excluirá todos os dados do dispositivo.';
 
   @override
   String get okButtonLabel => 'OK';
@@ -557,7 +576,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get encryptionKeyTitle => 'Chave de criptografia';
 
   @override
-  String get createKeyDescription => 'Por favor, insira uma chave (senha) longa e difícil de adivinhar. Lembre-se de salvá-la em um lugar seguro. Se ela for perdida ou esquecida, não poderá ser recuperada.';
+  String get createKeyDescription =>
+      'Por favor, insira uma chave (senha) longa e difícil de adivinhar. Lembre-se de salvá-la em um lugar seguro. Se ela for perdida ou esquecida, não poderá ser recuperada.';
 
   @override
   String get seeExamplesTooltip => 'Ver exemplos';
@@ -614,7 +634,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get featureSyncUpTo3Devices => 'Sincronize até 3 dispositivos';
 
   @override
-  String get featureUpgradeCancelAnytime => 'Faça upgrade/Cancele a qualquer momento';
+  String get featureUpgradeCancelAnytime =>
+      'Faça upgrade/Cancele a qualquer momento';
 
   @override
   String get noPlansAvailableMessage => 'Nenhum plano disponível';
@@ -632,13 +653,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get helloTitle => 'Olá';
 
   @override
-  String get selectKeyMasterKeyDescription => 'Para criptografar seus dados, precisaremos de uma chave mestra de criptografia.';
+  String get selectKeyMasterKeyDescription =>
+      'Para criptografar seus dados, precisaremos de uma chave mestra de criptografia.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'Existem 2 opções - ou você cria uma chave (como uma senha) ou nós criamos uma para você.';
+  String get selectKeyTwoOptionsDescription =>
+      'Existem 2 opções - ou você cria uma chave (como uma senha) ou nós criamos uma para você.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'Entendo que se eu perder/esquecer a chave de criptografia, posso perder meus dados.';
+  String get understandLoseKeyAcknowledgement =>
+      'Entendo que se eu perder/esquecer a chave de criptografia, posso perder meus dados.';
 
   @override
   String get createKeyForMeButtonLabel => 'Criar a chave para mim';
@@ -658,7 +682,8 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'Usamos criptografia de ponta a ponta para garantir que todas as suas notas estejam seguras e que ninguém mais possa vê-las, nem mesmo nós.';
+  String get e2eEncryptionDescription =>
+      'Usamos criptografia de ponta a ponta para garantir que todas as suas notas estejam seguras e que ninguém mais possa vê-las, nem mesmo nós.';
 
   @override
   String get timeToStartEncryptionLabel => 'Hora de iniciar a criptografia!';
@@ -667,10 +692,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get nextButtonLabel => 'Próximo';
 
   @override
-  String get sendingOtpFailedMessage => 'Falha ao enviar OTP. Por favor, tente novamente!';
+  String get sendingOtpFailedMessage =>
+      'Falha ao enviar OTP. Por favor, tente novamente!';
 
   @override
-  String get otpVerificationFailedMessage => 'Falha na verificação do OTP. Por favor, tente novamente!';
+  String get otpVerificationFailedMessage =>
+      'Falha na verificação do OTP. Por favor, tente novamente!';
 
   @override
   String get emailSignInTitle => 'Entrar com E-mail';
@@ -700,10 +727,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'Já tem uma conta? Entrar';
 
   @override
-  String get emailPasswordNote => 'Nota: este e-mail e senha são apenas para sua conta. A chave de criptografia das notas é configurada separadamente, depois disso.';
+  String get emailPasswordNote =>
+      'Nota: este e-mail e senha são apenas para sua conta. A chave de criptografia das notas é configurada separadamente, depois disso.';
 
   @override
-  String get passwordTooShortMessage => 'A senha deve ter pelo menos 8 caracteres';
+  String get passwordTooShortMessage =>
+      'A senha deve ter pelo menos 8 caracteres';
 
   @override
   String get passwordsDoNotMatchMessage => 'As senhas não coincidem';
@@ -712,10 +741,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get invalidCredentialsMessage => 'E-mail ou senha inválidos';
 
   @override
-  String get accountExistsMessage => 'Este e-mail já está registrado. Entre em vez disso.';
+  String get accountExistsMessage =>
+      'Este e-mail já está registrado. Entre em vez disso.';
 
   @override
-  String get tooManyAttemptsMessage => 'Muitas tentativas - tente novamente mais tarde';
+  String get tooManyAttemptsMessage =>
+      'Muitas tentativas - tente novamente mais tarde';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,10 +769,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get couldNotFetchMessage => 'Não foi possível buscar';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'Sua assinatura está associada a outro e-mail. Por favor, saia e use esse e-mail para ativar o armazenamento na nuvem.';
+  String get subscriptionEmailMismatchMessage =>
+      'Sua assinatura está associada a outro e-mail. Por favor, saia e use esse e-mail para ativar o armazenamento na nuvem.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'Erro ao verificar detalhes do plano';
+  String get errorCheckingPlanDetailsMessage =>
+      'Erro ao verificar detalhes do plano';
 
   @override
   String get registerDeviceTitle => 'Registrar dispositivo';
@@ -776,7 +809,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get invalidAccessKey => 'Chave de acesso inválida';
 
   @override
-  String get fileDoesNotContain24Words => 'O arquivo não contém exatamente 24 palavras.';
+  String get fileDoesNotContain24Words =>
+      'O arquivo não contém exatamente 24 palavras.';
 
   @override
   String get errorReadingFile => 'Erro ao ler arquivo';
@@ -1067,7 +1101,8 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1154,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get seedGroupFitness => 'Fitness';
 
   @override
-  String get seedItemWelcome => 'Bem-vindo ao Note Safe!\nIdeias, listas ou qualquer coisa em sua mente, coloque tudo aqui.\n\nPressione e segure nesta nota para excluir, editar e ver outras opções.';
+  String get seedItemWelcome =>
+      'Bem-vindo ao Note Safe!\nIdeias, listas ou qualquer coisa em sua mente, coloque tudo aqui.\n\nPressione e segure nesta nota para excluir, editar e ver outras opções.';
 
   @override
   String get seedItemMorningWorkout => 'Treino matinal';

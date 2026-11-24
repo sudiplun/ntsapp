@@ -12,7 +12,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importantTitle => '重要提示';
 
   @override
-  String get accessKeyNoticeDescription1 => '在下一页，您将看到一组 24 个单词。这是您唯一且私密的加密密钥，也是在退出登录、设备丢失或故障时恢复笔记的唯一途径。';
+  String get accessKeyNoticeDescription1 =>
+      '在下一页，您将看到一组 24 个单词。这是您唯一且私密的加密密钥，也是在退出登录、设备丢失或故障时恢复笔记的唯一途径。';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -133,7 +134,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get enableSyncTitle => '启用同步';
 
   @override
-  String get passwordRequirementsDescription => '请输入您创建的密钥（密码）。它必须至少包含 10 个字符，且包含至少 1 个数字、1 个小写字母、1 个大写字母和 1 个特殊字符。';
+  String get passwordRequirementsDescription =>
+      '请输入您创建的密钥（密码）。它必须至少包含 10 个字符，且包含至少 1 个数字、1 个小写字母、1 个大写字母和 1 个特殊字符。';
 
   @override
   String get enterKeyLabel => '输入密钥';
@@ -557,7 +559,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get encryptionKeyTitle => '加密密钥';
 
   @override
-  String get createKeyDescription => '请输入一个长且难以猜测的密钥（密码）。请务必将其保存在安全的地方。如果丢失或忘记，将无法找回。';
+  String get createKeyDescription =>
+      '请输入一个长且难以猜测的密钥（密码）。请务必将其保存在安全的地方。如果丢失或忘记，将无法找回。';
 
   @override
   String get seeExamplesTooltip => '查看示例';
@@ -635,7 +638,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get selectKeyMasterKeyDescription => '为了加密您的数据，我们需要一个主加密密钥。';
 
   @override
-  String get selectKeyTwoOptionsDescription => '有两种选择 - 您可以自己创建一个密钥（类似于密码），或者由我们为您创建。';
+  String get selectKeyTwoOptionsDescription =>
+      '有两种选择 - 您可以自己创建一个密钥（类似于密码），或者由我们为您创建。';
 
   @override
   String get understandLoseKeyAcknowledgement => '我理解如果我丢失/忘记了加密密钥，我可能会丢失数据。';
@@ -658,7 +662,8 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => '我们使用端到端加密，确保您的所有笔记都是安全的，任何人都无法查看，即使是我们也不行。';
+  String get e2eEncryptionDescription =>
+      '我们使用端到端加密，确保您的所有笔记都是安全的，任何人都无法查看，即使是我们也不行。';
 
   @override
   String get timeToStartEncryptionLabel => '是时候开始加密了！';
@@ -738,7 +743,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get couldNotFetchMessage => '无法获取';
 
   @override
-  String get subscriptionEmailMismatchMessage => '您的订阅关联了其他电子邮件。请退出登录并使用该邮箱以启用云存储。';
+  String get subscriptionEmailMismatchMessage =>
+      '您的订阅关联了其他电子邮件。请退出登录并使用该邮箱以启用云存储。';
 
   @override
   String get errorCheckingPlanDetailsMessage => '检查计划详情时出错';
@@ -1067,7 +1073,8 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1126,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get seedGroupFitness => '健身';
 
   @override
-  String get seedItemWelcome => '欢迎使用 Note Safe！\n无论是灵感、清单还是任何想法，都可以记录在这里。\n\n长按此笔记即可进行删除、编辑等操作。';
+  String get seedItemWelcome =>
+      '欢迎使用 Note Safe！\n无论是灵感、清单还是任何想法，都可以记录在这里。\n\n长按此笔记即可进行删除、编辑等操作。';
 
   @override
   String get seedItemMorningWorkout => '晨间锻炼';

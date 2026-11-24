@@ -12,7 +12,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get importantTitle => 'Quan trọng';
 
   @override
-  String get accessKeyNoticeDescription1 => 'Ở trang tiếp theo, bạn sẽ thấy một chuỗi gồm 24 từ. Đây là khóa mã hóa duy nhất và riêng tư của bạn, và đây là cách DUY NHẤT để khôi phục ghi chú trong trường hợp bạn đăng xuất, mất thiết bị hoặc thiết bị gặp sự cố.';
+  String get accessKeyNoticeDescription1 =>
+      'Ở trang tiếp theo, bạn sẽ thấy một chuỗi gồm 24 từ. Đây là khóa mã hóa duy nhất và riêng tư của bạn, và đây là cách DUY NHẤT để khôi phục ghi chú trong trường hợp bạn đăng xuất, mất thiết bị hoặc thiết bị gặp sự cố.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -38,7 +39,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get accessKeyTitle => 'Khóa truy cập';
 
   @override
-  String get accessKeyDescription => 'Vui lòng lưu khóa này ở nơi an toàn. Bạn sẽ cần nó để đồng bộ ghi chú trên thiết bị khác.';
+  String get accessKeyDescription =>
+      'Vui lòng lưu khóa này ở nơi an toàn. Bạn sẽ cần nó để đồng bộ ghi chú trên thiết bị khác.';
 
   @override
   String get copyLabel => 'Sao chép';
@@ -106,13 +108,16 @@ class AppLocalizationsVi extends AppLocalizations {
   String get enterYour24WordPhrase => 'Nhập cụm từ 24 từ của bạn';
 
   @override
-  String get enterYourRecoveryPhraseHere => 'Nhập cụm từ khôi phục của bạn tại đây';
+  String get enterYourRecoveryPhraseHere =>
+      'Nhập cụm từ khôi phục của bạn tại đây';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'Vui lòng nhập cụm từ khôi phục của bạn';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'Vui lòng nhập cụm từ khôi phục của bạn';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'Cụm từ khôi phục phải chứa chính xác 24 từ';
+  String get recoveryPhraseMustContain24Words =>
+      'Cụm từ khôi phục phải chứa chính xác 24 từ';
 
   @override
   String get submitLabel => 'Gửi';
@@ -133,7 +138,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get enableSyncTitle => 'Bật đồng bộ';
 
   @override
-  String get passwordRequirementsDescription => 'Vui lòng nhập khóa (mật khẩu) bạn đã tạo. Mật khẩu dài tối thiểu 10 ký tự, bao gồm ít nhất 1 số, 1 chữ thường, 1 chữ hoa và 1 ký tự đặc biệt.';
+  String get passwordRequirementsDescription =>
+      'Vui lòng nhập khóa (mật khẩu) bạn đã tạo. Mật khẩu dài tối thiểu 10 ký tự, bao gồm ít nhất 1 số, 1 chữ thường, 1 chữ hoa và 1 ký tự đặc biệt.';
 
   @override
   String get enterKeyLabel => 'Nhập khóa';
@@ -199,7 +205,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get microphoneNotAvailable => 'Micrô có thể không khả dụng.';
 
   @override
-  String get microphonePermissionRequired => 'Cần có quyền truy cập micrô để ghi âm.';
+  String get microphonePermissionRequired =>
+      'Cần có quyền truy cập micrô để ghi âm.';
 
   @override
   String get couldNotGetDuration => 'Không thể lấy thời lượng';
@@ -283,7 +290,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get accessKeyInputTitle => 'Bật đồng bộ';
 
   @override
-  String get accessKeyInputDescription => 'Vui lòng nhập cụm từ khôi phục 24 từ của bạn hoặc tải lên tệp .txt chứa nó.';
+  String get accessKeyInputDescription =>
+      'Vui lòng nhập cụm từ khôi phục 24 từ của bạn hoặc tải lên tệp .txt chứa nó.';
 
   @override
   String get editMenuItemLabel => 'Chỉnh sửa';
@@ -292,7 +300,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get filterMenuItemLabel => 'Bộ lọc';
 
   @override
-  String get externalStoragePermissionDenied => 'Quyền truy cập bộ nhớ ngoài đã bị từ chối.';
+  String get externalStoragePermissionDenied =>
+      'Quyền truy cập bộ nhớ ngoài đã bị từ chối.';
 
   @override
   String get pressLongToStartRecording => 'Nhấn giữ để bắt đầu ghi âm.';
@@ -351,7 +360,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get holdAndDragReorderTooltip => 'Nhấn giữ và kéo để sắp xếp lại';
 
   @override
-  String get emptyHomePageMessage => 'Xin chào!\n\nỞ đây có vẻ hơi trống trải.\n\nNhấn nút + để tạo một vài ghi chú cho bản thân nhé. :)';
+  String get emptyHomePageMessage =>
+      'Xin chào!\n\nỞ đây có vẻ hơi trống trải.\n\nNhấn nút + để tạo một vài ghi chú cho bản thân nhé. :)';
 
   @override
   String get reorderingTitle => 'Sắp xếp lại';
@@ -393,7 +403,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get locationPermissionRequiredTitle => 'Cần cấp quyền truy cập vị trí';
 
   @override
-  String get enableLocationPermissionsContent => 'Vui lòng bật quyền truy cập vị trí trong cài đặt ứng dụng.';
+  String get enableLocationPermissionsContent =>
+      'Vui lòng bật quyền truy cập vị trí trong cài đặt ứng dụng.';
 
   @override
   String get cancelButtonLabel => 'Hủy';
@@ -474,7 +485,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get confirmRemoveTitle => 'Xác nhận xóa';
 
   @override
-  String get confirmRemoveDeviceContent => 'Bạn có chắc không? Hành động này sẽ xóa tất cả dữ liệu trên thiết bị này.';
+  String get confirmRemoveDeviceContent =>
+      'Bạn có chắc không? Hành động này sẽ xóa tất cả dữ liệu trên thiết bị này.';
 
   @override
   String get okButtonLabel => 'OK';
@@ -498,7 +510,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get processingMessage => 'Đang xử lý...';
 
   @override
-  String get doNotNavigateAwayMessage => 'Vui lòng không thoát khỏi màn hình này';
+  String get doNotNavigateAwayMessage =>
+      'Vui lòng không thoát khỏi màn hình này';
 
   @override
   String errorWithDetails(String error) {
@@ -557,7 +570,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get encryptionKeyTitle => 'Khóa mã hóa';
 
   @override
-  String get createKeyDescription => 'Vui lòng nhập một khóa (mật khẩu) dài và khó đoán. Hãy nhớ lưu nó ở nơi an toàn. Nếu bị mất/quên, bạn sẽ không thể khôi phục nó.';
+  String get createKeyDescription =>
+      'Vui lòng nhập một khóa (mật khẩu) dài và khó đoán. Hãy nhớ lưu nó ở nơi an toàn. Nếu bị mất/quên, bạn sẽ không thể khôi phục nó.';
 
   @override
   String get seeExamplesTooltip => 'Xem ví dụ';
@@ -632,13 +646,16 @@ class AppLocalizationsVi extends AppLocalizations {
   String get helloTitle => 'Xin chào';
 
   @override
-  String get selectKeyMasterKeyDescription => 'Để mã hóa dữ liệu, chúng tôi cần một khóa mã hóa chính.';
+  String get selectKeyMasterKeyDescription =>
+      'Để mã hóa dữ liệu, chúng tôi cần một khóa mã hóa chính.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'Có 2 lựa chọn - bạn tự tạo khóa (giống như mật khẩu) hoặc chúng tôi tạo giúp bạn.';
+  String get selectKeyTwoOptionsDescription =>
+      'Có 2 lựa chọn - bạn tự tạo khóa (giống như mật khẩu) hoặc chúng tôi tạo giúp bạn.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'Tôi hiểu rằng nếu tôi làm mất/quên khóa mã hóa, tôi có thể mất dữ liệu.';
+  String get understandLoseKeyAcknowledgement =>
+      'Tôi hiểu rằng nếu tôi làm mất/quên khóa mã hóa, tôi có thể mất dữ liệu.';
 
   @override
   String get createKeyForMeButtonLabel => 'Tạo khóa giúp tôi';
@@ -658,7 +675,8 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'Chúng tôi sử dụng mã hóa đầu cuối để đảm bảo tất cả ghi chú của bạn đều an toàn và không ai khác có thể xem được, kể cả chúng tôi.';
+  String get e2eEncryptionDescription =>
+      'Chúng tôi sử dụng mã hóa đầu cuối để đảm bảo tất cả ghi chú của bạn đều an toàn và không ai khác có thể xem được, kể cả chúng tôi.';
 
   @override
   String get timeToStartEncryptionLabel => 'Đã đến lúc bắt đầu mã hóa!';
@@ -670,7 +688,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get sendingOtpFailedMessage => 'Gửi OTP thất bại. Vui lòng thử lại!';
 
   @override
-  String get otpVerificationFailedMessage => 'Xác thực OTP thất bại. Vui lòng thử lại!';
+  String get otpVerificationFailedMessage =>
+      'Xác thực OTP thất bại. Vui lòng thử lại!';
 
   @override
   String get emailSignInTitle => 'Đăng nhập bằng Email';
@@ -700,7 +719,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'Đã có tài khoản? Đăng nhập';
 
   @override
-  String get emailPasswordNote => 'Lưu ý: email và mật khẩu này chỉ dùng cho tài khoản của bạn. Khóa mã hóa ghi chú sẽ được thiết lập riêng sau bước này.';
+  String get emailPasswordNote =>
+      'Lưu ý: email và mật khẩu này chỉ dùng cho tài khoản của bạn. Khóa mã hóa ghi chú sẽ được thiết lập riêng sau bước này.';
 
   @override
   String get passwordTooShortMessage => 'Mật khẩu phải có ít nhất 8 ký tự';
@@ -712,7 +732,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get invalidCredentialsMessage => 'Email hoặc mật khẩu không đúng';
 
   @override
-  String get accountExistsMessage => 'Email này đã được đăng ký. Hãy đăng nhập thay thế.';
+  String get accountExistsMessage =>
+      'Email này đã được đăng ký. Hãy đăng nhập thay thế.';
 
   @override
   String get tooManyAttemptsMessage => 'Quá nhiều lần thử - thử lại sau';
@@ -738,10 +759,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get couldNotFetchMessage => 'Không thể lấy dữ liệu';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'Gói đăng ký của bạn được liên kết với một email khác. Vui lòng đăng xuất và sử dụng email đó để bật lưu trữ đám mây.';
+  String get subscriptionEmailMismatchMessage =>
+      'Gói đăng ký của bạn được liên kết với một email khác. Vui lòng đăng xuất và sử dụng email đó để bật lưu trữ đám mây.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'Lỗi khi kiểm tra thông tin gói';
+  String get errorCheckingPlanDetailsMessage =>
+      'Lỗi khi kiểm tra thông tin gói';
 
   @override
   String get registerDeviceTitle => 'Đăng ký thiết bị';
@@ -1067,7 +1090,8 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1143,8 @@ class AppLocalizationsVi extends AppLocalizations {
   String get seedGroupFitness => 'Thể dục';
 
   @override
-  String get seedItemWelcome => 'Chào mừng bạn đến với Note Safe!\nÝ tưởng, danh sách hay bất cứ điều gì bạn nghĩ, hãy lưu tất cả vào đây.\n\nNhấn giữ ghi chú này để xóa, sửa và xem các tùy chọn khác.';
+  String get seedItemWelcome =>
+      'Chào mừng bạn đến với Note Safe!\nÝ tưởng, danh sách hay bất cứ điều gì bạn nghĩ, hãy lưu tất cả vào đây.\n\nNhấn giữ ghi chú này để xóa, sửa và xem các tùy chọn khác.';
 
   @override
   String get seedItemMorningWorkout => 'Tập thể dục buổi sáng';

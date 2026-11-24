@@ -12,7 +12,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get importantTitle => 'Σημαντικό';
 
   @override
-  String get accessKeyNoticeDescription1 => 'Στην επόμενη σελίδα θα δείτε μια σειρά από 24 λέξεις. Αυτό είναι το μοναδικό και απόρρητο κλειδί κρυπτογράφησής σας και είναι ο ΜΟΝΑΔΙΚΟΣ τρόπος για να ανακτήσετε τις σημειώσεις σας σε περίπτωση αποσύνδεσης, απώλειας συσκευής ή δυσλειτουργίας.';
+  String get accessKeyNoticeDescription1 =>
+      'Στην επόμενη σελίδα θα δείτε μια σειρά από 24 λέξεις. Αυτό είναι το μοναδικό και απόρρητο κλειδί κρυπτογράφησής σας και είναι ο ΜΟΝΑΔΙΚΟΣ τρόπος για να ανακτήσετε τις σημειώσεις σας σε περίπτωση αποσύνδεσης, απώλειας συσκευής ή δυσλειτουργίας.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -23,7 +24,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get iUnderstandShowMeTheKey => 'Καταλαβαίνω.\nΔείξε μου το κλειδί.';
 
   @override
-  String get selectGroupToViewNotes => 'Επιλέξτε μια ομάδα για να δείτε τις σημειώσεις';
+  String get selectGroupToViewNotes =>
+      'Επιλέξτε μια ομάδα για να δείτε τις σημειώσεις';
 
   @override
   String get accessKeyShareText => 'Ορίστε το κλειδί πρόσβασής σας.';
@@ -38,7 +40,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get accessKeyTitle => 'Κλειδί πρόσβασης';
 
   @override
-  String get accessKeyDescription => 'Παρακαλώ αποθηκεύστε αυτό το κλειδί σε ασφαλές μέρος. Θα το χρειαστείτε για να συγχρονίσετε τις σημειώσεις σας σε άλλη συσκευή.';
+  String get accessKeyDescription =>
+      'Παρακαλώ αποθηκεύστε αυτό το κλειδί σε ασφαλές μέρος. Θα το χρειαστείτε για να συγχρονίσετε τις σημειώσεις σας σε άλλη συσκευή.';
 
   @override
   String get copyLabel => 'Αντιγραφή';
@@ -59,7 +62,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get couldNotShareFile => 'Δεν ήταν δυνατή η κοινή χρήση του αρχείου';
 
   @override
-  String get hereIsTheBackupFile => 'Ορίστε το αρχείο αντιγράφου ασφαλείας για την εφαρμογή σας.';
+  String get hereIsTheBackupFile =>
+      'Ορίστε το αρχείο αντιγράφου ασφαλείας για την εφαρμογή σας.';
 
   @override
   String get errorTitle => 'Σφάλμα';
@@ -109,10 +113,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get enterYourRecoveryPhraseHere => 'Εισαγάγετε εδώ τη φράση ανάκτησης';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'Παρακαλώ εισαγάγετε τη φράση ανάκτησης';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'Παρακαλώ εισαγάγετε τη φράση ανάκτησης';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'Η φράση ανάκτησης πρέπει να περιέχει ακριβώς 24 λέξεις';
+  String get recoveryPhraseMustContain24Words =>
+      'Η φράση ανάκτησης πρέπει να περιέχει ακριβώς 24 λέξεις';
 
   @override
   String get submitLabel => 'Υποβολή';
@@ -133,7 +139,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get enableSyncTitle => 'Ενεργοποίηση συγχρονισμού';
 
   @override
-  String get passwordRequirementsDescription => 'Παρακαλώ εισαγάγετε το κλειδί (κωδικό πρόσβασης) που έχετε δημιουργήσει. Πρέπει να έχει μήκος τουλάχιστον 10 χαρακτήρες, με τουλάχιστον 1 αριθμό, 1 πεζό, 1 κεφαλαίο γράμμα και 1 ειδικό χαρακτήρα.';
+  String get passwordRequirementsDescription =>
+      'Παρακαλώ εισαγάγετε το κλειδί (κωδικό πρόσβασης) που έχετε δημιουργήσει. Πρέπει να έχει μήκος τουλάχιστον 10 χαρακτήρες, με τουλάχιστον 1 αριθμό, 1 πεζό, 1 κεφαλαίο γράμμα και 1 ειδικό χαρακτήρα.';
 
   @override
   String get enterKeyLabel => 'Εισαγωγή κλειδιού';
@@ -196,10 +203,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get addressesShareLabel => 'Διευθύνσεις:';
 
   @override
-  String get microphoneNotAvailable => 'Το μικρόφωνο ενδέχεται να μην είναι διαθέσιμο.';
+  String get microphoneNotAvailable =>
+      'Το μικρόφωνο ενδέχεται να μην είναι διαθέσιμο.';
 
   @override
-  String get microphonePermissionRequired => 'Απαιτείται άδεια μικροφώνου για την εγγραφή ήχου.';
+  String get microphonePermissionRequired =>
+      'Απαιτείται άδεια μικροφώνου για την εγγραφή ήχου.';
 
   @override
   String get couldNotGetDuration => 'Δεν ήταν δυνατή η λήψη της διάρκειας';
@@ -226,7 +235,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get shareNotesTooltip => 'Κοινοποίηση σημειώσεων';
 
   @override
-  String get noNotesSelectedToShare => 'Δεν επιλέχθηκαν σημειώσεις για κοινοποίηση';
+  String get noNotesSelectedToShare =>
+      'Δεν επιλέχθηκαν σημειώσεις για κοινοποίηση';
 
   @override
   String get nothingToShare => 'Τίποτα για κοινοποίηση';
@@ -283,7 +293,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get accessKeyInputTitle => 'Ενεργοποίηση συγχρονισμού';
 
   @override
-  String get accessKeyInputDescription => 'Παρακαλώ εισαγάγετε τη φράση ανάκτησης 24 λέξεων ή φορτώστε ένα αρχείο .txt που την περιέχει.';
+  String get accessKeyInputDescription =>
+      'Παρακαλώ εισαγάγετε τη φράση ανάκτησης 24 λέξεων ή φορτώστε ένα αρχείο .txt που την περιέχει.';
 
   @override
   String get editMenuItemLabel => 'Επεξεργασία';
@@ -292,10 +303,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get filterMenuItemLabel => 'Φίλτρα';
 
   @override
-  String get externalStoragePermissionDenied => 'Η άδεια πρόσβασης στον εξωτερικό αποθηκευτικό χώρο απορρίφθηκε.';
+  String get externalStoragePermissionDenied =>
+      'Η άδεια πρόσβασης στον εξωτερικό αποθηκευτικό χώρο απορρίφθηκε.';
 
   @override
-  String get pressLongToStartRecording => 'Πατήστε παρατεταμένα για έναρξη εγγραφής.';
+  String get pressLongToStartRecording =>
+      'Πατήστε παρατεταμένα για έναρξη εγγραφής.';
 
   @override
   String get didYouKnowTitle => 'Το γνωρίζατε;';
@@ -351,7 +364,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get holdAndDragReorderTooltip => 'Κρατήστε και σύρετε για αναδιάταξη';
 
   @override
-  String get emptyHomePageMessage => 'Γεια σας!\n\nΕδώ είναι λίγο άδειο.\n\nΠατήστε το κουμπί + και δημιουργήστε μερικές σημειώσεις. :)';
+  String get emptyHomePageMessage =>
+      'Γεια σας!\n\nΕδώ είναι λίγο άδειο.\n\nΠατήστε το κουμπί + και δημιουργήστε μερικές σημειώσεις. :)';
 
   @override
   String get reorderingTitle => 'Αναδιάταξη';
@@ -393,7 +407,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get locationPermissionRequiredTitle => 'Απαιτείται άδεια τοποθεσίας';
 
   @override
-  String get enableLocationPermissionsContent => 'Παρακαλώ ενεργοποιήστε τις άδειες τοποθεσίας στις ρυθμίσεις της εφαρμογής.';
+  String get enableLocationPermissionsContent =>
+      'Παρακαλώ ενεργοποιήστε τις άδειες τοποθεσίας στις ρυθμίσεις της εφαρμογής.';
 
   @override
   String get cancelButtonLabel => 'Ακύρωση';
@@ -405,7 +420,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get locationServicesTitle => 'Υπηρεσίες τοποθεσίας';
 
   @override
-  String get pleaseEnableLocationServicesContent => 'Παρακαλώ ενεργοποιήστε τις!';
+  String get pleaseEnableLocationServicesContent =>
+      'Παρακαλώ ενεργοποιήστε τις!';
 
   @override
   String get selectLocationTitle => 'Επιλογή τοποθεσίας';
@@ -426,7 +442,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get dbViewerTitle => 'Προβολή βάσης δεδομένων';
 
   @override
-  String get selectTableToViewData => 'Επιλέξτε έναν πίνακα για να δείτε τα δεδομένα του';
+  String get selectTableToViewData =>
+      'Επιλέξτε έναν πίνακα για να δείτε τα δεδομένα του';
 
   @override
   String get selectTableDropdownHint => 'Επιλέξτε έναν πίνακα';
@@ -468,13 +485,15 @@ class AppLocalizationsEl extends AppLocalizations {
   String get deviceDisabledMessage => 'Η συσκευή απενεργοποιήθηκε!';
 
   @override
-  String get cannotRemoveThisDeviceMessage => 'Δεν είναι δυνατή η αφαίρεση αυτής της συσκευής!';
+  String get cannotRemoveThisDeviceMessage =>
+      'Δεν είναι δυνατή η αφαίρεση αυτής της συσκευής!';
 
   @override
   String get confirmRemoveTitle => 'Επιβεβαίωση αφαίρεσης';
 
   @override
-  String get confirmRemoveDeviceContent => 'Είστε σίγουροι; Αυτό θα διαγράψει όλα τα δεδομένα στη συσκευή.';
+  String get confirmRemoveDeviceContent =>
+      'Είστε σίγουροι; Αυτό θα διαγράψει όλα τα δεδομένα στη συσκευή.';
 
   @override
   String get okButtonLabel => 'OK';
@@ -557,13 +576,15 @@ class AppLocalizationsEl extends AppLocalizations {
   String get encryptionKeyTitle => 'Κλειδί κρυπτογράφησης';
 
   @override
-  String get createKeyDescription => 'Παρακαλώ εισαγάγετε ένα μεγάλο και δύσκολο στην πρόβλεψη κλειδί (κωδικό πρόσβασης). Θυμηθείτε να το αποθηκεύσετε σε ασφαλές μέρος. Αν χαθεί ή ξεχαστεί, δεν μπορεί να ανακτηθεί.';
+  String get createKeyDescription =>
+      'Παρακαλώ εισαγάγετε ένα μεγάλο και δύσκολο στην πρόβλεψη κλειδί (κωδικό πρόσβασης). Θυμηθείτε να το αποθηκεύσετε σε ασφαλές μέρος. Αν χαθεί ή ξεχαστεί, δεν μπορεί να ανακτηθεί.';
 
   @override
   String get seeExamplesTooltip => 'Δείτε παραδείγματα';
 
   @override
-  String get couldNotFetchDetailsMessage => 'Δεν ήταν δυνατή η ανάκτηση των λεπτομερειών';
+  String get couldNotFetchDetailsMessage =>
+      'Δεν ήταν δυνατή η ανάκτηση των λεπτομερειών';
 
   @override
   String get retryButtonLabel => 'Επανάληψη';
@@ -614,7 +635,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get featureSyncUpTo3Devices => 'Συγχρονισμός έως 3 συσκευών';
 
   @override
-  String get featureUpgradeCancelAnytime => 'Αναβάθμιση/Ακύρωση ανά πάσα στιγμή';
+  String get featureUpgradeCancelAnytime =>
+      'Αναβάθμιση/Ακύρωση ανά πάσα στιγμή';
 
   @override
   String get noPlansAvailableMessage => 'Δεν υπάρχουν διαθέσιμα προγράμματα';
@@ -632,13 +654,16 @@ class AppLocalizationsEl extends AppLocalizations {
   String get helloTitle => 'Γεια σας';
 
   @override
-  String get selectKeyMasterKeyDescription => 'Για να κρυπτογραφήσουμε τα δεδομένα σας, θα χρειαστούμε ένα κύριο κλειδί κρυπτογράφησης.';
+  String get selectKeyMasterKeyDescription =>
+      'Για να κρυπτογραφήσουμε τα δεδομένα σας, θα χρειαστούμε ένα κύριο κλειδί κρυπτογράφησης.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'Υπάρχουν 2 επιλογές - είτε δημιουργείτε εσείς το κλειδί (παρόμοια με κωδικό πρόσβασης) είτε το δημιουργούμε εμείς για εσάς.';
+  String get selectKeyTwoOptionsDescription =>
+      'Υπάρχουν 2 επιλογές - είτε δημιουργείτε εσείς το κλειδί (παρόμοια με κωδικό πρόσβασης) είτε το δημιουργούμε εμείς για εσάς.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'Καταλαβαίνω ότι αν χάσω/ξεχάσω το κλειδί κρυπτογράφησης, μπορεί να χάσω τα δεδομένα.';
+  String get understandLoseKeyAcknowledgement =>
+      'Καταλαβαίνω ότι αν χάσω/ξεχάσω το κλειδί κρυπτογράφησης, μπορεί να χάσω τα δεδομένα.';
 
   @override
   String get createKeyForMeButtonLabel => 'Δημιούργησε το κλειδί για μένα';
@@ -658,7 +683,8 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'Χρησιμοποιούμε κρυπτογράφηση από άκρο σε άκρο για να βεβαιωθούμε ότι όλες οι σημειώσεις σας είναι ασφαλείς και κανείς άλλος δεν μπορεί να τις δει, ούτε καν εμείς.';
+  String get e2eEncryptionDescription =>
+      'Χρησιμοποιούμε κρυπτογράφηση από άκρο σε άκρο για να βεβαιωθούμε ότι όλες οι σημειώσεις σας είναι ασφαλείς και κανείς άλλος δεν μπορεί να τις δει, ούτε καν εμείς.';
 
   @override
   String get timeToStartEncryptionLabel => 'Ώρα να ξεκινήσει η κρυπτογράφηση!';
@@ -667,10 +693,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get nextButtonLabel => 'Επόμενο';
 
   @override
-  String get sendingOtpFailedMessage => 'Η αποστολή του OTP απέτυχε. Παρακαλώ προσπαθήστε ξανά!';
+  String get sendingOtpFailedMessage =>
+      'Η αποστολή του OTP απέτυχε. Παρακαλώ προσπαθήστε ξανά!';
 
   @override
-  String get otpVerificationFailedMessage => 'Η επαλήθευση του OTP απέτυχε. Παρακαλώ προσπαθήστε ξανά!';
+  String get otpVerificationFailedMessage =>
+      'Η επαλήθευση του OTP απέτυχε. Παρακαλώ προσπαθήστε ξανά!';
 
   @override
   String get emailSignInTitle => 'Σύνδεση με Email';
@@ -700,10 +728,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'Έχετε ήδη λογαριασμό; Σύνδεση';
 
   @override
-  String get emailPasswordNote => 'Σημείωση: αυτό το email και ο κωδικός αφορούν μόνο τον λογαριασμό σας. Το κλειδί κρυπτογράφησης σημειώσεων ρυθμίζεται ξεχωριστά, μετά από αυτό.';
+  String get emailPasswordNote =>
+      'Σημείωση: αυτό το email και ο κωδικός αφορούν μόνο τον λογαριασμό σας. Το κλειδί κρυπτογράφησης σημειώσεων ρυθμίζεται ξεχωριστά, μετά από αυτό.';
 
   @override
-  String get passwordTooShortMessage => 'Ο κωδικός πρέπει να έχει τουλάχιστον 8 χαρακτήρες';
+  String get passwordTooShortMessage =>
+      'Ο κωδικός πρέπει να έχει τουλάχιστον 8 χαρακτήρες';
 
   @override
   String get passwordsDoNotMatchMessage => 'Οι κωδικοί δεν ταιριάζουν';
@@ -712,10 +742,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get invalidCredentialsMessage => 'Λάθος email ή κωδικός';
 
   @override
-  String get accountExistsMessage => 'Αυτό το email είναι ήδη καταχωρημένο. Συνδεθείτε αντί αυτού.';
+  String get accountExistsMessage =>
+      'Αυτό το email είναι ήδη καταχωρημένο. Συνδεθείτε αντί αυτού.';
 
   @override
-  String get tooManyAttemptsMessage => 'Πάρα πολλές προσπάθειες - δοκιμάστε ξανά αργότερα';
+  String get tooManyAttemptsMessage =>
+      'Πάρα πολλές προσπάθειες - δοκιμάστε ξανά αργότερα';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,10 +770,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get couldNotFetchMessage => 'Δεν ήταν δυνατή η ανάκτηση';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'Η συνδρομή σας σχετίζεται με άλλο email. Παρακαλώ αποσυνδεθείτε και χρησιμοποιήστε εκείνο για να ενεργοποιήσετε τον αποθηκευτικό χώρο στο cloud.';
+  String get subscriptionEmailMismatchMessage =>
+      'Η συνδρομή σας σχετίζεται με άλλο email. Παρακαλώ αποσυνδεθείτε και χρησιμοποιήστε εκείνο για να ενεργοποιήσετε τον αποθηκευτικό χώρο στο cloud.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'Σφάλμα κατά τον έλεγχο των λεπτομερειών του προγράμματος';
+  String get errorCheckingPlanDetailsMessage =>
+      'Σφάλμα κατά τον έλεγχο των λεπτομερειών του προγράμματος';
 
   @override
   String get registerDeviceTitle => 'Εγγραφή συσκευής';
@@ -776,7 +810,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get invalidAccessKey => 'Μη έγκυρο κλειδί πρόσβασης';
 
   @override
-  String get fileDoesNotContain24Words => 'Το αρχείο δεν περιέχει ακριβώς 24 λέξεις.';
+  String get fileDoesNotContain24Words =>
+      'Το αρχείο δεν περιέχει ακριβώς 24 λέξεις.';
 
   @override
   String get errorReadingFile => 'Σφάλμα κατά την ανάγνωση του αρχείου';
@@ -1067,7 +1102,8 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1155,8 @@ class AppLocalizationsEl extends AppLocalizations {
   String get seedGroupFitness => 'Γυμναστική';
 
   @override
-  String get seedItemWelcome => 'Καλώς ήρθατε στο Note Safe!\nΙδέες, λίστες ή οτιδήποτε άλλο έχετε στο μυαλό σας, καταγράψτε τα εδώ.\n\nΠατήστε παρατεταμένα σε αυτή τη σημείωση για διαγραφή, επεξεργασία και άλλες επιλογές.';
+  String get seedItemWelcome =>
+      'Καλώς ήρθατε στο Note Safe!\nΙδέες, λίστες ή οτιδήποτε άλλο έχετε στο μυαλό σας, καταγράψτε τα εδώ.\n\nΠατήστε παρατεταμένα σε αυτή τη σημείωση για διαγραφή, επεξεργασία και άλλες επιλογές.';
 
   @override
   String get seedItemMorningWorkout => 'Πρωινή γυμναστική';

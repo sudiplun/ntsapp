@@ -12,7 +12,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get importantTitle => 'महत्वपूर्ण';
 
   @override
-  String get accessKeyNoticeDescription1 => 'अगले पेज पर आपको 24 शब्दों की एक श्रृंखला दिखाई देगी। यह आपकी अद्वितीय और निजी एन्क्रिप्शन कुंजी है और लॉगआउट, डिवाइस खो जाने या खराब होने की स्थिति में आपके नोट्स को रिकवर करने का यह एकमात्र तरीका है।';
+  String get accessKeyNoticeDescription1 =>
+      'अगले पेज पर आपको 24 शब्दों की एक श्रृंखला दिखाई देगी। यह आपकी अद्वितीय और निजी एन्क्रिप्शन कुंजी है और लॉगआउट, डिवाइस खो जाने या खराब होने की स्थिति में आपके नोट्स को रिकवर करने का यह एकमात्र तरीका है।';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -38,7 +39,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get accessKeyTitle => 'एक्सेस की';
 
   @override
-  String get accessKeyDescription => 'कृपया इस कुंजी को सुरक्षित स्थान पर सहेजें। अन्य डिवाइस पर नोट्स सिंक करने के लिए आपको इसकी आवश्यकता होगी।';
+  String get accessKeyDescription =>
+      'कृपया इस कुंजी को सुरक्षित स्थान पर सहेजें। अन्य डिवाइस पर नोट्स सिंक करने के लिए आपको इसकी आवश्यकता होगी।';
 
   @override
   String get copyLabel => 'कॉपी करें';
@@ -109,10 +111,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get enterYourRecoveryPhraseHere => 'अपना रिकवरी फ्रेज़ यहाँ दर्ज करें';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'कृपया अपना रिकवरी वाक्यांश दर्ज करें';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'कृपया अपना रिकवरी वाक्यांश दर्ज करें';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'रिकवरी वाक्यांश में ठीक 24 शब्द होने चाहिए';
+  String get recoveryPhraseMustContain24Words =>
+      'रिकवरी वाक्यांश में ठीक 24 शब्द होने चाहिए';
 
   @override
   String get submitLabel => 'सबमिट करें';
@@ -133,7 +137,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get enableSyncTitle => 'सिंक सक्षम करें';
 
   @override
-  String get passwordRequirementsDescription => 'कृपया अपना बनाया हुआ पासवर्ड दर्ज करें। यह कम से कम 10 अक्षरों का होना चाहिए और इसमें न्यूनतम 1 अंक, 1 छोटा अक्षर, 1 बड़ा अक्षर और 1 विशेष वर्ण होना अनिवार्य है।';
+  String get passwordRequirementsDescription =>
+      'कृपया अपना बनाया हुआ पासवर्ड दर्ज करें। यह कम से कम 10 अक्षरों का होना चाहिए और इसमें न्यूनतम 1 अंक, 1 छोटा अक्षर, 1 बड़ा अक्षर और 1 विशेष वर्ण होना अनिवार्य है।';
 
   @override
   String get enterKeyLabel => 'कुंजी दर्ज करें';
@@ -199,7 +204,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get microphoneNotAvailable => 'माइक्रोफ़ोन शायद उपलब्ध नहीं है।';
 
   @override
-  String get microphonePermissionRequired => 'ऑडियो रिकॉर्ड करने के लिए माइक्रोफ़ोन की अनुमति आवश्यक है।';
+  String get microphonePermissionRequired =>
+      'ऑडियो रिकॉर्ड करने के लिए माइक्रोफ़ोन की अनुमति आवश्यक है।';
 
   @override
   String get couldNotGetDuration => 'अवधि प्राप्त नहीं हो सकी';
@@ -283,7 +289,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get accessKeyInputTitle => 'सिंक सक्षम करें';
 
   @override
-  String get accessKeyInputDescription => 'कृपया अपना 24-शब्दों का रिकवरी वाक्यांश दर्ज करें या इसे रखने वाली .txt फ़ाइल अपलोड करें।';
+  String get accessKeyInputDescription =>
+      'कृपया अपना 24-शब्दों का रिकवरी वाक्यांश दर्ज करें या इसे रखने वाली .txt फ़ाइल अपलोड करें।';
 
   @override
   String get editMenuItemLabel => 'संपादित करें';
@@ -292,10 +299,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get filterMenuItemLabel => 'फ़िल्टर';
 
   @override
-  String get externalStoragePermissionDenied => 'बाह्य संग्रहण (external storage) तक पहुँचने की अनुमति अस्वीकार कर दी गई।';
+  String get externalStoragePermissionDenied =>
+      'बाह्य संग्रहण (external storage) तक पहुँचने की अनुमति अस्वीकार कर दी गई।';
 
   @override
-  String get pressLongToStartRecording => 'रिकॉर्डिंग शुरू करने के लिए लंबे समय तक दबाएं।';
+  String get pressLongToStartRecording =>
+      'रिकॉर्डिंग शुरू करने के लिए लंबे समय तक दबाएं।';
 
   @override
   String get didYouKnowTitle => 'क्या आप जानते हैं?';
@@ -345,13 +354,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String get deleteGroupMenuItemLabel => 'हटाएं';
 
   @override
-  String get dragHandleReorderTooltip => 'पुनः व्यवस्थित करने के लिए ड्रैग हैंडल का उपयोग करें';
+  String get dragHandleReorderTooltip =>
+      'पुनः व्यवस्थित करने के लिए ड्रैग हैंडल का उपयोग करें';
 
   @override
-  String get holdAndDragReorderTooltip => 'पुनः व्यवस्थित करने के लिए दबाए रखें और ड्रैग करें';
+  String get holdAndDragReorderTooltip =>
+      'पुनः व्यवस्थित करने के लिए दबाए रखें और ड्रैग करें';
 
   @override
-  String get emptyHomePageMessage => 'नमस्ते!\n\nयहाँ सब कुछ खाली लग रहा है।\n\n+ बटन पर टैप करें और कुछ नोट्स बनाएं। :)';
+  String get emptyHomePageMessage =>
+      'नमस्ते!\n\nयहाँ सब कुछ खाली लग रहा है।\n\n+ बटन पर टैप करें और कुछ नोट्स बनाएं। :)';
 
   @override
   String get reorderingTitle => 'पुनः व्यवस्थित किया जा रहा है';
@@ -393,7 +405,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get locationPermissionRequiredTitle => 'स्थान की अनुमति आवश्यक है';
 
   @override
-  String get enableLocationPermissionsContent => 'कृपया ऐप सेटिंग्स में स्थान की अनुमतियाँ सक्षम करें।';
+  String get enableLocationPermissionsContent =>
+      'कृपया ऐप सेटिंग्स में स्थान की अनुमतियाँ सक्षम करें।';
 
   @override
   String get cancelButtonLabel => 'रद्द करें';
@@ -474,7 +487,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get confirmRemoveTitle => 'हटाने की पुष्टि करें';
 
   @override
-  String get confirmRemoveDeviceContent => 'क्या आप सुनिश्चित हैं? यह डिवाइस पर मौजूद सभी डेटा को हटा देगा।';
+  String get confirmRemoveDeviceContent =>
+      'क्या आप सुनिश्चित हैं? यह डिवाइस पर मौजूद सभी डेटा को हटा देगा।';
 
   @override
   String get okButtonLabel => 'ठीक है';
@@ -557,7 +571,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get encryptionKeyTitle => 'एन्क्रिप्शन कुंजी';
 
   @override
-  String get createKeyDescription => 'कृपया एक लंबी और अनुमान लगाने में कठिन कुंजी (पासवर्ड) दर्ज करें। इसे कहीं सुरक्षित रखना याद रखें। यदि यह खो जाती है या भूल जाते हैं, तो इसे पुनर्प्राप्त नहीं किया जा सकता है।';
+  String get createKeyDescription =>
+      'कृपया एक लंबी और अनुमान लगाने में कठिन कुंजी (पासवर्ड) दर्ज करें। इसे कहीं सुरक्षित रखना याद रखें। यदि यह खो जाती है या भूल जाते हैं, तो इसे पुनर्प्राप्त नहीं किया जा सकता है।';
 
   @override
   String get seeExamplesTooltip => 'उदाहरण देखें';
@@ -632,13 +647,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String get helloTitle => 'नमस्ते';
 
   @override
-  String get selectKeyMasterKeyDescription => 'अपने डेटा को एन्क्रिप्ट करने के लिए, हमें एक मास्टर एन्क्रिप्शन कुंजी की आवश्यकता होगी।';
+  String get selectKeyMasterKeyDescription =>
+      'अपने डेटा को एन्क्रिप्ट करने के लिए, हमें एक मास्टर एन्क्रिप्शन कुंजी की आवश्यकता होगी।';
 
   @override
-  String get selectKeyTwoOptionsDescription => '2 विकल्प हैं - या तो आप स्वयं एक कुंजी बनाएं (पासवर्ड के समान) या हम आपके लिए इसे बनाएं।';
+  String get selectKeyTwoOptionsDescription =>
+      '2 विकल्प हैं - या तो आप स्वयं एक कुंजी बनाएं (पासवर्ड के समान) या हम आपके लिए इसे बनाएं।';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'मैं समझता हूँ कि यदि मैं एन्क्रिप्शन कुंजी खो देता हूँ/भूल जाता हूँ, तो मैं डेटा खो सकता हूँ।';
+  String get understandLoseKeyAcknowledgement =>
+      'मैं समझता हूँ कि यदि मैं एन्क्रिप्शन कुंजी खो देता हूँ/भूल जाता हूँ, तो मैं डेटा खो सकता हूँ।';
 
   @override
   String get createKeyForMeButtonLabel => 'मेरे लिए कुंजी बनाएं';
@@ -658,7 +676,8 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'हम यह सुनिश्चित करने के लिए एंड-टू-एंड एन्क्रिप्शन का उपयोग करते हैं कि आपके सभी नोट्स सुरक्षित हैं और कोई और उन्हें नहीं देख सकता है, यहाँ तक कि हम भी नहीं।';
+  String get e2eEncryptionDescription =>
+      'हम यह सुनिश्चित करने के लिए एंड-टू-एंड एन्क्रिप्शन का उपयोग करते हैं कि आपके सभी नोट्स सुरक्षित हैं और कोई और उन्हें नहीं देख सकता है, यहाँ तक कि हम भी नहीं।';
 
   @override
   String get timeToStartEncryptionLabel => 'एन्क्रिप्शन शुरू करने का समय!';
@@ -667,10 +686,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get nextButtonLabel => 'अगला';
 
   @override
-  String get sendingOtpFailedMessage => 'OTP भेजने में विफल। कृपया पुनः प्रयास करें!';
+  String get sendingOtpFailedMessage =>
+      'OTP भेजने में विफल। कृपया पुनः प्रयास करें!';
 
   @override
-  String get otpVerificationFailedMessage => 'OTP सत्यापन विफल। कृपया पुनः प्रयास करें!';
+  String get otpVerificationFailedMessage =>
+      'OTP सत्यापन विफल। कृपया पुनः प्रयास करें!';
 
   @override
   String get emailSignInTitle => 'ईमेल साइन इन';
@@ -700,10 +721,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'पहले से खाता है? साइन इन करें';
 
   @override
-  String get emailPasswordNote => 'नोट: यह ईमेल और पासवर्ड केवल आपके खाते के लिए हैं। नोट एन्क्रिप्शन कुंजी इसके बाद अलग से सेट की जाती है।';
+  String get emailPasswordNote =>
+      'नोट: यह ईमेल और पासवर्ड केवल आपके खाते के लिए हैं। नोट एन्क्रिप्शन कुंजी इसके बाद अलग से सेट की जाती है।';
 
   @override
-  String get passwordTooShortMessage => 'पासवर्ड कम से कम 8 अक्षरों का होना चाहिए';
+  String get passwordTooShortMessage =>
+      'पासवर्ड कम से कम 8 अक्षरों का होना चाहिए';
 
   @override
   String get passwordsDoNotMatchMessage => 'पासवर्ड मेल नहीं खाते';
@@ -712,10 +735,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get invalidCredentialsMessage => 'ईमेल या पासवर्ड गलत है';
 
   @override
-  String get accountExistsMessage => 'यह ईमेल पहले से पंजीकृत है। इसके बजाय साइन इन करें।';
+  String get accountExistsMessage =>
+      'यह ईमेल पहले से पंजीकृत है। इसके बजाय साइन इन करें।';
 
   @override
-  String get tooManyAttemptsMessage => 'बहुत अधिक प्रयास - बाद में फिर से प्रयास करें';
+  String get tooManyAttemptsMessage =>
+      'बहुत अधिक प्रयास - बाद में फिर से प्रयास करें';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,10 +763,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get couldNotFetchMessage => 'प्राप्त नहीं किया जा सका';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'आपकी सदस्यता किसी अन्य ईमेल से जुड़ी है। कृपया साइन आउट करें और क्लाउड स्टोरेज सक्षम करने के लिए उसका उपयोग करें।';
+  String get subscriptionEmailMismatchMessage =>
+      'आपकी सदस्यता किसी अन्य ईमेल से जुड़ी है। कृपया साइन आउट करें और क्लाउड स्टोरेज सक्षम करने के लिए उसका उपयोग करें।';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'प्लान विवरण की जांच करने में त्रुटि';
+  String get errorCheckingPlanDetailsMessage =>
+      'प्लान विवरण की जांच करने में त्रुटि';
 
   @override
   String get registerDeviceTitle => 'डिवाइस पंजीकृत करें';
@@ -1067,7 +1094,8 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1147,8 @@ class AppLocalizationsHi extends AppLocalizations {
   String get seedGroupFitness => 'फिटनेस';
 
   @override
-  String get seedItemWelcome => 'Note Safe में आपका स्वागत है!\nअपने विचार, लिस्ट या जो भी आपके मन में हो, यहाँ लिखें।\n\nइस नोट को डिलीट, एडिट या अन्य विकल्पों के लिए लॉन्ग प्रेस करें।';
+  String get seedItemWelcome =>
+      'Note Safe में आपका स्वागत है!\nअपने विचार, लिस्ट या जो भी आपके मन में हो, यहाँ लिखें।\n\nइस नोट को डिलीट, एडिट या अन्य विकल्पों के लिए लॉन्ग प्रेस करें।';
 
   @override
   String get seedItemMorningWorkout => 'सुबह की कसरत';

@@ -117,7 +117,8 @@ class _PageMediaMigrationState extends State<PageMediaMigration> {
                 children: [
                   const CircularProgressIndicator(),
                   const SizedBox(width: 20),
-                  Text(loc.processingMessage, style: const TextStyle(fontSize: 18)),
+                  Text(loc.processingMessage,
+                      style: const TextStyle(fontSize: 18)),
                 ],
               ),
               const SizedBox(height: 40),

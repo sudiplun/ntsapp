@@ -895,17 +895,19 @@ class _PageItemsState extends State<PageItems> {
           List<String> contactParts = [contactData["name"] as String];
           List<String> phones = (contactData["phones"] as List).cast<String>();
           if (phones.isNotEmpty) {
-            contactParts.add([loc.contactShareLabel, phones.join("\n")].join("\n"));
+            contactParts
+                .add([loc.contactShareLabel, phones.join("\n")].join("\n"));
           }
           List<String> emails = (contactData["emails"] as List).cast<String>();
           if (emails.isNotEmpty) {
-            contactParts.add([loc.emailsShareLabel, emails.join("\n")].join("\n"));
+            contactParts
+                .add([loc.emailsShareLabel, emails.join("\n")].join("\n"));
           }
           List<String> addresses =
               (contactData["addresses"] as List).cast<String>();
           if (addresses.isNotEmpty) {
-            contactParts
-                .add([loc.addressesShareLabel, addresses.join("\n")].join("\n"));
+            contactParts.add(
+                [loc.addressesShareLabel, addresses.join("\n")].join("\n"));
           }
           texts.add(contactParts.join("\n"));
           break;

@@ -12,7 +12,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get importantTitle => '重要事項';
 
   @override
-  String get accessKeyNoticeDescription1 => '次のページで24個の単語が表示されます。これはあなた固有の非公開暗号化キーです。ログアウト、端末の紛失、故障が発生した場合、メモを復元できる唯一の方法です。';
+  String get accessKeyNoticeDescription1 =>
+      '次のページで24個の単語が表示されます。これはあなた固有の非公開暗号化キーです。ログアウト、端末の紛失、故障が発生した場合、メモを復元できる唯一の方法です。';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -38,7 +39,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get accessKeyTitle => 'アクセスキー';
 
   @override
-  String get accessKeyDescription => 'このキーを安全な場所に保存してください。別の端末でメモを同期する際に必要になります。';
+  String get accessKeyDescription =>
+      'このキーを安全な場所に保存してください。別の端末でメモを同期する際に必要になります。';
 
   @override
   String get copyLabel => 'コピー';
@@ -133,7 +135,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get enableSyncTitle => '同期を有効にする';
 
   @override
-  String get passwordRequirementsDescription => '作成したキー（パスワード）を入力してください。10文字以上で、数字、小文字、大文字、特殊文字をそれぞれ1つ以上含む必要があります。';
+  String get passwordRequirementsDescription =>
+      '作成したキー（パスワード）を入力してください。10文字以上で、数字、小文字、大文字、特殊文字をそれぞれ1つ以上含む必要があります。';
 
   @override
   String get enterKeyLabel => 'キーを入力';
@@ -283,7 +286,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get accessKeyInputTitle => '同期を有効にする';
 
   @override
-  String get accessKeyInputDescription => '24単語のリカバリーフレーズを入力するか、それを含む.txtファイルを読み込んでください。';
+  String get accessKeyInputDescription =>
+      '24単語のリカバリーフレーズを入力するか、それを含む.txtファイルを読み込んでください。';
 
   @override
   String get editMenuItemLabel => '編集';
@@ -351,7 +355,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get holdAndDragReorderTooltip => '長押しでドラッグして並び替え';
 
   @override
-  String get emptyHomePageMessage => 'こんにちは！\n\nここにはまだ何もありません。\n\n「+」ボタンをタップして、メモを作成してみましょう。:)';
+  String get emptyHomePageMessage =>
+      'こんにちは！\n\nここにはまだ何もありません。\n\n「+」ボタンをタップして、メモを作成してみましょう。:)';
 
   @override
   String get reorderingTitle => '並び替え中';
@@ -557,7 +562,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get encryptionKeyTitle => '暗号化キー';
 
   @override
-  String get createKeyDescription => '長く、推測されにくいキー（パスワード）を入力してください。安全な場所に保存することを忘れないでください。紛失・忘れた場合、復元することはできません。';
+  String get createKeyDescription =>
+      '長く、推測されにくいキー（パスワード）を入力してください。安全な場所に保存することを忘れないでください。紛失・忘れた場合、復元することはできません。';
 
   @override
   String get seeExamplesTooltip => '使用例を見る';
@@ -635,10 +641,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get selectKeyMasterKeyDescription => 'データを暗号化するために、マスター暗号化キーが必要です。';
 
   @override
-  String get selectKeyTwoOptionsDescription => '2つのオプションがあります。自分でキーを作成するか、アプリが自動で作成します。';
+  String get selectKeyTwoOptionsDescription =>
+      '2つのオプションがあります。自分でキーを作成するか、アプリが自動で作成します。';
 
   @override
-  String get understandLoseKeyAcknowledgement => '暗号化キーを紛失・忘れた場合、データが失われる可能性があることを理解しました。';
+  String get understandLoseKeyAcknowledgement =>
+      '暗号化キーを紛失・忘れた場合、データが失われる可能性があることを理解しました。';
 
   @override
   String get createKeyForMeButtonLabel => 'アプリでキーを作成';
@@ -658,7 +666,8 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'エンドツーエンド暗号化により、すべてのメモは安全に保護され、当社を含め第三者からは閲覧できません。';
+  String get e2eEncryptionDescription =>
+      'エンドツーエンド暗号化により、すべてのメモは安全に保護され、当社を含め第三者からは閲覧できません。';
 
   @override
   String get timeToStartEncryptionLabel => '暗号化を開始しましょう！';
@@ -700,7 +709,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'アカウントをお持ちですか？サインイン';
 
   @override
-  String get emailPasswordNote => '注意：このメールアドレスとパスワードはアカウント専用です。ノート暗号化キーは、この後別途設定します。';
+  String get emailPasswordNote =>
+      '注意：このメールアドレスとパスワードはアカウント専用です。ノート暗号化キーは、この後別途設定します。';
 
   @override
   String get passwordTooShortMessage => 'パスワードは8文字以上である必要があります';
@@ -738,7 +748,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get couldNotFetchMessage => '取得できませんでした';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'サブスクリプションが別のメールアドレスと関連付けられています。サインアウトし、そのアカウントを使用してクラウドストレージを有効にしてください。';
+  String get subscriptionEmailMismatchMessage =>
+      'サブスクリプションが別のメールアドレスと関連付けられています。サインアウトし、そのアカウントを使用してクラウドストレージを有効にしてください。';
 
   @override
   String get errorCheckingPlanDetailsMessage => 'プラン詳細の確認中にエラーが発生しました';
@@ -1067,7 +1078,8 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1131,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get seedGroupFitness => 'フィットネス';
 
   @override
-  String get seedItemWelcome => 'Note Safeへようこそ！\nアイデアやリストなど、気になることを何でもここに書き留めておきましょう。\n\nこのメモを長押しすると、削除や編集などのオプションが表示されます。';
+  String get seedItemWelcome =>
+      'Note Safeへようこそ！\nアイデアやリストなど、気になることを何でもここに書き留めておきましょう。\n\nこのメモを長押しすると、削除や編集などのオプションが表示されます。';
 
   @override
   String get seedItemMorningWorkout => '朝のワークアウト';

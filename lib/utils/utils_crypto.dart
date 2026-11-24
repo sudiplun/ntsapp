@@ -164,9 +164,8 @@ class CryptoUtils {
         logger.error("downloadDecryptFile|not uploaded yet:$fileName");
         return false;
       }
-      Uint8List encryptedBytes = await supabase.storage
-          .from("media")
-          .download("$userId/$fileName");
+      Uint8List encryptedBytes =
+          await supabase.storage.from("media").download("$userId/$fileName");
       Directory tempDir = await getTemporaryDirectory();
       String fileInPath = "${tempDir.path}/$fileName";
       File fileIn = File(fileInPath);
@@ -183,8 +182,8 @@ class CryptoUtils {
       Uint8List? fileEncryptionKeyBytes = getFileEncryptionKeyBytes(
           rows["key_cipher"], rows["key_nonce"], masterKeyBase64);
       if (fileEncryptionKeyBytes != null) {
-        ExecutionResult decryptionResult = await decryptFile(
-            fileInPath, fileOutPath, fileEncryptionKeyBytes);
+        ExecutionResult decryptionResult =
+            await decryptFile(fileInPath, fileOutPath, fileEncryptionKeyBytes);
         if (decryptionResult.isSuccess) {
           downloadDecrypted = true;
           logger.info("Fetched & decrypted");

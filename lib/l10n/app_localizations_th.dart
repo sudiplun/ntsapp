@@ -12,7 +12,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get importantTitle => 'สำคัญ';
 
   @override
-  String get accessKeyNoticeDescription1 => 'ในหน้าถัดไป คุณจะเห็นคำ 24 คำ นี่คือคีย์การเข้ารหัสลับเฉพาะตัวและเป็นส่วนตัวของคุณ ซึ่งเป็นวิธีเดียวในการกู้คืนบันทึกของคุณในกรณีที่คุณออกจากระบบ อุปกรณ์หาย หรืออุปกรณ์ทำงานผิดปกติ';
+  String get accessKeyNoticeDescription1 =>
+      'ในหน้าถัดไป คุณจะเห็นคำ 24 คำ นี่คือคีย์การเข้ารหัสลับเฉพาะตัวและเป็นส่วนตัวของคุณ ซึ่งเป็นวิธีเดียวในการกู้คืนบันทึกของคุณในกรณีที่คุณออกจากระบบ อุปกรณ์หาย หรืออุปกรณ์ทำงานผิดปกติ';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -38,7 +39,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get accessKeyTitle => 'คีย์เข้าถึง';
 
   @override
-  String get accessKeyDescription => 'โปรดบันทึกคีย์นี้ไว้ในที่ปลอดภัย คุณจะต้องใช้เพื่อซิงค์บันทึกบนอุปกรณ์อื่น';
+  String get accessKeyDescription =>
+      'โปรดบันทึกคีย์นี้ไว้ในที่ปลอดภัย คุณจะต้องใช้เพื่อซิงค์บันทึกบนอุปกรณ์อื่น';
 
   @override
   String get copyLabel => 'คัดลอก';
@@ -133,7 +135,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get enableSyncTitle => 'เปิดใช้งานการซิงค์';
 
   @override
-  String get passwordRequirementsDescription => 'โปรดป้อนคีย์ (รหัสผ่าน) ที่คุณสร้างไว้ ต้องมีความยาวอย่างน้อย 10 ตัวอักษร ประกอบด้วยตัวเลข 1 ตัว ตัวพิมพ์เล็ก 1 ตัว ตัวพิมพ์ใหญ่ 1 ตัว และอักขระพิเศษ 1 ตัว';
+  String get passwordRequirementsDescription =>
+      'โปรดป้อนคีย์ (รหัสผ่าน) ที่คุณสร้างไว้ ต้องมีความยาวอย่างน้อย 10 ตัวอักษร ประกอบด้วยตัวเลข 1 ตัว ตัวพิมพ์เล็ก 1 ตัว ตัวพิมพ์ใหญ่ 1 ตัว และอักขระพิเศษ 1 ตัว';
 
   @override
   String get enterKeyLabel => 'ป้อนคีย์';
@@ -199,7 +202,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get microphoneNotAvailable => 'ไมโครโฟนอาจไม่พร้อมใช้งาน';
 
   @override
-  String get microphonePermissionRequired => 'จำเป็นต้องได้รับอนุญาตให้ใช้ไมโครโฟนเพื่อบันทึกเสียง';
+  String get microphonePermissionRequired =>
+      'จำเป็นต้องได้รับอนุญาตให้ใช้ไมโครโฟนเพื่อบันทึกเสียง';
 
   @override
   String get couldNotGetDuration => 'ไม่สามารถระบุระยะเวลาได้';
@@ -283,7 +287,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get accessKeyInputTitle => 'เปิดใช้งานการซิงค์';
 
   @override
-  String get accessKeyInputDescription => 'โปรดป้อนวลีกู้คืน 24 คำของคุณ หรือโหลดไฟล์ .txt ที่มีวลีดังกล่าว';
+  String get accessKeyInputDescription =>
+      'โปรดป้อนวลีกู้คืน 24 คำของคุณ หรือโหลดไฟล์ .txt ที่มีวลีดังกล่าว';
 
   @override
   String get editMenuItemLabel => 'แก้ไข';
@@ -292,7 +297,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get filterMenuItemLabel => 'ตัวกรอง';
 
   @override
-  String get externalStoragePermissionDenied => 'ถูกปฏิเสธสิทธิ์ในการเข้าถึงที่จัดเก็บข้อมูลภายนอก';
+  String get externalStoragePermissionDenied =>
+      'ถูกปฏิเสธสิทธิ์ในการเข้าถึงที่จัดเก็บข้อมูลภายนอก';
 
   @override
   String get pressLongToStartRecording => 'กดค้างเพื่อเริ่มบันทึก';
@@ -351,7 +357,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get holdAndDragReorderTooltip => 'กดค้างและลากเพื่อจัดเรียงใหม่';
 
   @override
-  String get emptyHomePageMessage => 'สวัสดี!\n\nที่นี่ดูว่างเปล่าจัง\n\nแตะที่ปุ่ม + เพื่อสร้างบันทึกส่วนตัวได้เลย :)';
+  String get emptyHomePageMessage =>
+      'สวัสดี!\n\nที่นี่ดูว่างเปล่าจัง\n\nแตะที่ปุ่ม + เพื่อสร้างบันทึกส่วนตัวได้เลย :)';
 
   @override
   String get reorderingTitle => 'กำลังจัดเรียงใหม่';
@@ -390,10 +397,12 @@ class AppLocalizationsTh extends AppLocalizations {
   String get titleInputLabel => 'ชื่อเรื่อง';
 
   @override
-  String get locationPermissionRequiredTitle => 'ต้องได้รับอนุญาตตำแหน่งที่ตั้ง';
+  String get locationPermissionRequiredTitle =>
+      'ต้องได้รับอนุญาตตำแหน่งที่ตั้ง';
 
   @override
-  String get enableLocationPermissionsContent => 'โปรดเปิดใช้งานสิทธิ์เข้าถึงตำแหน่งที่ตั้งในการตั้งค่าแอป';
+  String get enableLocationPermissionsContent =>
+      'โปรดเปิดใช้งานสิทธิ์เข้าถึงตำแหน่งที่ตั้งในการตั้งค่าแอป';
 
   @override
   String get cancelButtonLabel => 'ยกเลิก';
@@ -474,7 +483,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get confirmRemoveTitle => 'ยืนยันการนำออก';
 
   @override
-  String get confirmRemoveDeviceContent => 'คุณแน่ใจหรือไม่? การดำเนินการนี้จะลบข้อมูลทั้งหมดบนอุปกรณ์ดังกล่าว';
+  String get confirmRemoveDeviceContent =>
+      'คุณแน่ใจหรือไม่? การดำเนินการนี้จะลบข้อมูลทั้งหมดบนอุปกรณ์ดังกล่าว';
 
   @override
   String get okButtonLabel => 'ตกลง';
@@ -557,7 +567,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get encryptionKeyTitle => 'คีย์การเข้ารหัส';
 
   @override
-  String get createKeyDescription => 'โปรดป้อนคีย์ (รหัสผ่าน) ที่ยาวและเดาได้ยาก อย่าลืมบันทึกไว้ในที่ปลอดภัย หากทำหายหรือลืม จะไม่สามารถกู้คืนได้';
+  String get createKeyDescription =>
+      'โปรดป้อนคีย์ (รหัสผ่าน) ที่ยาวและเดาได้ยาก อย่าลืมบันทึกไว้ในที่ปลอดภัย หากทำหายหรือลืม จะไม่สามารถกู้คืนได้';
 
   @override
   String get seeExamplesTooltip => 'ดูตัวอย่าง';
@@ -608,7 +619,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get acrossYourDevicesLabel => 'ข้ามอุปกรณ์ของคุณ';
 
   @override
-  String get featureEndToEndEncryption => 'การเข้ารหัสลับแบบต้นทางถึงปลายทาง (End-to-end Encryption)';
+  String get featureEndToEndEncryption =>
+      'การเข้ารหัสลับแบบต้นทางถึงปลายทาง (End-to-end Encryption)';
 
   @override
   String get featureSyncUpTo3Devices => 'ซิงค์สูงสุด 3 อุปกรณ์';
@@ -632,13 +644,16 @@ class AppLocalizationsTh extends AppLocalizations {
   String get helloTitle => 'สวัสดี';
 
   @override
-  String get selectKeyMasterKeyDescription => 'ในการเข้ารหัสลับข้อมูลของคุณ เราจำเป็นต้องใช้คีย์เข้ารหัสหลัก';
+  String get selectKeyMasterKeyDescription =>
+      'ในการเข้ารหัสลับข้อมูลของคุณ เราจำเป็นต้องใช้คีย์เข้ารหัสหลัก';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'มี 2 ตัวเลือก คือ คุณสร้างคีย์ด้วยตัวเอง (คล้ายรหัสผ่าน) หรือให้เราสร้างให้คุณ';
+  String get selectKeyTwoOptionsDescription =>
+      'มี 2 ตัวเลือก คือ คุณสร้างคีย์ด้วยตัวเอง (คล้ายรหัสผ่าน) หรือให้เราสร้างให้คุณ';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'ฉันเข้าใจว่าหากฉันทำคีย์เข้ารหัสหายหรือลืมรหัสไป ฉันอาจสูญเสียข้อมูลทั้งหมด';
+  String get understandLoseKeyAcknowledgement =>
+      'ฉันเข้าใจว่าหากฉันทำคีย์เข้ารหัสหายหรือลืมรหัสไป ฉันอาจสูญเสียข้อมูลทั้งหมด';
 
   @override
   String get createKeyForMeButtonLabel => 'ให้ฉันสร้างคีย์ให้';
@@ -658,7 +673,8 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'เราใช้การเข้ารหัสลับแบบต้นทางถึงปลายทางเพื่อให้แน่ใจว่าบันทึกทั้งหมดของคุณปลอดภัย และไม่มีใครคนอื่นเห็นได้ แม้แต่เราเอง';
+  String get e2eEncryptionDescription =>
+      'เราใช้การเข้ารหัสลับแบบต้นทางถึงปลายทางเพื่อให้แน่ใจว่าบันทึกทั้งหมดของคุณปลอดภัย และไม่มีใครคนอื่นเห็นได้ แม้แต่เราเอง';
 
   @override
   String get timeToStartEncryptionLabel => 'ได้เวลาเริ่มการเข้ารหัสแล้ว!';
@@ -667,10 +683,12 @@ class AppLocalizationsTh extends AppLocalizations {
   String get nextButtonLabel => 'ถัดไป';
 
   @override
-  String get sendingOtpFailedMessage => 'การส่ง OTP ล้มเหลว โปรดลองใหม่อีกครั้ง!';
+  String get sendingOtpFailedMessage =>
+      'การส่ง OTP ล้มเหลว โปรดลองใหม่อีกครั้ง!';
 
   @override
-  String get otpVerificationFailedMessage => 'การยืนยัน OTP ล้มเหลว โปรดลองใหม่อีกครั้ง!';
+  String get otpVerificationFailedMessage =>
+      'การยืนยัน OTP ล้มเหลว โปรดลองใหม่อีกครั้ง!';
 
   @override
   String get emailSignInTitle => 'ลงชื่อเข้าใช้ด้วยอีเมล';
@@ -700,7 +718,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'มีบัญชีอยู่แล้ว? เข้าสู่ระบบ';
 
   @override
-  String get emailPasswordNote => 'หมายเหตุ: อีเมลและรหัสผ่านนี้ใช้สำหรับบัญชีของคุณเท่านั้น คีย์เข้ารหัสโน้ตจะตั้งค่าแยกต่างหากหลังจากนี้';
+  String get emailPasswordNote =>
+      'หมายเหตุ: อีเมลและรหัสผ่านนี้ใช้สำหรับบัญชีของคุณเท่านั้น คีย์เข้ารหัสโน้ตจะตั้งค่าแยกต่างหากหลังจากนี้';
 
   @override
   String get passwordTooShortMessage => 'รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร';
@@ -738,10 +757,12 @@ class AppLocalizationsTh extends AppLocalizations {
   String get couldNotFetchMessage => 'ไม่สามารถดึงข้อมูลได้';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'การสมัครสมาชิกของคุณเชื่อมโยงกับอีเมลอื่น โปรดลงชื่อออกและใช้อีเมลนั้นเพื่อเปิดใช้งานระบบคลาวด์';
+  String get subscriptionEmailMismatchMessage =>
+      'การสมัครสมาชิกของคุณเชื่อมโยงกับอีเมลอื่น โปรดลงชื่อออกและใช้อีเมลนั้นเพื่อเปิดใช้งานระบบคลาวด์';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'เกิดข้อผิดพลาดขณะตรวจสอบรายละเอียดแผน';
+  String get errorCheckingPlanDetailsMessage =>
+      'เกิดข้อผิดพลาดขณะตรวจสอบรายละเอียดแผน';
 
   @override
   String get registerDeviceTitle => 'ลงทะเบียนอุปกรณ์';
@@ -756,7 +777,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get signingOutTitle => 'กำลังลงชื่อออก';
 
   @override
-  String get pleaseCheckInternetMessage => 'โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ต';
+  String get pleaseCheckInternetMessage =>
+      'โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ต';
 
   @override
   String get somethingWentWrongMessage => 'มีบางอย่างผิดพลาด';
@@ -1067,7 +1089,8 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1142,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get seedGroupFitness => 'ออกกำลังกาย';
 
   @override
-  String get seedItemWelcome => 'ยินดีต้อนรับสู่ Note Safe!\nไม่ว่าจะเป็นไอเดีย รายการสิ่งที่ต้องทำ หรืออะไรก็ตามที่อยู่ในใจ เก็บไว้ที่นี่ได้เลย\n\nกดค้างที่บันทึกนี้เพื่อลบ แก้ไข หรือดูตัวเลือกอื่นๆ';
+  String get seedItemWelcome =>
+      'ยินดีต้อนรับสู่ Note Safe!\nไม่ว่าจะเป็นไอเดีย รายการสิ่งที่ต้องทำ หรืออะไรก็ตามที่อยู่ในใจ เก็บไว้ที่นี่ได้เลย\n\nกดค้างที่บันทึกนี้เพื่อลบ แก้ไข หรือดูตัวเลือกอื่นๆ';
 
   @override
   String get seedItemMorningWorkout => 'ออกกำลังกายตอนเช้า';

@@ -12,7 +12,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get importantTitle => 'Önemli';
 
   @override
-  String get accessKeyNoticeDescription1 => 'Bir sonraki sayfada 24 kelimeden oluşan bir dizi göreceksiniz. Bu sizin benzersiz ve özel şifreleme anahtarınızdır ve oturum kapatma, cihaz kaybı veya arıza durumunda notlarınızı kurtarmanın TEK yoludur.';
+  String get accessKeyNoticeDescription1 =>
+      'Bir sonraki sayfada 24 kelimeden oluşan bir dizi göreceksiniz. Bu sizin benzersiz ve özel şifreleme anahtarınızdır ve oturum kapatma, cihaz kaybı veya arıza durumunda notlarınızı kurtarmanın TEK yoludur.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -23,7 +24,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get iUnderstandShowMeTheKey => 'Anlıyorum.\nAnahtarı göster.';
 
   @override
-  String get selectGroupToViewNotes => 'Notları görüntülemek için bir grup seçin';
+  String get selectGroupToViewNotes =>
+      'Notları görüntülemek için bir grup seçin';
 
   @override
   String get accessKeyShareText => 'Erişim anahtarınız burada.';
@@ -38,7 +40,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get accessKeyTitle => 'Erişim Anahtarı';
 
   @override
-  String get accessKeyDescription => 'Lütfen bu anahtarı güvenli bir yerde saklayın. Notları başka bir cihazda senkronize etmek için buna ihtiyacınız olacak.';
+  String get accessKeyDescription =>
+      'Lütfen bu anahtarı güvenli bir yerde saklayın. Notları başka bir cihazda senkronize etmek için buna ihtiyacınız olacak.';
 
   @override
   String get copyLabel => 'Kopyala';
@@ -112,7 +115,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get pleaseEnterYourRecoveryPhrase => 'Lütfen kurtarma ifadenizi girin';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'Kurtarma ifadesi tam olarak 24 kelime içermelidir';
+  String get recoveryPhraseMustContain24Words =>
+      'Kurtarma ifadesi tam olarak 24 kelime içermelidir';
 
   @override
   String get submitLabel => 'Gönder';
@@ -133,7 +137,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get enableSyncTitle => 'Senkronizasyonu Etkinleştir';
 
   @override
-  String get passwordRequirementsDescription => 'Lütfen oluşturduğunuz anahtarı (parolayı) girin. En az 10 karakter uzunluğunda; en az 1 rakam, 1 küçük harf, 1 büyük harf ve 1 özel karakter içermelidir.';
+  String get passwordRequirementsDescription =>
+      'Lütfen oluşturduğunuz anahtarı (parolayı) girin. En az 10 karakter uzunluğunda; en az 1 rakam, 1 küçük harf, 1 büyük harf ve 1 özel karakter içermelidir.';
 
   @override
   String get enterKeyLabel => 'Anahtarı girin';
@@ -199,7 +204,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get microphoneNotAvailable => 'Mikrofon kullanılamıyor olabilir.';
 
   @override
-  String get microphonePermissionRequired => 'Ses kaydı yapmak için mikrofon izni gereklidir.';
+  String get microphonePermissionRequired =>
+      'Ses kaydı yapmak için mikrofon izni gereklidir.';
 
   @override
   String get couldNotGetDuration => 'Süre alınamadı';
@@ -283,7 +289,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get accessKeyInputTitle => 'Senkronizasyonu Etkinleştir';
 
   @override
-  String get accessKeyInputDescription => 'Lütfen 24 kelimelik kurtarma ifadenizi girin veya onu içeren bir .txt dosyası yükleyin.';
+  String get accessKeyInputDescription =>
+      'Lütfen 24 kelimelik kurtarma ifadenizi girin veya onu içeren bir .txt dosyası yükleyin.';
 
   @override
   String get editMenuItemLabel => 'Düzenle';
@@ -292,7 +299,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get filterMenuItemLabel => 'Filtreler';
 
   @override
-  String get externalStoragePermissionDenied => 'Harici depolama erişim izni reddedildi.';
+  String get externalStoragePermissionDenied =>
+      'Harici depolama erişim izni reddedildi.';
 
   @override
   String get pressLongToStartRecording => 'Kaydı başlatmak için uzun basın.';
@@ -348,10 +356,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get dragHandleReorderTooltip => 'Yeniden sıralamak için sürükleyin';
 
   @override
-  String get holdAndDragReorderTooltip => 'Yeniden sıralamak için basılı tutun ve sürükleyin';
+  String get holdAndDragReorderTooltip =>
+      'Yeniden sıralamak için basılı tutun ve sürükleyin';
 
   @override
-  String get emptyHomePageMessage => 'Merhaba!\n\nBurası biraz boş görünüyor.\n\n+ düğmesine dokunun ve kendiniz için notlar oluşturun. :)';
+  String get emptyHomePageMessage =>
+      'Merhaba!\n\nBurası biraz boş görünüyor.\n\n+ düğmesine dokunun ve kendiniz için notlar oluşturun. :)';
 
   @override
   String get reorderingTitle => 'Yeniden Sıralanıyor';
@@ -393,7 +403,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get locationPermissionRequiredTitle => 'Konum İzni Gerekiyor';
 
   @override
-  String get enableLocationPermissionsContent => 'Lütfen uygulama ayarlarından konum izinlerini etkinleştirin.';
+  String get enableLocationPermissionsContent =>
+      'Lütfen uygulama ayarlarından konum izinlerini etkinleştirin.';
 
   @override
   String get cancelButtonLabel => 'İptal';
@@ -426,7 +437,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get dbViewerTitle => 'Veritabanı Görüntüleyici';
 
   @override
-  String get selectTableToViewData => 'Verilerini görüntülemek için bir tablo seçin';
+  String get selectTableToViewData =>
+      'Verilerini görüntülemek için bir tablo seçin';
 
   @override
   String get selectTableDropdownHint => 'Bir tablo seçin';
@@ -474,7 +486,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get confirmRemoveTitle => 'Kaldırmayı Onayla';
 
   @override
-  String get confirmRemoveDeviceContent => 'Emin misiniz? Bu, cihazdaki tüm verileri silecektir.';
+  String get confirmRemoveDeviceContent =>
+      'Emin misiniz? Bu, cihazdaki tüm verileri silecektir.';
 
   @override
   String get okButtonLabel => 'TAMAM';
@@ -557,7 +570,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get encryptionKeyTitle => 'Şifreleme anahtarı';
 
   @override
-  String get createKeyDescription => 'Lütfen uzun ve tahmin edilmesi zor bir anahtar (parola) girin. Güvenli bir yerde saklamayı unutmayın. Kaybedilirse veya unutulursa kurtarılamaz.';
+  String get createKeyDescription =>
+      'Lütfen uzun ve tahmin edilmesi zor bir anahtar (parola) girin. Güvenli bir yerde saklamayı unutmayın. Kaybedilirse veya unutulursa kurtarılamaz.';
 
   @override
   String get seeExamplesTooltip => 'Örnekleri gör';
@@ -614,7 +628,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get featureSyncUpTo3Devices => '3 cihaza kadar senkronizasyon';
 
   @override
-  String get featureUpgradeCancelAnytime => 'İstediğiniz zaman yükseltin/iptal edin';
+  String get featureUpgradeCancelAnytime =>
+      'İstediğiniz zaman yükseltin/iptal edin';
 
   @override
   String get noPlansAvailableMessage => 'Plan mevcut değil';
@@ -632,13 +647,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get helloTitle => 'Merhaba';
 
   @override
-  String get selectKeyMasterKeyDescription => 'Verilerinizi şifrelemek için bir ana şifreleme anahtarına ihtiyacımız olacak.';
+  String get selectKeyMasterKeyDescription =>
+      'Verilerinizi şifrelemek için bir ana şifreleme anahtarına ihtiyacımız olacak.';
 
   @override
-  String get selectKeyTwoOptionsDescription => '2 seçenek var; ya anahtarı kendiniz oluşturursunuz (parola gibi) ya da biz sizin için oluştururuz.';
+  String get selectKeyTwoOptionsDescription =>
+      '2 seçenek var; ya anahtarı kendiniz oluşturursunuz (parola gibi) ya da biz sizin için oluştururuz.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'Şifreleme anahtarını kaybedersem/unutursam verilerimi kaybedebileceğimi anlıyorum.';
+  String get understandLoseKeyAcknowledgement =>
+      'Şifreleme anahtarını kaybedersem/unutursam verilerimi kaybedebileceğimi anlıyorum.';
 
   @override
   String get createKeyForMeButtonLabel => 'Anahtarı benim için oluştur';
@@ -658,7 +676,8 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'Tüm notlarınızın güvende olduğundan ve biz dahil hiç kimsenin onları göremediğinden emin olmak için uçtan uca şifreleme kullanıyoruz.';
+  String get e2eEncryptionDescription =>
+      'Tüm notlarınızın güvende olduğundan ve biz dahil hiç kimsenin onları göremediğinden emin olmak için uçtan uca şifreleme kullanıyoruz.';
 
   @override
   String get timeToStartEncryptionLabel => 'Şifrelemeyi başlatma zamanı!';
@@ -667,10 +686,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get nextButtonLabel => 'İleri';
 
   @override
-  String get sendingOtpFailedMessage => 'OTP gönderilemedi. Lütfen tekrar deneyin!';
+  String get sendingOtpFailedMessage =>
+      'OTP gönderilemedi. Lütfen tekrar deneyin!';
 
   @override
-  String get otpVerificationFailedMessage => 'OTP doğrulanamadı. Lütfen tekrar deneyin!';
+  String get otpVerificationFailedMessage =>
+      'OTP doğrulanamadı. Lütfen tekrar deneyin!';
 
   @override
   String get emailSignInTitle => 'E-posta ile Giriş';
@@ -700,7 +721,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'Zaten hesabınız var mı? Oturum aç';
 
   @override
-  String get emailPasswordNote => 'Not: Bu e-posta ve şifre yalnızca hesabınız içindir. Not şifreleme anahtarı bundan sonra ayrıca ayarlanır.';
+  String get emailPasswordNote =>
+      'Not: Bu e-posta ve şifre yalnızca hesabınız içindir. Not şifreleme anahtarı bundan sonra ayrıca ayarlanır.';
 
   @override
   String get passwordTooShortMessage => 'Şifre en az 8 karakter olmalıdır';
@@ -712,10 +734,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get invalidCredentialsMessage => 'E-posta veya şifre hatalı';
 
   @override
-  String get accountExistsMessage => 'Bu e-posta zaten kayıtlı. Bunun yerine oturum açın.';
+  String get accountExistsMessage =>
+      'Bu e-posta zaten kayıtlı. Bunun yerine oturum açın.';
 
   @override
-  String get tooManyAttemptsMessage => 'Çok fazla deneme - daha sonra tekrar deneyin';
+  String get tooManyAttemptsMessage =>
+      'Çok fazla deneme - daha sonra tekrar deneyin';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,10 +762,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get couldNotFetchMessage => 'Alınamadı';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'Aboneliğiniz başka bir e-posta ile ilişkilendirilmiş. Lütfen oturumu kapatın ve bulut depolamayı etkinleştirmek için o e-postayı kullanın.';
+  String get subscriptionEmailMismatchMessage =>
+      'Aboneliğiniz başka bir e-posta ile ilişkilendirilmiş. Lütfen oturumu kapatın ve bulut depolamayı etkinleştirmek için o e-postayı kullanın.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'Plan ayrıntıları kontrol edilirken hata oluştu';
+  String get errorCheckingPlanDetailsMessage =>
+      'Plan ayrıntıları kontrol edilirken hata oluştu';
 
   @override
   String get registerDeviceTitle => 'Cihazı kaydet';
@@ -756,7 +782,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get signingOutTitle => 'Oturum kapatılıyor';
 
   @override
-  String get pleaseCheckInternetMessage => 'Lütfen internet bağlantınızı kontrol edin';
+  String get pleaseCheckInternetMessage =>
+      'Lütfen internet bağlantınızı kontrol edin';
 
   @override
   String get somethingWentWrongMessage => 'Bir şeyler ters gitti';
@@ -776,7 +803,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get invalidAccessKey => 'Geçersiz erişim anahtarı';
 
   @override
-  String get fileDoesNotContain24Words => 'Dosya tam olarak 24 kelime içermiyor.';
+  String get fileDoesNotContain24Words =>
+      'Dosya tam olarak 24 kelime içermiyor.';
 
   @override
   String get errorReadingFile => 'Dosya okuma hatası';
@@ -1067,7 +1095,8 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1148,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get seedGroupFitness => 'Fitness';
 
   @override
-  String get seedItemWelcome => 'Note Safe\'e hoş geldiniz!\nFikirlerinizi, listelerinizi veya aklınızdaki her şeyi buraya kaydedebilirsiniz.\n\nSilme, düzenleme ve diğer seçenekler için bu notun üzerine basılı tutun.';
+  String get seedItemWelcome =>
+      'Note Safe\'e hoş geldiniz!\nFikirlerinizi, listelerinizi veya aklınızdaki her şeyi buraya kaydedebilirsiniz.\n\nSilme, düzenleme ve diğer seçenekler için bu notun üzerine basılı tutun.';
 
   @override
   String get seedItemMorningWorkout => 'Sabah antrenmanı';

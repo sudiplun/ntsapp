@@ -12,7 +12,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get importantTitle => 'Penting';
 
   @override
-  String get accessKeyNoticeDescription1 => 'Di halaman berikutnya Anda akan melihat 24 kata. Ini adalah kunci enkripsi pribadi yang unik bagi Anda dan merupakan SATU-SATUNYA cara untuk memulihkan catatan Anda jika Anda keluar (logout), kehilangan perangkat, atau perangkat rusak.';
+  String get accessKeyNoticeDescription1 =>
+      'Di halaman berikutnya Anda akan melihat 24 kata. Ini adalah kunci enkripsi pribadi yang unik bagi Anda dan merupakan SATU-SATUNYA cara untuk memulihkan catatan Anda jika Anda keluar (logout), kehilangan perangkat, atau perangkat rusak.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -38,7 +39,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get accessKeyTitle => 'Kunci Akses';
 
   @override
-  String get accessKeyDescription => 'Harap simpan kunci ini di tempat yang aman. Anda akan membutuhkannya untuk menyinkronkan catatan di perangkat lain.';
+  String get accessKeyDescription =>
+      'Harap simpan kunci ini di tempat yang aman. Anda akan membutuhkannya untuk menyinkronkan catatan di perangkat lain.';
 
   @override
   String get copyLabel => 'Salin';
@@ -59,7 +61,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get couldNotShareFile => 'Gagal membagikan file';
 
   @override
-  String get hereIsTheBackupFile => 'Ini adalah file cadangan untuk aplikasi Anda.';
+  String get hereIsTheBackupFile =>
+      'Ini adalah file cadangan untuk aplikasi Anda.';
 
   @override
   String get errorTitle => 'Kesalahan';
@@ -106,13 +109,16 @@ class AppLocalizationsId extends AppLocalizations {
   String get enterYour24WordPhrase => 'Masukkan 24 kata frasa Anda';
 
   @override
-  String get enterYourRecoveryPhraseHere => 'Masukkan frasa pemulihan Anda di sini';
+  String get enterYourRecoveryPhraseHere =>
+      'Masukkan frasa pemulihan Anda di sini';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'Harap masukkan frasa pemulihan Anda';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'Harap masukkan frasa pemulihan Anda';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'Frasa pemulihan harus berisi tepat 24 kata';
+  String get recoveryPhraseMustContain24Words =>
+      'Frasa pemulihan harus berisi tepat 24 kata';
 
   @override
   String get submitLabel => 'Kirim';
@@ -133,7 +139,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get enableSyncTitle => 'Aktifkan Sinkronisasi';
 
   @override
-  String get passwordRequirementsDescription => 'Harap masukkan kunci (sandi) yang telah Anda buat. Minimal 10 karakter dengan minimal 1 angka, 1 huruf kecil, 1 huruf besar, dan 1 karakter khusus.';
+  String get passwordRequirementsDescription =>
+      'Harap masukkan kunci (sandi) yang telah Anda buat. Minimal 10 karakter dengan minimal 1 angka, 1 huruf kecil, 1 huruf besar, dan 1 karakter khusus.';
 
   @override
   String get enterKeyLabel => 'Masukkan kunci';
@@ -199,7 +206,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get microphoneNotAvailable => 'Mikrofon mungkin tidak tersedia.';
 
   @override
-  String get microphonePermissionRequired => 'Izin mikrofon diperlukan untuk merekam audio.';
+  String get microphonePermissionRequired =>
+      'Izin mikrofon diperlukan untuk merekam audio.';
 
   @override
   String get couldNotGetDuration => 'Tidak bisa mendapatkan durasi';
@@ -226,7 +234,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get shareNotesTooltip => 'Bagikan catatan';
 
   @override
-  String get noNotesSelectedToShare => 'Tidak ada catatan dipilih untuk dibagikan';
+  String get noNotesSelectedToShare =>
+      'Tidak ada catatan dipilih untuk dibagikan';
 
   @override
   String get nothingToShare => 'Tidak ada yang dibagikan';
@@ -283,7 +292,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get accessKeyInputTitle => 'Aktifkan Sinkronisasi';
 
   @override
-  String get accessKeyInputDescription => 'Harap masukkan frasa pemulihan 24 kata Anda atau muat file .txt yang berisi frasa tersebut.';
+  String get accessKeyInputDescription =>
+      'Harap masukkan frasa pemulihan 24 kata Anda atau muat file .txt yang berisi frasa tersebut.';
 
   @override
   String get editMenuItemLabel => 'Edit';
@@ -292,7 +302,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get filterMenuItemLabel => 'Filter';
 
   @override
-  String get externalStoragePermissionDenied => 'Izin untuk mengakses penyimpanan eksternal ditolak.';
+  String get externalStoragePermissionDenied =>
+      'Izin untuk mengakses penyimpanan eksternal ditolak.';
 
   @override
   String get pressLongToStartRecording => 'Tekan lama untuk mulai merekam.';
@@ -348,10 +359,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get dragHandleReorderTooltip => 'Seret pegangan untuk menyusun ulang';
 
   @override
-  String get holdAndDragReorderTooltip => 'Tahan dan seret untuk menyusun ulang';
+  String get holdAndDragReorderTooltip =>
+      'Tahan dan seret untuk menyusun ulang';
 
   @override
-  String get emptyHomePageMessage => 'Halo!\n\nDi sini tampak kosong.\n\nKetuk tombol + dan buat catatan untuk diri sendiri. :)';
+  String get emptyHomePageMessage =>
+      'Halo!\n\nDi sini tampak kosong.\n\nKetuk tombol + dan buat catatan untuk diri sendiri. :)';
 
   @override
   String get reorderingTitle => 'Menyusun ulang';
@@ -393,7 +406,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get locationPermissionRequiredTitle => 'Izin Lokasi Diperlukan';
 
   @override
-  String get enableLocationPermissionsContent => 'Harap aktifkan izin lokasi di pengaturan aplikasi.';
+  String get enableLocationPermissionsContent =>
+      'Harap aktifkan izin lokasi di pengaturan aplikasi.';
 
   @override
   String get cancelButtonLabel => 'Batal';
@@ -468,13 +482,15 @@ class AppLocalizationsId extends AppLocalizations {
   String get deviceDisabledMessage => 'Perangkat dinonaktifkan!';
 
   @override
-  String get cannotRemoveThisDeviceMessage => 'Tidak dapat menghapus perangkat ini!';
+  String get cannotRemoveThisDeviceMessage =>
+      'Tidak dapat menghapus perangkat ini!';
 
   @override
   String get confirmRemoveTitle => 'Konfirmasi Hapus';
 
   @override
-  String get confirmRemoveDeviceContent => 'Anda yakin? Ini akan menghapus semua data di perangkat tersebut.';
+  String get confirmRemoveDeviceContent =>
+      'Anda yakin? Ini akan menghapus semua data di perangkat tersebut.';
 
   @override
   String get okButtonLabel => 'OK';
@@ -557,7 +573,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get encryptionKeyTitle => 'Kunci enkripsi';
 
   @override
-  String get createKeyDescription => 'Harap masukkan kunci (sandi) yang panjang dan sulit ditebak. Ingatlah untuk menyimpannya di tempat yang aman. Jika hilang/lupa, kunci tidak dapat dipulihkan.';
+  String get createKeyDescription =>
+      'Harap masukkan kunci (sandi) yang panjang dan sulit ditebak. Ingatlah untuk menyimpannya di tempat yang aman. Jika hilang/lupa, kunci tidak dapat dipulihkan.';
 
   @override
   String get seeExamplesTooltip => 'Lihat contoh';
@@ -632,13 +649,16 @@ class AppLocalizationsId extends AppLocalizations {
   String get helloTitle => 'Halo';
 
   @override
-  String get selectKeyMasterKeyDescription => 'Untuk mengenkripsi data Anda, kami memerlukan kunci enkripsi utama.';
+  String get selectKeyMasterKeyDescription =>
+      'Untuk mengenkripsi data Anda, kami memerlukan kunci enkripsi utama.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'Ada 2 pilihan - Anda membuat kunci sendiri (seperti kata sandi) atau kami yang membuatnya untuk Anda.';
+  String get selectKeyTwoOptionsDescription =>
+      'Ada 2 pilihan - Anda membuat kunci sendiri (seperti kata sandi) atau kami yang membuatnya untuk Anda.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'Saya mengerti bahwa jika saya kehilangan/lupa kunci enkripsi, saya mungkin kehilangan data.';
+  String get understandLoseKeyAcknowledgement =>
+      'Saya mengerti bahwa jika saya kehilangan/lupa kunci enkripsi, saya mungkin kehilangan data.';
 
   @override
   String get createKeyForMeButtonLabel => 'Buatkan kunci untuk saya';
@@ -658,7 +678,8 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'Kami menggunakan enkripsi end-to-end untuk memastikan bahwa semua catatan Anda aman dan tidak ada orang lain yang bisa melihatnya, bahkan kami.';
+  String get e2eEncryptionDescription =>
+      'Kami menggunakan enkripsi end-to-end untuk memastikan bahwa semua catatan Anda aman dan tidak ada orang lain yang bisa melihatnya, bahkan kami.';
 
   @override
   String get timeToStartEncryptionLabel => 'Waktunya memulai enkripsi!';
@@ -670,7 +691,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get sendingOtpFailedMessage => 'Gagal mengirim OTP. Harap coba lagi!';
 
   @override
-  String get otpVerificationFailedMessage => 'Verifikasi OTP gagal. Harap coba lagi!';
+  String get otpVerificationFailedMessage =>
+      'Verifikasi OTP gagal. Harap coba lagi!';
 
   @override
   String get emailSignInTitle => 'Masuk dengan Email';
@@ -700,7 +722,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'Sudah punya akun? Masuk';
 
   @override
-  String get emailPasswordNote => 'Catatan: email dan kata sandi ini hanya untuk akun Anda. Kunci enkripsi catatan disiapkan terpisah, setelah ini.';
+  String get emailPasswordNote =>
+      'Catatan: email dan kata sandi ini hanya untuk akun Anda. Kunci enkripsi catatan disiapkan terpisah, setelah ini.';
 
   @override
   String get passwordTooShortMessage => 'Kata sandi minimal 8 karakter';
@@ -715,7 +738,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get accountExistsMessage => 'Email ini sudah terdaftar. Masuk saja.';
 
   @override
-  String get tooManyAttemptsMessage => 'Terlalu banyak percobaan - coba lagi nanti';
+  String get tooManyAttemptsMessage =>
+      'Terlalu banyak percobaan - coba lagi nanti';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,10 +762,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get couldNotFetchMessage => 'Tidak bisa mengambil';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'Langganan Anda terkait dengan email lain. Silakan keluar dan gunakan email tersebut untuk mengaktifkan penyimpanan cloud.';
+  String get subscriptionEmailMismatchMessage =>
+      'Langganan Anda terkait dengan email lain. Silakan keluar dan gunakan email tersebut untuk mengaktifkan penyimpanan cloud.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'Kesalahan memeriksa detail paket';
+  String get errorCheckingPlanDetailsMessage =>
+      'Kesalahan memeriksa detail paket';
 
   @override
   String get registerDeviceTitle => 'Daftarkan perangkat';
@@ -1067,7 +1093,8 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1146,8 @@ class AppLocalizationsId extends AppLocalizations {
   String get seedGroupFitness => 'Kebugaran';
 
   @override
-  String get seedItemWelcome => 'Selamat datang di Note Safe!\nIde, daftar, atau apa pun yang ada di pikiran Anda, simpan semuanya di sini.\n\nTekan lama pada catatan ini untuk menghapus, mengedit, dan opsi lainnya.';
+  String get seedItemWelcome =>
+      'Selamat datang di Note Safe!\nIde, daftar, atau apa pun yang ada di pikiran Anda, simpan semuanya di sini.\n\nTekan lama pada catatan ini untuk menghapus, mengedit, dan opsi lainnya.';
 
   @override
   String get seedItemMorningWorkout => 'Olahraga pagi';

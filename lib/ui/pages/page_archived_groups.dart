@@ -101,7 +101,8 @@ class _PageArchivedGroupsState extends State<PageArchivedGroups> {
     if (mounted) {
       final loc = AppLocalizations.of(context)!;
       clearSelection();
-      displaySnackBar(context, message: loc.deletedPermanentlyLabel, seconds: 1);
+      displaySnackBar(context,
+          message: loc.deletedPermanentlyLabel, seconds: 1);
     }
     await fetchArchivedGroups();
   }

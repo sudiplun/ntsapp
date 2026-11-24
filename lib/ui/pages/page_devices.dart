@@ -61,7 +61,8 @@ class _PageDevicesState extends State<PageDevices> {
       await supabase.functions
           .invoke("remove_device", body: {"deviceId": deviceId});
       if (mounted) {
-        displaySnackBar(context, message: loc.deviceDisabledMessage, seconds: 2);
+        displaySnackBar(context,
+            message: loc.deviceDisabledMessage, seconds: 2);
         fetchDevices(); // Refresh the list
       }
     } catch (e) {
@@ -91,8 +92,7 @@ class _PageDevicesState extends State<PageDevices> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(loc.confirmRemoveTitle),
-        content:
-            Text(loc.confirmRemoveDeviceContent),
+        content: Text(loc.confirmRemoveDeviceContent),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context), // Cancel

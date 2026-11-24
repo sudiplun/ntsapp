@@ -1117,7 +1117,8 @@ Future<bool> hasInternetConnection() async {
       'example.com',
     ).timeout(const Duration(seconds: 3));
     return addresses.isNotEmpty &&
-        addresses.any((InternetAddress address) => address.rawAddress.isNotEmpty);
+        addresses
+            .any((InternetAddress address) => address.rawAddress.isNotEmpty);
   } catch (e) {
     return false;
   }

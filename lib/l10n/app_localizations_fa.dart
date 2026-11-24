@@ -12,7 +12,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get importantTitle => 'مهم';
 
   @override
-  String get accessKeyNoticeDescription1 => 'در صفحه بعد، مجموعه‌ای از ۲۴ کلمه را مشاهده خواهید کرد. این کلید رمزنگاری منحصربه‌فرد و خصوصی شماست و تنها راه بازیابی یادداشت‌هایتان در صورت خروج از حساب، گم شدن دستگاه یا خرابی آن است.';
+  String get accessKeyNoticeDescription1 =>
+      'در صفحه بعد، مجموعه‌ای از ۲۴ کلمه را مشاهده خواهید کرد. این کلید رمزنگاری منحصربه‌فرد و خصوصی شماست و تنها راه بازیابی یادداشت‌هایتان در صورت خروج از حساب، گم شدن دستگاه یا خرابی آن است.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -23,7 +24,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get iUnderstandShowMeTheKey => 'متوجه شدم.\nکلید را نشانم بده.';
 
   @override
-  String get selectGroupToViewNotes => 'برای مشاهده یادداشت‌ها، یک گروه انتخاب کنید';
+  String get selectGroupToViewNotes =>
+      'برای مشاهده یادداشت‌ها، یک گروه انتخاب کنید';
 
   @override
   String get accessKeyShareText => 'این کلید دسترسی شماست.';
@@ -38,7 +40,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get accessKeyTitle => 'کلید دسترسی';
 
   @override
-  String get accessKeyDescription => 'لطفاً این کلید را در مکانی امن ذخیره کنید. برای همگام‌سازی یادداشت‌ها روی دستگاه دیگر به آن نیاز خواهید داشت.';
+  String get accessKeyDescription =>
+      'لطفاً این کلید را در مکانی امن ذخیره کنید. برای همگام‌سازی یادداشت‌ها روی دستگاه دیگر به آن نیاز خواهید داشت.';
 
   @override
   String get copyLabel => 'کپی';
@@ -106,13 +109,16 @@ class AppLocalizationsFa extends AppLocalizations {
   String get enterYour24WordPhrase => 'عبارت ۲۴ کلمه‌ای خود را وارد کنید';
 
   @override
-  String get enterYourRecoveryPhraseHere => 'عبارت بازیابی خود را اینجا وارد کنید';
+  String get enterYourRecoveryPhraseHere =>
+      'عبارت بازیابی خود را اینجا وارد کنید';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'لطفاً عبارت بازیابی خود را وارد کنید';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'لطفاً عبارت بازیابی خود را وارد کنید';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'عبارت بازیابی باید دقیقاً ۲۴ کلمه باشد';
+  String get recoveryPhraseMustContain24Words =>
+      'عبارت بازیابی باید دقیقاً ۲۴ کلمه باشد';
 
   @override
   String get submitLabel => 'ثبت';
@@ -133,7 +139,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get enableSyncTitle => 'فعال‌سازی همگام‌سازی';
 
   @override
-  String get passwordRequirementsDescription => 'لطفاً کلیدی (رمز عبوری) که قبلاً ساخته‌اید را وارد کنید. این کلید باید حداقل ۱۰ کاراکتر داشته باشد و شامل حداقل ۱ عدد، ۱ حرف کوچک، ۱ حرف بزرگ و ۱ کاراکتر خاص باشد.';
+  String get passwordRequirementsDescription =>
+      'لطفاً کلیدی (رمز عبوری) که قبلاً ساخته‌اید را وارد کنید. این کلید باید حداقل ۱۰ کاراکتر داشته باشد و شامل حداقل ۱ عدد، ۱ حرف کوچک، ۱ حرف بزرگ و ۱ کاراکتر خاص باشد.';
 
   @override
   String get enterKeyLabel => 'وارد کردن کلید';
@@ -199,7 +206,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get microphoneNotAvailable => 'میکروفون ممکن است در دسترس نباشد.';
 
   @override
-  String get microphonePermissionRequired => 'برای ضبط صدا، دسترسی به میکروفون لازم است.';
+  String get microphonePermissionRequired =>
+      'برای ضبط صدا، دسترسی به میکروفون لازم است.';
 
   @override
   String get couldNotGetDuration => 'امکان دریافت مدت زمان وجود ندارد';
@@ -226,7 +234,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get shareNotesTooltip => 'اشتراک‌گذاری یادداشت‌ها';
 
   @override
-  String get noNotesSelectedToShare => 'یادداشتی برای اشتراک‌گذاری انتخاب نشده است';
+  String get noNotesSelectedToShare =>
+      'یادداشتی برای اشتراک‌گذاری انتخاب نشده است';
 
   @override
   String get nothingToShare => 'چیزی برای اشتراک‌گذاری نیست';
@@ -283,7 +292,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get accessKeyInputTitle => 'فعال‌سازی همگام‌سازی';
 
   @override
-  String get accessKeyInputDescription => 'لطفاً عبارت بازیابی ۲۴ کلمه‌ای خود را وارد کنید یا فایل .txt شامل آن را بارگذاری نمایید.';
+  String get accessKeyInputDescription =>
+      'لطفاً عبارت بازیابی ۲۴ کلمه‌ای خود را وارد کنید یا فایل .txt شامل آن را بارگذاری نمایید.';
 
   @override
   String get editMenuItemLabel => 'ویرایش';
@@ -351,7 +361,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get holdAndDragReorderTooltip => 'برای تغییر ترتیب نگه دارید و بکشید';
 
   @override
-  String get emptyHomePageMessage => 'سلام!\n\nاینجا کمی خالی به نظر می‌رسد.\n\nدکمه + را بزنید و یادداشت‌های خود را ایجاد کنید. :)';
+  String get emptyHomePageMessage =>
+      'سلام!\n\nاینجا کمی خالی به نظر می‌رسد.\n\nدکمه + را بزنید و یادداشت‌های خود را ایجاد کنید. :)';
 
   @override
   String get reorderingTitle => 'مرتب‌سازی';
@@ -393,7 +404,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get locationPermissionRequiredTitle => 'مجوز مکان مورد نیاز است';
 
   @override
-  String get enableLocationPermissionsContent => 'لطفاً مجوزهای مکان را در تنظیمات برنامه فعال کنید.';
+  String get enableLocationPermissionsContent =>
+      'لطفاً مجوزهای مکان را در تنظیمات برنامه فعال کنید.';
 
   @override
   String get cancelButtonLabel => 'لغو';
@@ -426,7 +438,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get dbViewerTitle => 'مشاهده‌گر دیتابیس';
 
   @override
-  String get selectTableToViewData => 'برای مشاهده داده‌ها، یک جدول انتخاب کنید';
+  String get selectTableToViewData =>
+      'برای مشاهده داده‌ها، یک جدول انتخاب کنید';
 
   @override
   String get selectTableDropdownHint => 'انتخاب جدول';
@@ -474,7 +487,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get confirmRemoveTitle => 'تأیید حذف';
 
   @override
-  String get confirmRemoveDeviceContent => 'مطمئن هستید؟ این کار تمام داده‌های روی این دستگاه را حذف می‌کند.';
+  String get confirmRemoveDeviceContent =>
+      'مطمئن هستید؟ این کار تمام داده‌های روی این دستگاه را حذف می‌کند.';
 
   @override
   String get okButtonLabel => 'باشه';
@@ -557,7 +571,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get encryptionKeyTitle => 'کلید رمزنگاری';
 
   @override
-  String get createKeyDescription => 'لطفاً یک کلید (رمز عبور) طولانی و غیرقابل حدس وارد کنید. به یاد داشته باشید که آن را در مکانی امن ذخیره کنید. در صورت گم شدن یا فراموشی، بازیابی آن امکان‌پذیر نیست.';
+  String get createKeyDescription =>
+      'لطفاً یک کلید (رمز عبور) طولانی و غیرقابل حدس وارد کنید. به یاد داشته باشید که آن را در مکانی امن ذخیره کنید. در صورت گم شدن یا فراموشی، بازیابی آن امکان‌پذیر نیست.';
 
   @override
   String get seeExamplesTooltip => 'مشاهده نمونه‌ها';
@@ -632,13 +647,16 @@ class AppLocalizationsFa extends AppLocalizations {
   String get helloTitle => 'سلام';
 
   @override
-  String get selectKeyMasterKeyDescription => 'برای رمزنگاری داده‌هایتان، به یک کلید رمزنگاری اصلی نیاز داریم.';
+  String get selectKeyMasterKeyDescription =>
+      'برای رمزنگاری داده‌هایتان، به یک کلید رمزنگاری اصلی نیاز داریم.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'دو گزینه دارید: یا خودتان کلید را بسازید (مشابه رمز عبور) یا ما آن را برای شما بسازیم.';
+  String get selectKeyTwoOptionsDescription =>
+      'دو گزینه دارید: یا خودتان کلید را بسازید (مشابه رمز عبور) یا ما آن را برای شما بسازیم.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'متوجه هستم که در صورت گم کردن یا فراموشی کلید رمزنگاری، ممکن است داده‌ها را از دست بدهم.';
+  String get understandLoseKeyAcknowledgement =>
+      'متوجه هستم که در صورت گم کردن یا فراموشی کلید رمزنگاری، ممکن است داده‌ها را از دست بدهم.';
 
   @override
   String get createKeyForMeButtonLabel => 'کلید را برایم بساز';
@@ -658,7 +676,8 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'ما از رمزنگاری سراسری استفاده می‌کنیم تا اطمینان حاصل کنیم که تمام یادداشت‌های شما امن هستند و هیچ‌کس، حتی ما، نمی‌تواند آن‌ها را ببیند.';
+  String get e2eEncryptionDescription =>
+      'ما از رمزنگاری سراسری استفاده می‌کنیم تا اطمینان حاصل کنیم که تمام یادداشت‌های شما امن هستند و هیچ‌کس، حتی ما، نمی‌تواند آن‌ها را ببیند.';
 
   @override
   String get timeToStartEncryptionLabel => 'زمان شروع رمزنگاری است!';
@@ -667,10 +686,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get nextButtonLabel => 'بعدی';
 
   @override
-  String get sendingOtpFailedMessage => 'ارسال کد تایید (OTP) انجام نشد. لطفاً دوباره تلاش کنید!';
+  String get sendingOtpFailedMessage =>
+      'ارسال کد تایید (OTP) انجام نشد. لطفاً دوباره تلاش کنید!';
 
   @override
-  String get otpVerificationFailedMessage => 'تایید کد ناموفق بود. لطفاً دوباره تلاش کنید!';
+  String get otpVerificationFailedMessage =>
+      'تایید کد ناموفق بود. لطفاً دوباره تلاش کنید!';
 
   @override
   String get emailSignInTitle => 'ورود با ایمیل';
@@ -700,7 +721,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'قبلاً حساب ساخته‌اید؟ ورود';
 
   @override
-  String get emailPasswordNote => 'توجه: این ایمیل و رمز عبور فقط برای حساب شماست. کلید رمزنگاری یادداشت‌ها بعداً به‌صورت جداگانه تنظیم می‌شود.';
+  String get emailPasswordNote =>
+      'توجه: این ایمیل و رمز عبور فقط برای حساب شماست. کلید رمزنگاری یادداشت‌ها بعداً به‌صورت جداگانه تنظیم می‌شود.';
 
   @override
   String get passwordTooShortMessage => 'رمز عبور باید حداقل ۸ نویسه باشد';
@@ -712,10 +734,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get invalidCredentialsMessage => 'ایمیل یا رمز عبور اشتباه است';
 
   @override
-  String get accountExistsMessage => 'این ایمیل قبلاً ثبت شده است. به‌جای آن وارد شوید.';
+  String get accountExistsMessage =>
+      'این ایمیل قبلاً ثبت شده است. به‌جای آن وارد شوید.';
 
   @override
-  String get tooManyAttemptsMessage => 'تلاش‌های بیش از حد - بعداً دوباره امتحان کنید';
+  String get tooManyAttemptsMessage =>
+      'تلاش‌های بیش از حد - بعداً دوباره امتحان کنید';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,7 +762,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get couldNotFetchMessage => 'امکان دریافت وجود ندارد';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'اشتراک شما با ایمیل دیگری مرتبط است. لطفاً خارج شده و با آن ایمیل وارد شوید تا فضای ابری فعال شود.';
+  String get subscriptionEmailMismatchMessage =>
+      'اشتراک شما با ایمیل دیگری مرتبط است. لطفاً خارج شده و با آن ایمیل وارد شوید تا فضای ابری فعال شود.';
 
   @override
   String get errorCheckingPlanDetailsMessage => 'خطا در بررسی جزئیات طرح';
@@ -1067,7 +1092,8 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1145,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get seedGroupFitness => 'تناسب اندام';
 
   @override
-  String get seedItemWelcome => 'به Note Safe خوش آمدید!\nایده‌ها، لیست‌ها یا هر چیزی که در ذهن دارید را اینجا بنویسید.\n\nبرای حذف، ویرایش و سایر گزینه‌ها، روی این یادداشت نگه دارید.';
+  String get seedItemWelcome =>
+      'به Note Safe خوش آمدید!\nایده‌ها، لیست‌ها یا هر چیزی که در ذهن دارید را اینجا بنویسید.\n\nبرای حذف، ویرایش و سایر گزینه‌ها، روی این یادداشت نگه دارید.';
 
   @override
   String get seedItemMorningWorkout => 'ورزش صبحگاهی';

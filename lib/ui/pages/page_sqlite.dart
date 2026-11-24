@@ -60,8 +60,7 @@ class _PageSqliteState extends State<PageSqlite> {
               children: [
                 Expanded(
                   child: _selectedTable == null
-                      ? Center(
-                          child: Text(loc.selectTableToViewData))
+                      ? Center(child: Text(loc.selectTableToViewData))
                       : SingleChildScrollView(
                           scrollDirection: Axis.vertical,
                           child: SingleChildScrollView(

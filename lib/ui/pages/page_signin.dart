@@ -207,8 +207,7 @@ class _PageSigninState extends State<PageSignin> {
                 TextField(
                   autofocus: true,
                   controller: emailController,
-                  decoration:
-                      InputDecoration(labelText: loc.enterEmailLabel),
+                  decoration: InputDecoration(labelText: loc.enterEmailLabel),
                   keyboardType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
                 ),
@@ -232,8 +231,8 @@ class _PageSigninState extends State<PageSignin> {
                   const SizedBox(height: 8),
                   TextField(
                     controller: confirmPasswordController,
-                    decoration: InputDecoration(
-                        labelText: loc.confirmPasswordLabel),
+                    decoration:
+                        InputDecoration(labelText: loc.confirmPasswordLabel),
                     obscureText: true,
                     enableSuggestions: false,
                     autocorrect: false,

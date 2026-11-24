@@ -12,7 +12,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get importantTitle => 'Важно';
 
   @override
-  String get accessKeyNoticeDescription1 => 'На следующей странице вы увидите список из 24 слов. Это ваш уникальный и личный ключ шифрования. Это ЕДИНСТВЕННЫЙ способ восстановить доступ к заметкам в случае выхода из аккаунта, потери или поломки устройства.';
+  String get accessKeyNoticeDescription1 =>
+      'На следующей странице вы увидите список из 24 слов. Это ваш уникальный и личный ключ шифрования. Это ЕДИНСТВЕННЫЙ способ восстановить доступ к заметкам в случае выхода из аккаунта, потери или поломки устройства.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -38,7 +39,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get accessKeyTitle => 'Ключ доступа';
 
   @override
-  String get accessKeyDescription => 'Пожалуйста, сохраните этот ключ в надежном месте. Он понадобится вам для синхронизации заметок на другом устройстве.';
+  String get accessKeyDescription =>
+      'Пожалуйста, сохраните этот ключ в надежном месте. Он понадобится вам для синхронизации заметок на другом устройстве.';
 
   @override
   String get copyLabel => 'Копировать';
@@ -59,7 +61,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get couldNotShareFile => 'Не удалось отправить файл';
 
   @override
-  String get hereIsTheBackupFile => 'Вот файл резервной копии вашего приложения.';
+  String get hereIsTheBackupFile =>
+      'Вот файл резервной копии вашего приложения.';
 
   @override
   String get errorTitle => 'Ошибка';
@@ -106,13 +109,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get enterYour24WordPhrase => 'Введите вашу фразу из 24 слов';
 
   @override
-  String get enterYourRecoveryPhraseHere => 'Введите фразу для восстановления здесь';
+  String get enterYourRecoveryPhraseHere =>
+      'Введите фразу для восстановления здесь';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'Пожалуйста, введите вашу фразу для восстановления';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'Пожалуйста, введите вашу фразу для восстановления';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'Фраза для восстановления должна состоять ровно из 24 слов';
+  String get recoveryPhraseMustContain24Words =>
+      'Фраза для восстановления должна состоять ровно из 24 слов';
 
   @override
   String get submitLabel => 'Отправить';
@@ -133,7 +139,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get enableSyncTitle => 'Включить синхронизацию';
 
   @override
-  String get passwordRequirementsDescription => 'Пожалуйста, введите созданный вами ключ (пароль). Минимум 10 символов, включая 1 цифру, 1 строчную букву, 1 заглавную букву и 1 спецсимвол.';
+  String get passwordRequirementsDescription =>
+      'Пожалуйста, введите созданный вами ключ (пароль). Минимум 10 символов, включая 1 цифру, 1 строчную букву, 1 заглавную букву и 1 спецсимвол.';
 
   @override
   String get enterKeyLabel => 'Введите ключ';
@@ -199,7 +206,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get microphoneNotAvailable => 'Микрофон может быть недоступен.';
 
   @override
-  String get microphonePermissionRequired => 'Для записи аудио требуется разрешение на использование микрофона.';
+  String get microphonePermissionRequired =>
+      'Для записи аудио требуется разрешение на использование микрофона.';
 
   @override
   String get couldNotGetDuration => 'Не удалось получить длительность';
@@ -283,7 +291,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get accessKeyInputTitle => 'Включить синхронизацию';
 
   @override
-  String get accessKeyInputDescription => 'Пожалуйста, введите вашу фразу для восстановления из 24 слов или загрузите .txt файл, содержащий ее.';
+  String get accessKeyInputDescription =>
+      'Пожалуйста, введите вашу фразу для восстановления из 24 слов или загрузите .txt файл, содержащий ее.';
 
   @override
   String get editMenuItemLabel => 'Редактировать';
@@ -292,10 +301,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get filterMenuItemLabel => 'Фильтры';
 
   @override
-  String get externalStoragePermissionDenied => 'В доступе к внешнему хранилищу отказано.';
+  String get externalStoragePermissionDenied =>
+      'В доступе к внешнему хранилищу отказано.';
 
   @override
-  String get pressLongToStartRecording => 'Нажмите и удерживайте, чтобы начать запись.';
+  String get pressLongToStartRecording =>
+      'Нажмите и удерживайте, чтобы начать запись.';
 
   @override
   String get didYouKnowTitle => 'А вы знали?';
@@ -345,13 +356,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get deleteGroupMenuItemLabel => 'Удалить';
 
   @override
-  String get dragHandleReorderTooltip => 'Перетащите маркер, чтобы изменить порядок';
+  String get dragHandleReorderTooltip =>
+      'Перетащите маркер, чтобы изменить порядок';
 
   @override
-  String get holdAndDragReorderTooltip => 'Нажмите и перетащите, чтобы изменить порядок';
+  String get holdAndDragReorderTooltip =>
+      'Нажмите и перетащите, чтобы изменить порядок';
 
   @override
-  String get emptyHomePageMessage => 'Привет!\n\nЗдесь пока пусто.\n\nНажмите кнопку +, чтобы создать свою первую заметку. :)';
+  String get emptyHomePageMessage =>
+      'Привет!\n\nЗдесь пока пусто.\n\nНажмите кнопку +, чтобы создать свою первую заметку. :)';
 
   @override
   String get reorderingTitle => 'Изменение порядка';
@@ -390,10 +404,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get titleInputLabel => 'Заголовок';
 
   @override
-  String get locationPermissionRequiredTitle => 'Требуется разрешение на доступ к местоположению';
+  String get locationPermissionRequiredTitle =>
+      'Требуется разрешение на доступ к местоположению';
 
   @override
-  String get enableLocationPermissionsContent => 'Пожалуйста, включите разрешения на использование местоположения в настройках приложения.';
+  String get enableLocationPermissionsContent =>
+      'Пожалуйста, включите разрешения на использование местоположения в настройках приложения.';
 
   @override
   String get cancelButtonLabel => 'Отмена';
@@ -426,7 +442,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get dbViewerTitle => 'Просмотр БД';
 
   @override
-  String get selectTableToViewData => 'Выберите таблицу, чтобы просмотреть данные';
+  String get selectTableToViewData =>
+      'Выберите таблицу, чтобы просмотреть данные';
 
   @override
   String get selectTableDropdownHint => 'Выберите таблицу';
@@ -468,13 +485,15 @@ class AppLocalizationsRu extends AppLocalizations {
   String get deviceDisabledMessage => 'Устройство отключено!';
 
   @override
-  String get cannotRemoveThisDeviceMessage => 'Невозможно удалить это устройство!';
+  String get cannotRemoveThisDeviceMessage =>
+      'Невозможно удалить это устройство!';
 
   @override
   String get confirmRemoveTitle => 'Подтвердите удаление';
 
   @override
-  String get confirmRemoveDeviceContent => 'Вы уверены? Это приведет к удалению всех данных на устройстве.';
+  String get confirmRemoveDeviceContent =>
+      'Вы уверены? Это приведет к удалению всех данных на устройстве.';
 
   @override
   String get okButtonLabel => 'OK';
@@ -557,7 +576,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get encryptionKeyTitle => 'Ключ шифрования';
 
   @override
-  String get createKeyDescription => 'Пожалуйста, введите длинный и сложный для угадывания ключ (пароль). Не забудьте сохранить его в надежном месте. Если ключ будет потерян или забыт, восстановить его будет невозможно.';
+  String get createKeyDescription =>
+      'Пожалуйста, введите длинный и сложный для угадывания ключ (пароль). Не забудьте сохранить его в надежном месте. Если ключ будет потерян или забыт, восстановить его будет невозможно.';
 
   @override
   String get seeExamplesTooltip => 'Посмотреть примеры';
@@ -632,13 +652,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get helloTitle => 'Привет';
 
   @override
-  String get selectKeyMasterKeyDescription => 'Для шифрования ваших данных нам понадобится мастер-ключ.';
+  String get selectKeyMasterKeyDescription =>
+      'Для шифрования ваших данных нам понадобится мастер-ключ.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'Есть 2 варианта: вы можете создать ключ самостоятельно (как пароль) или мы создадим его для вас.';
+  String get selectKeyTwoOptionsDescription =>
+      'Есть 2 варианта: вы можете создать ключ самостоятельно (как пароль) или мы создадим его для вас.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'Я понимаю, что если я потеряю/забуду ключ шифрования, я могу потерять доступ к данным.';
+  String get understandLoseKeyAcknowledgement =>
+      'Я понимаю, что если я потеряю/забуду ключ шифрования, я могу потерять доступ к данным.';
 
   @override
   String get createKeyForMeButtonLabel => 'Создать ключ для меня';
@@ -658,7 +681,8 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'Мы используем сквозное шифрование, чтобы гарантировать, что все ваши заметки в безопасности и никто, даже мы, не может их прочитать.';
+  String get e2eEncryptionDescription =>
+      'Мы используем сквозное шифрование, чтобы гарантировать, что все ваши заметки в безопасности и никто, даже мы, не может их прочитать.';
 
   @override
   String get timeToStartEncryptionLabel => 'Время начать шифрование!';
@@ -667,10 +691,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get nextButtonLabel => 'Далее';
 
   @override
-  String get sendingOtpFailedMessage => 'Не удалось отправить OTP. Попробуйте еще раз!';
+  String get sendingOtpFailedMessage =>
+      'Не удалось отправить OTP. Попробуйте еще раз!';
 
   @override
-  String get otpVerificationFailedMessage => 'Проверка OTP не удалась. Попробуйте еще раз!';
+  String get otpVerificationFailedMessage =>
+      'Проверка OTP не удалась. Попробуйте еще раз!';
 
   @override
   String get emailSignInTitle => 'Вход по Email';
@@ -700,10 +726,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'Уже есть аккаунт? Войти';
 
   @override
-  String get emailPasswordNote => 'Примечание: этот email и пароль — только для аккаунта. Ключ шифрования заметок настраивается отдельно, после этого.';
+  String get emailPasswordNote =>
+      'Примечание: этот email и пароль — только для аккаунта. Ключ шифрования заметок настраивается отдельно, после этого.';
 
   @override
-  String get passwordTooShortMessage => 'Пароль должен содержать не менее 8 символов';
+  String get passwordTooShortMessage =>
+      'Пароль должен содержать не менее 8 символов';
 
   @override
   String get passwordsDoNotMatchMessage => 'Пароли не совпадают';
@@ -712,10 +740,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get invalidCredentialsMessage => 'Неверный email или пароль';
 
   @override
-  String get accountExistsMessage => 'Этот email уже зарегистрирован. Войдите вместо этого.';
+  String get accountExistsMessage =>
+      'Этот email уже зарегистрирован. Войдите вместо этого.';
 
   @override
-  String get tooManyAttemptsMessage => 'Слишком много попыток - попробуйте позже';
+  String get tooManyAttemptsMessage =>
+      'Слишком много попыток - попробуйте позже';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,10 +768,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get couldNotFetchMessage => 'Не удалось получить данные';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'Ваша подписка привязана к другому email. Пожалуйста, выйдите из аккаунта и войдите через нужную почту, чтобы включить облачное хранилище.';
+  String get subscriptionEmailMismatchMessage =>
+      'Ваша подписка привязана к другому email. Пожалуйста, выйдите из аккаунта и войдите через нужную почту, чтобы включить облачное хранилище.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'Ошибка при проверке деталей подписки';
+  String get errorCheckingPlanDetailsMessage =>
+      'Ошибка при проверке деталей подписки';
 
   @override
   String get registerDeviceTitle => 'Регистрация устройства';
@@ -1067,7 +1099,8 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1152,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get seedGroupFitness => 'Фитнес';
 
   @override
-  String get seedItemWelcome => 'Добро пожаловать в Note Safe!\nЗаписывайте сюда любые идеи, списки и всё, что у вас на уме.\n\nУдерживайте заметку, чтобы удалить, изменить её или открыть другие параметры.';
+  String get seedItemWelcome =>
+      'Добро пожаловать в Note Safe!\nЗаписывайте сюда любые идеи, списки и всё, что у вас на уме.\n\nУдерживайте заметку, чтобы удалить, изменить её или открыть другие параметры.';
 
   @override
   String get seedItemMorningWorkout => 'Утренняя тренировка';

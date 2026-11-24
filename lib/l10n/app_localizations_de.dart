@@ -12,7 +12,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get importantTitle => 'Wichtig';
 
   @override
-  String get accessKeyNoticeDescription1 => 'Auf der nächsten Seite werden 24 Wörter angezeigt. Dies ist dein einzigartiger und privater Verschlüsselungsschlüssel. Er ist die EINZIGE Möglichkeit, deine Notizen bei Abmeldung, Geräteverlust oder Defekt wiederherzustellen.';
+  String get accessKeyNoticeDescription1 =>
+      'Auf der nächsten Seite werden 24 Wörter angezeigt. Dies ist dein einzigartiger und privater Verschlüsselungsschlüssel. Er ist die EINZIGE Möglichkeit, deine Notizen bei Abmeldung, Geräteverlust oder Defekt wiederherzustellen.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -20,10 +21,12 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get iUnderstandShowMeTheKey => 'Ich habe verstanden.\nSchlüssel anzeigen.';
+  String get iUnderstandShowMeTheKey =>
+      'Ich habe verstanden.\nSchlüssel anzeigen.';
 
   @override
-  String get selectGroupToViewNotes => 'Wähle eine Gruppe, um Notizen anzuzeigen';
+  String get selectGroupToViewNotes =>
+      'Wähle eine Gruppe, um Notizen anzuzeigen';
 
   @override
   String get accessKeyShareText => 'Hier ist dein Zugangsschlüssel.';
@@ -38,7 +41,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get accessKeyTitle => 'Zugangsschlüssel';
 
   @override
-  String get accessKeyDescription => 'Bitte bewahre diesen Schlüssel an einem sicheren Ort auf. Du benötigst ihn, um Notizen auf einem anderen Gerät zu synchronisieren.';
+  String get accessKeyDescription =>
+      'Bitte bewahre diesen Schlüssel an einem sicheren Ort auf. Du benötigst ihn, um Notizen auf einem anderen Gerät zu synchronisieren.';
 
   @override
   String get copyLabel => 'Kopieren';
@@ -106,13 +110,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get enterYour24WordPhrase => 'Gib deine 24-Wörter-Phrase ein';
 
   @override
-  String get enterYourRecoveryPhraseHere => 'Gib hier deine Wiederherstellungsphrase ein';
+  String get enterYourRecoveryPhraseHere =>
+      'Gib hier deine Wiederherstellungsphrase ein';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'Bitte gib deine Wiederherstellungsphrase ein';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'Bitte gib deine Wiederherstellungsphrase ein';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'Die Wiederherstellungsphrase muss genau 24 Wörter enthalten';
+  String get recoveryPhraseMustContain24Words =>
+      'Die Wiederherstellungsphrase muss genau 24 Wörter enthalten';
 
   @override
   String get submitLabel => 'Absenden';
@@ -133,7 +140,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get enableSyncTitle => 'Synchronisierung aktivieren';
 
   @override
-  String get passwordRequirementsDescription => 'Bitte gib den von dir erstellten Schlüssel (Passwort) ein. Er muss mindestens 10 Zeichen lang sein und jeweils mindestens eine Ziffer, einen Kleinbuchstaben, einen Großbuchstaben sowie ein Sonderzeichen enthalten.';
+  String get passwordRequirementsDescription =>
+      'Bitte gib den von dir erstellten Schlüssel (Passwort) ein. Er muss mindestens 10 Zeichen lang sein und jeweils mindestens eine Ziffer, einen Kleinbuchstaben, einen Großbuchstaben sowie ein Sonderzeichen enthalten.';
 
   @override
   String get enterKeyLabel => 'Schlüssel eingeben';
@@ -196,10 +204,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get addressesShareLabel => 'Adressen:';
 
   @override
-  String get microphoneNotAvailable => 'Mikrofon ist eventuell nicht verfügbar.';
+  String get microphoneNotAvailable =>
+      'Mikrofon ist eventuell nicht verfügbar.';
 
   @override
-  String get microphonePermissionRequired => 'Mikrofonberechtigung für Audioaufnahmen erforderlich.';
+  String get microphonePermissionRequired =>
+      'Mikrofonberechtigung für Audioaufnahmen erforderlich.';
 
   @override
   String get couldNotGetDuration => 'Dauer konnte nicht abgerufen werden';
@@ -283,7 +293,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get accessKeyInputTitle => 'Synchronisierung aktivieren';
 
   @override
-  String get accessKeyInputDescription => 'Bitte gib deine 24-Wörter-Wiederherstellungsphrase ein oder lade eine .txt-Datei, die diese enthält.';
+  String get accessKeyInputDescription =>
+      'Bitte gib deine 24-Wörter-Wiederherstellungsphrase ein oder lade eine .txt-Datei, die diese enthält.';
 
   @override
   String get editMenuItemLabel => 'Bearbeiten';
@@ -292,10 +303,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get filterMenuItemLabel => 'Filter';
 
   @override
-  String get externalStoragePermissionDenied => 'Berechtigung für den Zugriff auf den externen Speicher wurde verweigert.';
+  String get externalStoragePermissionDenied =>
+      'Berechtigung für den Zugriff auf den externen Speicher wurde verweigert.';
 
   @override
-  String get pressLongToStartRecording => 'Lange drücken, um die Aufnahme zu starten.';
+  String get pressLongToStartRecording =>
+      'Lange drücken, um die Aufnahme zu starten.';
 
   @override
   String get didYouKnowTitle => 'Schon gewusst?';
@@ -348,10 +361,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get dragHandleReorderTooltip => 'Zum Sortieren ziehen';
 
   @override
-  String get holdAndDragReorderTooltip => 'Gedrückt halten und zum Sortieren ziehen';
+  String get holdAndDragReorderTooltip =>
+      'Gedrückt halten und zum Sortieren ziehen';
 
   @override
-  String get emptyHomePageMessage => 'Hallo!\n\nHier ist es noch etwas leer.\n\nTippe auf die Plus-Schaltfläche (+), um dir eine Notiz zu erstellen. :)';
+  String get emptyHomePageMessage =>
+      'Hallo!\n\nHier ist es noch etwas leer.\n\nTippe auf die Plus-Schaltfläche (+), um dir eine Notiz zu erstellen. :)';
 
   @override
   String get reorderingTitle => 'Sortieren';
@@ -390,10 +405,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get titleInputLabel => 'Titel';
 
   @override
-  String get locationPermissionRequiredTitle => 'Standortberechtigung erforderlich';
+  String get locationPermissionRequiredTitle =>
+      'Standortberechtigung erforderlich';
 
   @override
-  String get enableLocationPermissionsContent => 'Bitte aktiviere die Standortberechtigungen in den App-Einstellungen.';
+  String get enableLocationPermissionsContent =>
+      'Bitte aktiviere die Standortberechtigungen in den App-Einstellungen.';
 
   @override
   String get cancelButtonLabel => 'Abbrechen';
@@ -426,7 +443,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get dbViewerTitle => 'DB-Betrachter';
 
   @override
-  String get selectTableToViewData => 'Wähle eine Tabelle aus, um deren Daten anzuzeigen';
+  String get selectTableToViewData =>
+      'Wähle eine Tabelle aus, um deren Daten anzuzeigen';
 
   @override
   String get selectTableDropdownHint => 'Tabelle auswählen';
@@ -468,13 +486,15 @@ class AppLocalizationsDe extends AppLocalizations {
   String get deviceDisabledMessage => 'Gerät deaktiviert!';
 
   @override
-  String get cannotRemoveThisDeviceMessage => 'Dieses Gerät kann nicht entfernt werden!';
+  String get cannotRemoveThisDeviceMessage =>
+      'Dieses Gerät kann nicht entfernt werden!';
 
   @override
   String get confirmRemoveTitle => 'Entfernen bestätigen';
 
   @override
-  String get confirmRemoveDeviceContent => 'Sind Sie sicher? Dies löscht alle Daten auf dem Gerät.';
+  String get confirmRemoveDeviceContent =>
+      'Sind Sie sicher? Dies löscht alle Daten auf dem Gerät.';
 
   @override
   String get okButtonLabel => 'OK';
@@ -498,7 +518,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get processingMessage => 'Verarbeitung läuft…';
 
   @override
-  String get doNotNavigateAwayMessage => 'Bitte verlassen Sie diesen Bereich nicht';
+  String get doNotNavigateAwayMessage =>
+      'Bitte verlassen Sie diesen Bereich nicht';
 
   @override
   String errorWithDetails(String error) {
@@ -515,7 +536,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get enterKeyAgainLabel => 'Schlüssel erneut eingeben';
 
   @override
-  String get pleaseEnterKeyAgainError => 'Bitte geben Sie den Schlüssel erneut ein';
+  String get pleaseEnterKeyAgainError =>
+      'Bitte geben Sie den Schlüssel erneut ein';
 
   @override
   String get keysDoNotMatchError => 'Schlüssel stimmen nicht überein';
@@ -557,13 +579,15 @@ class AppLocalizationsDe extends AppLocalizations {
   String get encryptionKeyTitle => 'Verschlüsselungsschlüssel';
 
   @override
-  String get createKeyDescription => 'Bitte geben Sie einen langen und schwer zu erratenden Schlüssel (Passwort) ein. Bewahren Sie ihn an einem sicheren Ort auf. Falls er verloren geht oder vergessen wird, kann er nicht wiederhergestellt werden.';
+  String get createKeyDescription =>
+      'Bitte geben Sie einen langen und schwer zu erratenden Schlüssel (Passwort) ein. Bewahren Sie ihn an einem sicheren Ort auf. Falls er verloren geht oder vergessen wird, kann er nicht wiederhergestellt werden.';
 
   @override
   String get seeExamplesTooltip => 'Beispiele ansehen';
 
   @override
-  String get couldNotFetchDetailsMessage => 'Details konnten nicht geladen werden';
+  String get couldNotFetchDetailsMessage =>
+      'Details konnten nicht geladen werden';
 
   @override
   String get retryButtonLabel => 'Wiederholen';
@@ -632,13 +656,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get helloTitle => 'Hallo';
 
   @override
-  String get selectKeyMasterKeyDescription => 'Um deine Daten zu verschlüsseln, benötigen wir einen Hauptschlüssel.';
+  String get selectKeyMasterKeyDescription =>
+      'Um deine Daten zu verschlüsseln, benötigen wir einen Hauptschlüssel.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'Es gibt zwei Optionen: Entweder du erstellst den Schlüssel selbst (ähnlich einem Passwort) oder wir erstellen ihn für dich.';
+  String get selectKeyTwoOptionsDescription =>
+      'Es gibt zwei Optionen: Entweder du erstellst den Schlüssel selbst (ähnlich einem Passwort) oder wir erstellen ihn für dich.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'Ich verstehe, dass der Verlust meines Verschlüsselungsschlüssels zum Datenverlust führen kann.';
+  String get understandLoseKeyAcknowledgement =>
+      'Ich verstehe, dass der Verlust meines Verschlüsselungsschlüssels zum Datenverlust führen kann.';
 
   @override
   String get createKeyForMeButtonLabel => 'Schlüssel für mich erstellen';
@@ -658,19 +685,23 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'Wir verwenden Ende-zu-Ende-Verschlüsselung, um sicherzustellen, dass all deine Notizen sicher sind und niemand sonst sie sehen kann, nicht einmal wir.';
+  String get e2eEncryptionDescription =>
+      'Wir verwenden Ende-zu-Ende-Verschlüsselung, um sicherzustellen, dass all deine Notizen sicher sind und niemand sonst sie sehen kann, nicht einmal wir.';
 
   @override
-  String get timeToStartEncryptionLabel => 'Zeit, die Verschlüsselung zu starten!';
+  String get timeToStartEncryptionLabel =>
+      'Zeit, die Verschlüsselung zu starten!';
 
   @override
   String get nextButtonLabel => 'Weiter';
 
   @override
-  String get sendingOtpFailedMessage => 'Senden des OTP fehlgeschlagen. Bitte versuche es erneut!';
+  String get sendingOtpFailedMessage =>
+      'Senden des OTP fehlgeschlagen. Bitte versuche es erneut!';
 
   @override
-  String get otpVerificationFailedMessage => 'OTP-Verifizierung fehlgeschlagen. Bitte versuche es erneut!';
+  String get otpVerificationFailedMessage =>
+      'OTP-Verifizierung fehlgeschlagen. Bitte versuche es erneut!';
 
   @override
   String get emailSignInTitle => 'E-Mail-Anmeldung';
@@ -700,10 +731,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'Du hast bereits ein Konto? Anmelden';
 
   @override
-  String get emailPasswordNote => 'Hinweis: Diese E-Mail und dieses Passwort sind nur für dein Konto. Der Notiz-Verschlüsselungsschlüssel wird danach separat eingerichtet.';
+  String get emailPasswordNote =>
+      'Hinweis: Diese E-Mail und dieses Passwort sind nur für dein Konto. Der Notiz-Verschlüsselungsschlüssel wird danach separat eingerichtet.';
 
   @override
-  String get passwordTooShortMessage => 'Das Passwort muss mindestens 8 Zeichen lang sein';
+  String get passwordTooShortMessage =>
+      'Das Passwort muss mindestens 8 Zeichen lang sein';
 
   @override
   String get passwordsDoNotMatchMessage => 'Passwörter stimmen nicht überein';
@@ -712,10 +745,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get invalidCredentialsMessage => 'E-Mail oder Passwort ist falsch';
 
   @override
-  String get accountExistsMessage => 'Diese E-Mail ist bereits registriert. Melde dich stattdessen an.';
+  String get accountExistsMessage =>
+      'Diese E-Mail ist bereits registriert. Melde dich stattdessen an.';
 
   @override
-  String get tooManyAttemptsMessage => 'Zu viele Versuche - versuche es später erneut';
+  String get tooManyAttemptsMessage =>
+      'Zu viele Versuche - versuche es später erneut';
 
   @override
   String otpSentToEmailMessage(String email) {
@@ -738,10 +773,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get couldNotFetchMessage => 'Abruf fehlgeschlagen';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'Dein Abonnement ist mit einer anderen E-Mail-Adresse verknüpft. Bitte melde dich ab und verwende diese, um den Cloud-Speicher zu aktivieren.';
+  String get subscriptionEmailMismatchMessage =>
+      'Dein Abonnement ist mit einer anderen E-Mail-Adresse verknüpft. Bitte melde dich ab und verwende diese, um den Cloud-Speicher zu aktivieren.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'Fehler beim Überprüfen der Tarifdetails';
+  String get errorCheckingPlanDetailsMessage =>
+      'Fehler beim Überprüfen der Tarifdetails';
 
   @override
   String get registerDeviceTitle => 'Gerät registrieren';
@@ -776,7 +813,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get invalidAccessKey => 'Ungültiger Zugriffsschlüssel';
 
   @override
-  String get fileDoesNotContain24Words => 'Die Datei enthält nicht exakt 24 Wörter.';
+  String get fileDoesNotContain24Words =>
+      'Die Datei enthält nicht exakt 24 Wörter.';
 
   @override
   String get errorReadingFile => 'Fehler beim Lesen der Datei';
@@ -1067,7 +1105,8 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1158,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get seedGroupFitness => 'Fitness';
 
   @override
-  String get seedItemWelcome => 'Willkommen bei Note Safe!\nIdeen, Listen oder was dir auch immer durch den Kopf geht – speichere es einfach hier.\n\nHalte diese Notiz gedrückt, um sie zu bearbeiten, zu löschen oder weitere Optionen zu sehen.';
+  String get seedItemWelcome =>
+      'Willkommen bei Note Safe!\nIdeen, Listen oder was dir auch immer durch den Kopf geht – speichere es einfach hier.\n\nHalte diese Notiz gedrückt, um sie zu bearbeiten, zu löschen oder weitere Optionen zu sehen.';
 
   @override
   String get seedItemMorningWorkout => 'Morgentraining';

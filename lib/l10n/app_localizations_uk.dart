@@ -12,7 +12,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get importantTitle => 'Важливо';
 
   @override
-  String get accessKeyNoticeDescription1 => 'На наступній сторінці ви побачите 24 слова. Це ваш унікальний і приватний ключ шифрування, і це ЄДИНИЙ спосіб відновити ваші нотатки у разі виходу з облікового запису, втрати чи поломки пристрою.';
+  String get accessKeyNoticeDescription1 =>
+      'На наступній сторінці ви побачите 24 слова. Це ваш унікальний і приватний ключ шифрування, і це ЄДИНИЙ спосіб відновити ваші нотатки у разі виходу з облікового запису, втрати чи поломки пристрою.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -23,7 +24,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get iUnderstandShowMeTheKey => 'Я розумію.\nПоказати ключ.';
 
   @override
-  String get selectGroupToViewNotes => 'Виберіть групу, щоб переглянути нотатки';
+  String get selectGroupToViewNotes =>
+      'Виберіть групу, щоб переглянути нотатки';
 
   @override
   String get accessKeyShareText => 'Ось ваш ключ доступу.';
@@ -38,7 +40,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get accessKeyTitle => 'Ключ доступу';
 
   @override
-  String get accessKeyDescription => 'Будь ласка, збережіть цей ключ у надійному місці. Він знадобиться вам для синхронізації нотаток на іншому пристрої.';
+  String get accessKeyDescription =>
+      'Будь ласка, збережіть цей ключ у надійному місці. Він знадобиться вам для синхронізації нотаток на іншому пристрої.';
 
   @override
   String get copyLabel => 'Копіювати';
@@ -59,7 +62,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get couldNotShareFile => 'Не вдалося поділитися файлом';
 
   @override
-  String get hereIsTheBackupFile => 'Ось файл резервної копії для вашої програми.';
+  String get hereIsTheBackupFile =>
+      'Ось файл резервної копії для вашої програми.';
 
   @override
   String get errorTitle => 'Помилка';
@@ -106,13 +110,16 @@ class AppLocalizationsUk extends AppLocalizations {
   String get enterYour24WordPhrase => 'Введіть вашу фразу з 24 слів';
 
   @override
-  String get enterYourRecoveryPhraseHere => 'Введіть вашу фразу відновлення тут';
+  String get enterYourRecoveryPhraseHere =>
+      'Введіть вашу фразу відновлення тут';
 
   @override
-  String get pleaseEnterYourRecoveryPhrase => 'Будь ласка, введіть фразу відновлення';
+  String get pleaseEnterYourRecoveryPhrase =>
+      'Будь ласка, введіть фразу відновлення';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'Фраза відновлення повинна містити рівно 24 слова';
+  String get recoveryPhraseMustContain24Words =>
+      'Фраза відновлення повинна містити рівно 24 слова';
 
   @override
   String get submitLabel => 'Надіслати';
@@ -133,7 +140,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get enableSyncTitle => 'Увімкнути синхронізацію';
 
   @override
-  String get passwordRequirementsDescription => 'Будь ласка, введіть створений вами ключ (пароль). Він повинен містити мінімум 10 символів, включаючи принаймні 1 цифру, 1 малу літеру, 1 велику літеру та 1 спеціальний символ.';
+  String get passwordRequirementsDescription =>
+      'Будь ласка, введіть створений вами ключ (пароль). Він повинен містити мінімум 10 символів, включаючи принаймні 1 цифру, 1 малу літеру, 1 велику літеру та 1 спеціальний символ.';
 
   @override
   String get enterKeyLabel => 'Введіть ключ';
@@ -199,7 +207,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get microphoneNotAvailable => 'Мікрофон може бути недоступний.';
 
   @override
-  String get microphonePermissionRequired => 'Для запису аудіо потрібен дозвіл на використання мікрофона.';
+  String get microphonePermissionRequired =>
+      'Для запису аудіо потрібен дозвіл на використання мікрофона.';
 
   @override
   String get couldNotGetDuration => 'Не вдалося отримати тривалість';
@@ -283,7 +292,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get accessKeyInputTitle => 'Увімкнути синхронізацію';
 
   @override
-  String get accessKeyInputDescription => 'Будь ласка, введіть вашу фразу відновлення з 24 слів або завантажте .txt файл, що її містить.';
+  String get accessKeyInputDescription =>
+      'Будь ласка, введіть вашу фразу відновлення з 24 слів або завантажте .txt файл, що її містить.';
 
   @override
   String get editMenuItemLabel => 'Редагувати';
@@ -292,10 +302,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get filterMenuItemLabel => 'Фільтри';
 
   @override
-  String get externalStoragePermissionDenied => 'У доступі до зовнішнього сховища було відмовлено.';
+  String get externalStoragePermissionDenied =>
+      'У доступі до зовнішнього сховища було відмовлено.';
 
   @override
-  String get pressLongToStartRecording => 'Натисніть і утримуйте, щоб почати запис.';
+  String get pressLongToStartRecording =>
+      'Натисніть і утримуйте, щоб почати запис.';
 
   @override
   String get didYouKnowTitle => 'Чи знаєте ви?';
@@ -348,10 +360,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get dragHandleReorderTooltip => 'Перетягніть, щоб змінити порядок';
 
   @override
-  String get holdAndDragReorderTooltip => 'Натисніть і перетягніть, щоб змінити порядок';
+  String get holdAndDragReorderTooltip =>
+      'Натисніть і перетягніть, щоб змінити порядок';
 
   @override
-  String get emptyHomePageMessage => 'Привіт!\n\nТут поки що порожньо.\n\nНатисніть кнопку +, щоб створити перші нотатки. :)';
+  String get emptyHomePageMessage =>
+      'Привіт!\n\nТут поки що порожньо.\n\nНатисніть кнопку +, щоб створити перші нотатки. :)';
 
   @override
   String get reorderingTitle => 'Зміна порядку';
@@ -390,10 +404,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get titleInputLabel => 'Назва';
 
   @override
-  String get locationPermissionRequiredTitle => 'Потрібен дозвіл на місцезнаходження';
+  String get locationPermissionRequiredTitle =>
+      'Потрібен дозвіл на місцезнаходження';
 
   @override
-  String get enableLocationPermissionsContent => 'Будь ласка, увімкніть дозвіл на визначення місцезнаходження в налаштуваннях програми.';
+  String get enableLocationPermissionsContent =>
+      'Будь ласка, увімкніть дозвіл на визначення місцезнаходження в налаштуваннях програми.';
 
   @override
   String get cancelButtonLabel => 'Скасувати';
@@ -411,7 +427,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get selectLocationTitle => 'Вибрати місцезнаходження';
 
   @override
-  String get useCurrentLocationTooltip => 'Використати поточне місцезнаходження';
+  String get useCurrentLocationTooltip =>
+      'Використати поточне місцезнаходження';
 
   @override
   String get selectAllButtonLabel => 'Вибрати все';
@@ -474,7 +491,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get confirmRemoveTitle => 'Підтвердити видалення';
 
   @override
-  String get confirmRemoveDeviceContent => 'Ви впевнені? Це призведе до видалення всіх даних на пристрої.';
+  String get confirmRemoveDeviceContent =>
+      'Ви впевнені? Це призведе до видалення всіх даних на пристрої.';
 
   @override
   String get okButtonLabel => 'ОК';
@@ -557,7 +575,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get encryptionKeyTitle => 'Ключ шифрування';
 
   @override
-  String get createKeyDescription => 'Будь ласка, введіть довгий і складний ключ (пароль). Не забудьте зберегти його в надійному місці. Якщо він буде втрачений або забутий, його неможливо відновити.';
+  String get createKeyDescription =>
+      'Будь ласка, введіть довгий і складний ключ (пароль). Не забудьте зберегти його в надійному місці. Якщо він буде втрачений або забутий, його неможливо відновити.';
 
   @override
   String get seeExamplesTooltip => 'Дивитися приклади';
@@ -614,7 +633,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get featureSyncUpTo3Devices => 'Синхронізація до 3 пристроїв';
 
   @override
-  String get featureUpgradeCancelAnytime => 'Оновлення/скасування в будь-який час';
+  String get featureUpgradeCancelAnytime =>
+      'Оновлення/скасування в будь-який час';
 
   @override
   String get noPlansAvailableMessage => 'Немає доступних планів';
@@ -632,13 +652,16 @@ class AppLocalizationsUk extends AppLocalizations {
   String get helloTitle => 'Вітаємо';
 
   @override
-  String get selectKeyMasterKeyDescription => 'Щоб зашифрувати ваші дані, нам знадобиться майстер-ключ шифрування.';
+  String get selectKeyMasterKeyDescription =>
+      'Щоб зашифрувати ваші дані, нам знадобиться майстер-ключ шифрування.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'Є 2 варіанти: або ви створюєте ключ самостійно (як пароль), або ми створюємо його за вас.';
+  String get selectKeyTwoOptionsDescription =>
+      'Є 2 варіанти: або ви створюєте ключ самостійно (як пароль), або ми створюємо його за вас.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'Я розумію, що якщо втрачу/забуду ключ шифрування, я можу втратити дані.';
+  String get understandLoseKeyAcknowledgement =>
+      'Я розумію, що якщо втрачу/забуду ключ шифрування, я можу втратити дані.';
 
   @override
   String get createKeyForMeButtonLabel => 'Створити ключ за мене';
@@ -658,7 +681,8 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'Ми використовуємо наскрізне шифрування, щоб гарантувати безпеку ваших нотаток. Ніхто інший, навіть ми, не може їх побачити.';
+  String get e2eEncryptionDescription =>
+      'Ми використовуємо наскрізне шифрування, щоб гарантувати безпеку ваших нотаток. Ніхто інший, навіть ми, не може їх побачити.';
 
   @override
   String get timeToStartEncryptionLabel => 'Час почати шифрування!';
@@ -667,10 +691,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get nextButtonLabel => 'Далі';
 
   @override
-  String get sendingOtpFailedMessage => 'Не вдалося надіслати OTP. Будь ласка, спробуйте ще раз!';
+  String get sendingOtpFailedMessage =>
+      'Не вдалося надіслати OTP. Будь ласка, спробуйте ще раз!';
 
   @override
-  String get otpVerificationFailedMessage => 'Перевірка OTP не вдалася. Будь ласка, спробуйте ще раз!';
+  String get otpVerificationFailedMessage =>
+      'Перевірка OTP не вдалася. Будь ласка, спробуйте ще раз!';
 
   @override
   String get emailSignInTitle => 'Вхід через Email';
@@ -700,10 +726,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'Вже є акаунт? Увійти';
 
   @override
-  String get emailPasswordNote => 'Примітка: цей email і пароль — лише для акаунта. Ключ шифрування нотаток налаштовується окремо, після цього.';
+  String get emailPasswordNote =>
+      'Примітка: цей email і пароль — лише для акаунта. Ключ шифрування нотаток налаштовується окремо, після цього.';
 
   @override
-  String get passwordTooShortMessage => 'Пароль має містити не менше 8 символів';
+  String get passwordTooShortMessage =>
+      'Пароль має містити не менше 8 символів';
 
   @override
   String get passwordsDoNotMatchMessage => 'Паролі не збігаються';
@@ -712,7 +740,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get invalidCredentialsMessage => 'Невірний email або пароль';
 
   @override
-  String get accountExistsMessage => 'Цей email вже зареєстрований. Увійдіть замість цього.';
+  String get accountExistsMessage =>
+      'Цей email вже зареєстрований. Увійдіть замість цього.';
 
   @override
   String get tooManyAttemptsMessage => 'Забагато спроб - спробуйте пізніше';
@@ -738,10 +767,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get couldNotFetchMessage => 'Не вдалося отримати';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'Ваша підписка прив\'язана до іншої електронної адреси. Будь ласка, вийдіть і використайте її для увімкнення хмарного сховища.';
+  String get subscriptionEmailMismatchMessage =>
+      'Ваша підписка прив\'язана до іншої електронної адреси. Будь ласка, вийдіть і використайте її для увімкнення хмарного сховища.';
 
   @override
-  String get errorCheckingPlanDetailsMessage => 'Помилка при перевірці даних плану';
+  String get errorCheckingPlanDetailsMessage =>
+      'Помилка при перевірці даних плану';
 
   @override
   String get registerDeviceTitle => 'Реєстрація пристрою';
@@ -756,7 +787,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get signingOutTitle => 'Вихід';
 
   @override
-  String get pleaseCheckInternetMessage => 'Будь ласка, перевірте інтернет-з\'єднання';
+  String get pleaseCheckInternetMessage =>
+      'Будь ласка, перевірте інтернет-з\'єднання';
 
   @override
   String get somethingWentWrongMessage => 'Щось пішло не так';
@@ -1067,7 +1099,8 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1152,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get seedGroupFitness => 'Фітнес';
 
   @override
-  String get seedItemWelcome => 'Ласкаво просимо до Note Safe!\nІдеї, списки чи будь-що, про що ви думаєте — записуйте все сюди.\n\nУтримуйте цю нотатку, щоб видалити, змінити або переглянути інші опції.';
+  String get seedItemWelcome =>
+      'Ласкаво просимо до Note Safe!\nІдеї, списки чи будь-що, про що ви думаєте — записуйте все сюди.\n\nУтримуйте цю нотатку, щоб видалити, змінити або переглянути інші опції.';
 
   @override
   String get seedItemMorningWorkout => 'Ранкове тренування';

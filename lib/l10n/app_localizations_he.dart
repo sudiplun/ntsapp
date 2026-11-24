@@ -12,7 +12,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get importantTitle => 'חשוב';
 
   @override
-  String get accessKeyNoticeDescription1 => 'בעמוד הבא תראה סדרה של 24 מילים. זהו מפתח ההצפנה הייחודי והפרטי שלך, והוא הדרך היחידה לשחזר את ההערות שלך במקרה של התנתקות, אובדן מכשיר או תקלה.';
+  String get accessKeyNoticeDescription1 =>
+      'בעמוד הבא תראה סדרה של 24 מילים. זהו מפתח ההצפנה הייחודי והפרטי שלך, והוא הדרך היחידה לשחזר את ההערות שלך במקרה של התנתקות, אובדן מכשיר או תקלה.';
 
   @override
   String accessKeyNoticeDescription2(String appName) {
@@ -38,7 +39,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get accessKeyTitle => 'מפתח גישה';
 
   @override
-  String get accessKeyDescription => 'אנא שמור מפתח זה במקום מאובטח. תזדקק לו כדי לסנכרן הערות במכשיר אחר.';
+  String get accessKeyDescription =>
+      'אנא שמור מפתח זה במקום מאובטח. תזדקק לו כדי לסנכרן הערות במכשיר אחר.';
 
   @override
   String get copyLabel => 'העתק';
@@ -112,7 +114,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get pleaseEnterYourRecoveryPhrase => 'אנא הזן את משפט השחזור שלך';
 
   @override
-  String get recoveryPhraseMustContain24Words => 'משפט השחזור חייב להכיל בדיוק 24 מילים';
+  String get recoveryPhraseMustContain24Words =>
+      'משפט השחזור חייב להכיל בדיוק 24 מילים';
 
   @override
   String get submitLabel => 'שלח';
@@ -133,7 +136,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get enableSyncTitle => 'הפעל סנכרון';
 
   @override
-  String get passwordRequirementsDescription => 'אנא הזן את המפתח (הסיסמה) שיצרת. הוא חייב להכיל לפחות 10 תווים, כולל לפחות ספרה אחת, אות קטנה אחת, אות גדולה אחת ותו מיוחד אחד.';
+  String get passwordRequirementsDescription =>
+      'אנא הזן את המפתח (הסיסמה) שיצרת. הוא חייב להכיל לפחות 10 תווים, כולל לפחות ספרה אחת, אות קטנה אחת, אות גדולה אחת ותו מיוחד אחד.';
 
   @override
   String get enterKeyLabel => 'הזן מפתח';
@@ -199,7 +203,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get microphoneNotAvailable => 'ייתכן שהמיקרופון אינו זמין.';
 
   @override
-  String get microphonePermissionRequired => 'נדרשת הרשאת מיקרופון כדי להקליט אודיו.';
+  String get microphonePermissionRequired =>
+      'נדרשת הרשאת מיקרופון כדי להקליט אודיו.';
 
   @override
   String get couldNotGetDuration => 'לא ניתן לקבל משך זמן';
@@ -283,7 +288,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get accessKeyInputTitle => 'הפעל סנכרון';
 
   @override
-  String get accessKeyInputDescription => 'אנא הזן את משפט השחזור בן 24 המילים שלך או טען קובץ .txt המכיל אותו.';
+  String get accessKeyInputDescription =>
+      'אנא הזן את משפט השחזור בן 24 המילים שלך או טען קובץ .txt המכיל אותו.';
 
   @override
   String get editMenuItemLabel => 'ערוך';
@@ -292,7 +298,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get filterMenuItemLabel => 'מסננים';
 
   @override
-  String get externalStoragePermissionDenied => 'ההרשאה לגישה לאחסון חיצוני נדחתה.';
+  String get externalStoragePermissionDenied =>
+      'ההרשאה לגישה לאחסון חיצוני נדחתה.';
 
   @override
   String get pressLongToStartRecording => 'לחץ לחיצה ארוכה כדי להתחיל בהקלטה.';
@@ -351,7 +358,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get holdAndDragReorderTooltip => 'החזק וגרור כדי לסדר מחדש';
 
   @override
-  String get emptyHomePageMessage => 'שלום!\n\nנראה שקצת ריק כאן.\n\nהקש על כפתור ה-+ וצור לעצמך הערות. :)';
+  String get emptyHomePageMessage =>
+      'שלום!\n\nנראה שקצת ריק כאן.\n\nהקש על כפתור ה-+ וצור לעצמך הערות. :)';
 
   @override
   String get reorderingTitle => 'סידור מחדש';
@@ -393,7 +401,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get locationPermissionRequiredTitle => 'נדרשת הרשאת מיקום';
 
   @override
-  String get enableLocationPermissionsContent => 'אנא הפעל הרשאות מיקום בהגדרות האפליקציה.';
+  String get enableLocationPermissionsContent =>
+      'אנא הפעל הרשאות מיקום בהגדרות האפליקציה.';
 
   @override
   String get cancelButtonLabel => 'ביטול';
@@ -474,7 +483,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get confirmRemoveTitle => 'אשר הסרה';
 
   @override
-  String get confirmRemoveDeviceContent => 'האם אתה בטוח? פעולה זו תמחק את כל הנתונים במכשיר.';
+  String get confirmRemoveDeviceContent =>
+      'האם אתה בטוח? פעולה זו תמחק את כל הנתונים במכשיר.';
 
   @override
   String get okButtonLabel => 'אישור';
@@ -557,7 +567,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get encryptionKeyTitle => 'מפתח הצפנה';
 
   @override
-  String get createKeyDescription => 'אנא הזן מפתח (סיסמה) ארוך וקשה לניחוש. זכור לשמור אותו במקום בטוח. אם הוא יאבד או יישכח, לא ניתן יהיה לשחזרו.';
+  String get createKeyDescription =>
+      'אנא הזן מפתח (סיסמה) ארוך וקשה לניחוש. זכור לשמור אותו במקום בטוח. אם הוא יאבד או יישכח, לא ניתן יהיה לשחזרו.';
 
   @override
   String get seeExamplesTooltip => 'ראה דוגמאות';
@@ -632,13 +643,16 @@ class AppLocalizationsHe extends AppLocalizations {
   String get helloTitle => 'שלום';
 
   @override
-  String get selectKeyMasterKeyDescription => 'כדי להצפין את הנתונים שלך, נצטרך מפתח הצפנה ראשי.';
+  String get selectKeyMasterKeyDescription =>
+      'כדי להצפין את הנתונים שלך, נצטרך מפתח הצפנה ראשי.';
 
   @override
-  String get selectKeyTwoOptionsDescription => 'ישנן 2 אפשרויות - או שתיצור מפתח בעצמך (בדומה לסיסמה) או שאנחנו ניצור אותו עבורך.';
+  String get selectKeyTwoOptionsDescription =>
+      'ישנן 2 אפשרויות - או שתיצור מפתח בעצמך (בדומה לסיסמה) או שאנחנו ניצור אותו עבורך.';
 
   @override
-  String get understandLoseKeyAcknowledgement => 'אני מבין שאם אאבד/אשכח את מפתח ההצפנה, אני עלול לאבד את הנתונים.';
+  String get understandLoseKeyAcknowledgement =>
+      'אני מבין שאם אאבד/אשכח את מפתח ההצפנה, אני עלול לאבד את הנתונים.';
 
   @override
   String get createKeyForMeButtonLabel => 'צור את המפתח עבורי';
@@ -658,7 +672,8 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get e2eEncryptionDescription => 'אנו משתמשים בהצפנה מקצה לקצה כדי לוודא שכל ההערות שלך בטוחות ושאף אחד אחר לא יכול לראות אותן, אפילו לא אנחנו.';
+  String get e2eEncryptionDescription =>
+      'אנו משתמשים בהצפנה מקצה לקצה כדי לוודא שכל ההערות שלך בטוחות ושאף אחד אחר לא יכול לראות אותן, אפילו לא אנחנו.';
 
   @override
   String get timeToStartEncryptionLabel => 'הגיע הזמן להתחיל בהצפנה!';
@@ -700,7 +715,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get alreadyHaveAccountLabel => 'כבר יש לך חשבון? התחבר';
 
   @override
-  String get emailPasswordNote => 'שים לב: אימייל וסיסמה אלה מיועדים לחשבונך בלבד. מפתח הצפנת הפתקים מוגדר בנפרד, לאחר מכן.';
+  String get emailPasswordNote =>
+      'שים לב: אימייל וסיסמה אלה מיועדים לחשבונך בלבד. מפתח הצפנת הפתקים מוגדר בנפרד, לאחר מכן.';
 
   @override
   String get passwordTooShortMessage => 'הסיסמה חייבת להכיל לפחות 8 תווים';
@@ -738,7 +754,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get couldNotFetchMessage => 'לא ניתן היה להביא נתונים';
 
   @override
-  String get subscriptionEmailMismatchMessage => 'המנוי שלך משויך לאימייל אחר. אנא התנתק והשתמש בו כדי להפעיל אחסון בענן.';
+  String get subscriptionEmailMismatchMessage =>
+      'המנוי שלך משויך לאימייל אחר. אנא התנתק והשתמש בו כדי להפעיל אחסון בענן.';
 
   @override
   String get errorCheckingPlanDetailsMessage => 'שגיאה בבדיקת פרטי התוכנית';
@@ -1067,7 +1084,8 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String mediaDurationHoursFormat(String hours, String minutes, String seconds) {
+  String mediaDurationHoursFormat(
+      String hours, String minutes, String seconds) {
     return '$hours:$minutes:$seconds';
   }
 
@@ -1119,7 +1137,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get seedGroupFitness => 'כושר';
 
   @override
-  String get seedItemWelcome => 'ברוכים הבאים ל-Note Safe!\nרעיונות, רשימות או כל דבר שעולה בדעתכם – שמרו הכל כאן.\n\nלחצו לחיצה ארוכה על הערה זו כדי למחוק, לערוך או לראות אפשרויות נוספות.';
+  String get seedItemWelcome =>
+      'ברוכים הבאים ל-Note Safe!\nרעיונות, רשימות או כל דבר שעולה בדעתכם – שמרו הכל כאן.\n\nלחצו לחיצה ארוכה על הערה זו כדי למחוק, לערוך או לראות אפשרויות נוספות.';
 
   @override
   String get seedItemMorningWorkout => 'אימון בוקר';

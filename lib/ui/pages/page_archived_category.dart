@@ -100,7 +100,8 @@ class _PageArchivedCategoriesState extends State<PageArchivedCategories> {
     }
     if (mounted) {
       clearSelection();
-      displaySnackBar(context, message: loc.deletedPermanentlyLabel, seconds: 1);
+      displaySnackBar(context,
+          message: loc.deletedPermanentlyLabel, seconds: 1);
     }
     await fetchArchivedCategories();
   }
